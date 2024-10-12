@@ -6,15 +6,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'main/Dashboard/images/fav.png' %}">
     <title>Openup AI Generator Dashboard</title>
     <!-- bootstrap Css -->
-    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
-    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/Dashboard/css/plugins/fontawesome-6.css' %}">
+    <link rel="stylesheet" href="{% static 'main/Dashboard/css/plugins/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'main/Dashboard/css/vendor/bootstrap.min.css' %}">
     {% block extra_css %}
     {% endblock %}    
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{% static 'main/Dashboard/css/style.css' %}">
 </head>
 
 
@@ -23,10 +23,10 @@
     
 
     <!-- jquery Js -->
-    <script src="assets/js/plugins/jquery.min.js"></script>
-    <script src="assets/js/plugins/swiper.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="{% static 'main/Dashboard/js/plugins/jquery.min.js' %}"></script>
+    <script src="{% static 'main/Dashboard/js/plugins/swiper.js' %}"></script>
+    <script src="{% static 'main/Dashboard/js/plugins/bootstrap.min.js' %}"></script>
     <!-- custom js -->
-    <script src="assets/js/main.js"></script>
+    <script src="{% static 'main/Dashboard/js/main.js' %}"></script>
 </body>
 </html>

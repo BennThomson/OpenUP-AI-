@@ -1,3 +1,4 @@
+{% load static %}
 <!-- header area -->
 
     <!-- header area -->
@@ -6,17 +7,17 @@
             <div class="col-lg-12">
                 <div class="header-inner-one">
                     <div class="left-logo-area">
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo/logo-01.png" alt="logo-image">
+                        <a href="{% url 'dashboard-main' %}" class="logo">
+                            <img src="{% static 'main/Dashboard/images/logo/logo-01.png' %}" alt="logo-image">
                         </a>
                         <div class="left-side-open-clouse" id="collups-left">
-                            <img src="assets/images/icons/01.svg" alt="icons">
+                            <img src="{% static 'main/Dashboard/images/icons/01.svg' %}" alt="icons">
                         </div>
                     </div>
                     <div class="header-right">
                         <div class="button-area">
                             <a href="javascript: void(0);" class="rts-btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-                                <img src="assets/images/icons/02.svg" alt="icons">
+                                <img src="{% static 'main/Dashboard/images/icons/02.svg' %}" alt="icons">
                                 Update
                             </a>
                         </div>
@@ -46,7 +47,7 @@
                                             <li class="single__items">
                                                 <a class="single-link" href="#">
                                                     <div class="avatar">
-                                                        <img src="assets/images/avatar/user.svg" alt="Popup Img" class="">
+                                                        <img src="{% static 'main/Dashboard/images/avatar/user.svg' %}" alt="Popup Img" class="">
                                                     </div>
                                                     <div class="main-content">
                                                         <h5 class="name-user">
@@ -63,7 +64,7 @@
                                             <li class="single__items">
                                                 <a class="single-link" href="#">
                                                     <div class="avatar">
-                                                        <img src="assets/images/avatar/user.svg" alt="Popup Img" class="">
+                                                        <img src="{% static 'main/Dashboard/images/avatar/user.svg' %}" alt="Popup Img" class="">
                                                     </div>
                                                     <div class="main-content">
                                                         <h5 class="name-user">
@@ -80,7 +81,7 @@
                                             <li class="single__items">
                                                 <a class="single-link" href="#">
                                                     <div class="avatar">
-                                                        <img src="assets/images/avatar/user.svg" alt="Popup Img" class="">
+                                                        <img src="{% static 'main/Dashboard/images/avatar/user.svg' %}" alt="Popup Img" class="">
                                                     </div>
                                                     <div class="main-content">
                                                         <h5 class="name-user">
@@ -97,7 +98,7 @@
                                             <li class="single__items">
                                                 <a class="single-link" href="#">
                                                     <div class="avatar">
-                                                        <img src="assets/images/avatar/user.svg" alt="Popup Img" class="">
+                                                        <img src="{% static 'main/Dashboard/images/avatar/user.svg' %}" alt="Popup Img" class="">
                                                     </div>
                                                     <div class="main-content">
                                                         <h5 class="name-user">
@@ -114,7 +115,7 @@
                                             <li class="single__items">
                                                 <a class="single-link" href="#">
                                                     <div class="avatar">
-                                                        <img src="assets/images/avatar/user.svg" alt="Popup Img" class="">
+                                                        <img src="{% static 'main/Dashboard/images/avatar/user.svg' %}" alt="Popup Img" class="">
                                                     </div>
                                                     <div class="main-content">
                                                         <h5 class="name-user">
@@ -164,12 +165,12 @@
                             </div>
                             <div class="single_action__haeader user_avatar__information openuptip" flow="down" tooltip="Profile">
                                 <div class="avatar">
-                                    <img src="assets/images/avatar/01.png" alt="avatar">
+                                    <img src="{% static 'main/Dashboard/images/avatar/01.png' %}" alt="avatar">
                                 </div>
                                 <div class="user_information_main_wrapper slide-down__click">
                                     <div class="user_header">
                                         <div class="main-avatar">
-                                            <img src="assets/images/avatar/user-2.svg" alt="user">
+                                            <img src="{% static 'main/Dashboard/images/avatar/user-2.svg' %}" alt="user">
                                         </div>
                                         <div class="user_naim-information">
                                             <h3 class="title">MR.Crow Kader</h3>
