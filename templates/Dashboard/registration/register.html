@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'Dashboard/layouts/dashboardMain.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
-    <title>Openup AI Generator Dashboard</title>
-    <!-- bootstrap Css -->
-    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
-    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
+{% block content %}
 <body class="register">
-
-
-
-
 
     <div class="dash-board-main-wrapper">
         <div class="main-center-content-m-left center-content">
@@ -87,14 +72,4 @@
         </div>
     </div>
 
-
-
-    <!-- jquery Js -->
-    <script src="assets/js/plugins/jquery.min.js"></script>
-    <script src="assets/js/plugins/swiper.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
-    <!-- custom js -->
-    <script src="assets/js/main.js"></script>
-</body>
-
-</html>
+{% endblock %}
