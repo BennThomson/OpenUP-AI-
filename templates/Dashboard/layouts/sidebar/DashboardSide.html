@@ -1,75 +1,77 @@
+{% load static %}
+
 <div class="left-side-bar">
     <div class="inner">
         <div class="single-menu-wrapper">
-            <a href="index.html" class="single-menu">
+            <a href="{% url 'dashboard-main' %}" class="single-menu">
                 <div class="icon">
-                    <img src="assets/images/icons/01.png" alt="icons">
+                    <img src="{% static 'main/Dashboard/images/icons/01.png' %}" alt="icons">
                 </div>
                 <p>Home</p>
             </a>
-            <a href="community-feed.html" class="single-menu">
+            <a href="{% url 'dashboard-community' %}" class="single-menu">
                 <div class="icon">
-                    <img src="assets/images/icons/02.png" alt="icons">
+                    <img src="{% static 'main/Dashboard/images/icons/02.png' %}" alt="icons">
                 </div>
                 <p>Community Feed</p>
             </a>
-            <a href="manage-subscription.html" class="single-menu ">
+            <a href="{% url 'dashboard-subscription' %}" class="single-menu ">
                 <div class="icon">
-                    <img src="assets/images/icons/03.png" alt="icons">
+                    <img src="{% static 'main/Dashboard/images/icons/03.png' %}" alt="icons">
                 </div>
                 <p>Manage Subscription</p>
             </a>
         </div>
         <div class="single-menu-wrapper">
-            <a href="chatbot.html" class="single-menu active">
+            <a href="{% url 'dashboard-chatbot' %}" class="single-menu active">
                 <div class="icon">
-                    <img src="assets/images/icons/04.png" alt="icons">
+                    <img src="{% static 'main/Dashboard/images/icons/04.png' %}" alt="icons">
                 </div>
                 <p>AI Chat Bot</p>
             </a>
-            <a href="image-generator.html" class="single-menu">
+            <a href="#" class="single-menu">
                 <div class="icon">
-                    <img src="assets/images/icons/05.png" alt="icons">
+                    <img src="{% static 'main/Dashboard/images/icons/05.png' %}" alt="icons">
                 </div>
                 <p>Image Generator</p>
             </a>
-            <a href="voicegenerator.html" class="single-menu">
+            <a href="#" class="single-menu">
                 <div class="icon">
-                    <img src="assets/images/icons/06.png" alt="icons">
+                    <img src="{% static 'main/Dashboard/images/icons/06.png' %}" alt="icons">
                 </div>
                 <p>Voice Generate</p>
             </a>
         </div>
         <div class="single-menu-wrapper">
-            <a href="register.html" class="single-menu">
+            <a href="{% url 'register' %}" class="single-menu">
                 <div class="icon">
-                    <img src="assets/images/icons/07.png" alt="icons">
+                    <img src="{% static 'main/Dashboard/images/icons/07.png' %}" alt="icons">
                 </div>
                 <p>Register</p>
             </a>
             <a class="collapse-btn collapsed single-menu" data-bs-toggle="collapse" href="#collapseExample"
                role="button" aria-expanded="false" aria-controls="collapseExample">
                 <div class="icon">
-                    <img src="assets/images/icons/08.png" alt="icons">
+                    <img src="{% static 'main/Dashboard/images/icons/08.png' %}" alt="icons">
                 </div>
                 <p>Settings</p>
             </a>
             <div class="collapse" id="collapseExample">
                 <ul class="submenu rts-default-sidebar-list">
                     <li>
-                        <a href="faq.html">
+                        <a href="{% url 'dashboard-faq' %}">
                             <i class="fa-sharp fa-regular fa-user"></i>
                             <span>FAQ</span>
                         </a>
                     </li>
                     <li>
-                        <a href="login.html">
+                        <a href="{% url 'login' %}">
                             <i class="fa-sharp fa-regular fa-user"></i>
                             <span>Login</span>
                         </a>
                     </li>
                     <li>
-                        <a href="reset-password.html">
+                        <a href="#">
                             <i class="fa-sharp fa-regular fa-user"></i>
                             <span>Reset Password</span>
                         </a>
@@ -78,7 +80,7 @@
             </div>
             <a href="#" class="single-menu">
                 <div class="icon">
-                    <img src="assets/images/icons/09.png" alt="icons">
+                    <img src="{% static 'main/Dashboard/images/icons/09.png' %}" alt="icons">
                 </div>
                 <p>Logout</p>
             </a>
@@ -86,7 +88,7 @@
     </div>
     <div class="bottom-user">
         <div class="user-wrapper">
-            <img src="assets/images/avatar/02.png" alt="avatar">
+            <img src="{% static 'main/Dashboard/images/avatar/02.png' %}" alt="avatar">
             <div class="info">
                 <h6 class="title">Mack Gok</h6>
                 <a href="#">openup@net.com</a>
@@ -96,7 +98,7 @@
         <div class="pro-upgrade">
             <button class="rts-btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     data-bs-whatever="@mdo">
-                <img src="assets/images/icons/14.png" alt="icons">
+                <img src="{% static 'main/Dashboard/images/icons/14.png' %}" alt="icons">
                 Upgrade To Pro
             </button>
         </div>

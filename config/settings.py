@@ -20,7 +20,7 @@ INSTALLED_APPS = [
 
 #     Installed apps
     'dashboard',
-
+    'users',
 ]
 
 MIDDLEWARE = [
