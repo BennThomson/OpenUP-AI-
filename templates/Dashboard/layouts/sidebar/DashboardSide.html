@@ -29,26 +29,20 @@
                 </div>
                 <p>AI Chat Bot</p>
             </a>
-            <a href="#" class="single-menu">
-                <div class="icon">
-                    <img src="{% static 'main/Dashboard/images/icons/05.png' %}" alt="icons">
-                </div>
-                <p>Image Generator</p>
-            </a>
-            <a href="#" class="single-menu">
-                <div class="icon">
-                    <img src="{% static 'main/Dashboard/images/icons/06.png' %}" alt="icons">
-                </div>
-                <p>Voice Generate</p>
-            </a>
+{#            <a href="#" class="single-menu">#}
+{#                <div class="icon">#}
+{#                    <img src="{% static 'main/Dashboard/images/icons/05.png' %}" alt="icons">#}
+{#                </div>#}
+{#                <p>Image Generator</p>#}
+{#            </a>#}
+{#            <a href="#" class="single-menu">#}
+{#                <div class="icon">#}
+{#                    <img src="{% static 'main/Dashboard/images/icons/06.png' %}" alt="icons">#}
+{#                </div>#}
+{#                <p>Voice Generate</p>#}
+{#            </a>#}
         </div>
         <div class="single-menu-wrapper">
-            <a href="{% url 'register' %}" class="single-menu">
-                <div class="icon">
-                    <img src="{% static 'main/Dashboard/images/icons/07.png' %}" alt="icons">
-                </div>
-                <p>Register</p>
-            </a>
             <a class="collapse-btn collapsed single-menu" data-bs-toggle="collapse" href="#collapseExample"
                role="button" aria-expanded="false" aria-controls="collapseExample">
                 <div class="icon">
@@ -59,26 +53,14 @@
             <div class="collapse" id="collapseExample">
                 <ul class="submenu rts-default-sidebar-list">
                     <li>
-                        <a href="{% url 'dashboard-faq' %}">
+                        <a href="{% url 'dashboard-profile' %}">
                             <i class="fa-sharp fa-regular fa-user"></i>
-                            <span>FAQ</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'login' %}">
-                            <i class="fa-sharp fa-regular fa-user"></i>
-                            <span>Login</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-sharp fa-regular fa-user"></i>
-                            <span>Reset Password</span>
+                            <span>Profile</span>
                         </a>
                     </li>
                 </ul>
             </div>
-            <a href="#" class="single-menu">
+            <a href="{% url 'logout' %}" class="single-menu">
                 <div class="icon">
                     <img src="{% static 'main/Dashboard/images/icons/09.png' %}" alt="icons">
                 </div>
@@ -90,10 +72,16 @@
         <div class="user-wrapper">
             <img src="{% static 'main/Dashboard/images/avatar/02.png' %}" alt="avatar">
             <div class="info">
-                <h6 class="title">Mack Gok</h6>
-                <a href="#">openup@net.com</a>
+                <h6 class="title">
+                    {% if user.first_name or user.last_name %}
+                        {{ user.first_name }} {{ user.last_name }} 
+                    {% else %}
+                        <a style="text-decoration: none" href="#">Enter your name</a>
+                    {% endif %}
+                </h6>
+                <a href="#">{{ user.email }}</a>
             </div>
-            <span>Free</span>
+{#            <span>Free</span>#}
         </div>
         <div class="pro-upgrade">
             <button class="rts-btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"

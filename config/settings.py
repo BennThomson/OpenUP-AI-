@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-yf#rke042t%*v-kbg+iu_l*jhzb8pmo04evyksl0*xm$-&uv)t
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+LOGIN_URL = 'login'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -17,11 +17,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+#     crispy
+    "crispy_forms",
+    "crispy_bootstrap5",
+
 
 #     Installed apps
     'dashboard',
     'users',
+    'mainPage',
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+AUTH_USER_MODEL = "users.CustomUser"
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

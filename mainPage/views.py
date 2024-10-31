@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+def MainPage(request):
+    return render(request, 'Openup/light/index-two.html')
+
+def contact_page(request):
+    return render(request, 'Openup/light/contact.html')
+
+
+
+
