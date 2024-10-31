@@ -1,0 +1,74 @@
+{% load static %}
+
+<header class="header-area header-two">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- header top start -->
+                <div class="header-top-two">
+                    <div class="social-area">
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-brands fa-behance"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-brands fa-discord"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-area">
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="{% url 'contactPage' %}">Contact</a></li>
+                            <li><a href="#">En(US)</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- header top end -->
+
+                <div class="header-main-two header--sticky">
+                    <a href="{% url 'mainPage' %}">
+                        <img src="{% static 'main/Openup/images/logo/03.svg' %}" alt="logo">
+                    </a>
+                    <!-- nav -->
+                    <div class="nav-area-main d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a class="links-main" href="#">Home</a>
+                                </li>
+                                <li><a class="links-main" href="#">Ai Chat Bot</a></li>
+                                <li><a class="links-main" href="#">Photo Stock</a></li>
+                                <li><a class="links-main" href="{% url 'contactPage' %}">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- nav end -->
+                    <div class="button-area">
+                        
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'dashboard-main' %}" class="rts-btn btn-primary">Dashboard</a>
+                        {% else %}
+                            <a href="{% url 'login' %}">Login</a>
+                            <a href="{% url 'register' %}" class="rts-btn btn-primary">Sign Up</a>
+                        {% endif %}
+                    </div>
+                    <div class="menu-btn d-xl-none d-lg-none d-md-block d-sm-block" id="menu-btn">
+                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                            <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                            <rect width="20" height="2" fill="#1F1F25"></rect>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>

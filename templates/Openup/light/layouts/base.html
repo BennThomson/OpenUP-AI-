@@ -1,0 +1,45 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'main/Openup/images/fav.png' %}">
+    <title>OpenUp HTML Template</title>
+    <!-- bootstrap min css -->
+
+    <link rel="stylesheet preload" href="{% static 'main/Openup/css/plugins/fontawesome-6.css' %}" as="style">
+    <link rel="stylesheet preload" href="{% static 'main/Openup/css/plugins/unicons.css' %}" as="style">
+    <link rel="stylesheet preload" href="{% static 'main/Openup/css/plugins/swiper.min.css' %}" as="style">
+    <link rel="stylesheet preload" href="{% static 'main/Openup/css/vendor/magnific-popup.css' %}" as="style">
+    <link rel="stylesheet preload" href="{% static 'main/Openup/css/vendor/metismenu.css' %}" as="style">
+    <link rel="stylesheet preload" href="{% static 'main/Openup/css/vendor/bootstrap.min.css' %}" as="style">
+    {% block extra-css %}
+    {% endblock %}
+
+    <!-- custom css style -->
+    <link rel="stylesheet preload" href="{% static 'main/Openup/css/style.css' %}" as="style">
+</head>
+
+
+{% block body %}
+
+{% endblock %}
+
+
+{# scripts parts#}
+<script src="{% static 'main/Openup/js/vendor/jquery.min.js' %}" defer></script>
+<script src="{% static 'main/Openup/js/vendor/metismenu.js' %}" defer></script>
+<script src="{% static 'main/Openup/js/vendor/imagesloaded.pkgd.min.js' %}" defer></script>
+<script src="{% static 'main/Openup/js/vendor/isotope.pkgd.min.js' %}" defer></script>
+<script src="{% static 'main/Openup/js/vendor/magnific-popup.js' %}" defer></script>
+<script src="{% static 'main/Openup/js/plugins/bootstrap.min.js' %}" defer></script>
+<script src="{% static 'main/Openup/js/plugins/swiper.js' %}" defer></script>
+<script src="{% static 'main/Openup/js/plugins/contact.form.js' %}" defer></script>
+<script src="{% static 'main/Openup/js/main.js' %}" defer></script>
+
+</body>
+</html>
