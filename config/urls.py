@@ -6,6 +6,7 @@ from config import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('', include('mainPage.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('user/', include('users.urls')),

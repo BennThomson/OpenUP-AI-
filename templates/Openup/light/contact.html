@@ -1,6 +1,6 @@
 {% extends 'Openup/light/layouts/base.html' %}
 {% load static %}
-
+{% load crispy_forms_filters %}
 {% block body %}
 
 
@@ -76,31 +76,38 @@
                 <div class="col-lg-4 col-md-12">
                     <div id="form-messages"></div>
                     <!-- left contact form -->
-                    <form id="contact-form" class="contact-page-form" action="mailer.php" method="post">
-                        <h3 class="title">Get In Touch</h3>
-                        <!-- ingle input start -->
-                        <div class="single-input">
-                            <label for="name">Your Name</label>
-                            <input id="name" name="name" type="text" placeholder="Enter you full name" required>
-                            <i class="fa-regular fa-user"></i>
-                        </div>
+
+                    <form  action="{% url 'contactPage' %}" method="post">
+                        {% csrf_token %}
+                            {{ form|crispy }}
+
+                            <input type="submit" value="Send Message">
+
+{#                        <h3 class="title">Get In Touch</h3>#}
+{#                        <!-- ingle input start -->#}
+{#                        <div class="single-input">#}
+{#                            <label for="name">Your Name</label>#}
+{#                            <input id="name" name="name" type="text" placeholder="Enter you full name" required>#}
+{#                            <i class="fa-regular fa-user"></i>#}
+{#                        </div>#}
+{#                        <!-- single input end -->#}
+{#                        <!-- ingle input start -->#}
+{#                        <div class="single-input">#}
+{#                            <label for="email">Your Email Address</label>#}
+{#                            <input id="email" name="email" type="email" placeholder="openup@info.com">#}
+{#                            <i class="fa-light fa-envelope"></i>#}
+{#                        </div>#}
+{#                        <!-- single input end -->#}
+{#                        <!-- ingle input start -->#}
+{#                        <div class="single-input">#}
+{#                            <label for="textarea">Enter Your Message</label>#}
+{#                            <textarea name="message" id="textarea" placeholder="Write here your details message"></textarea>#}
+{#                            <i class="fa-light fa-marker"></i>#}
+{#                        </div>#}
                         <!-- single input end -->
-                        <!-- ingle input start -->
-                        <div class="single-input">
-                            <label for="email">Your Email Address</label>
-                            <input id="email" name="email" type="email" placeholder="openup@info.com">
-                            <i class="fa-light fa-envelope"></i>
-                        </div>
-                        <!-- single input end -->
-                        <!-- ingle input start -->
-                        <div class="single-input">
-                            <label for="textarea">Enter Your Message</label>
-                            <textarea name="message" id="textarea" placeholder="Write here your details message"></textarea>
-                            <i class="fa-light fa-marker"></i>
-                        </div>
-                        <!-- single input end -->
-                        <button class="rts-btn btn-primary">Send Message</button>
+{#                        <button type="submit" class="btn btn-primary">Send Message</button>#}
                     </form>
+
                     <!-- left contact form end -->
                 </div>
                 <div class="col-lg-8 col-md-12">

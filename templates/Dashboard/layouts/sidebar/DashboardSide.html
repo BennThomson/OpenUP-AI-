@@ -60,6 +60,7 @@
                     </li>
                 </ul>
             </div>
+            
             <a href="{% url 'logout' %}" class="single-menu">
                 <div class="icon">
                     <img src="{% static 'main/Dashboard/images/icons/09.png' %}" alt="icons">
@@ -74,12 +75,17 @@
             <div class="info">
                 <h6 class="title">
                     {% if user.first_name or user.last_name %}
-                        {{ user.first_name }} {{ user.last_name }} 
+                        {% if user.first_name|add:user.last_name|length > 13 %}
+                            {{ user.first_name}}...
+                        {% else %}
+                            {{ user.first_name }} {{ user.last_name }}
+                        {% endif %}
                     {% else %}
                         <a style="text-decoration: none" href="#">Enter your name</a>
                     {% endif %}
                 </h6>
-                <a href="#">{{ user.email }}</a>
+
+                <a href="{% url 'dashboard-profile' %}">See your email</a>
             </div>
 {#            <span>Free</span>#}
         </div>
