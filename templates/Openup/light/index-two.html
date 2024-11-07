@@ -23,7 +23,7 @@
                         <form action="#">
                             <div class="input-area">
                                 <input type="email" placeholder="Enter your mail address" required>
-                                <button>Sign Up Free <i class="fa-regular fa-arrow-right"></i></button>
+                                <button><a href="#">Sign Up Free</a><i class="fa-regular fa-arrow-right"></i></button>
                             </div>
                         </form>
                         <div class="rating-area">
@@ -646,9 +646,14 @@
                             <li><a class="mobile-menu-link" href="index-five.html">Photo Stock</a></li>
                         </ul>
                     </li>
-                    
                     <li class="parent">
-                        <a href="contact.html" class="main">Contact</a>
+                        <a href="{% url 'contactPage' %}" class="main">Contact</a>
+                    </li>
+                    <li class="parent">
+                        <a href="{% url 'login' %}" class="main">Login</a>
+                    </li>
+                    <li class="parent">
+                        <a href="{% url 'register' %}" class="main">Sign up</a>
                     </li>
                 </ul>
             </nav>

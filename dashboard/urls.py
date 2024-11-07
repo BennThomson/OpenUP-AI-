@@ -6,7 +6,7 @@ urlpatterns = [
     path('', dashboard_main_view, name='dashboard-main'),
     path('community/', dashboard_community_view, name='dashboard-community'),
     path('chatbot/', dashboard_chatbot_view, name='dashboard-chatbot'),
-    path('faq/', dashboard_profile_view, name='dashboard-profile'),
+    path('profile/', dashboard_profile_view, name='dashboard-profile'),
     path('manage-subscribtion/', dashboard_subscription_view, name='dashboard-subscription'),
 
 ]

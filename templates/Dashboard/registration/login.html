@@ -3,11 +3,11 @@
 {% load crispy_forms_filters %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 {% endblock %}
 
 {% block content %}
-<body class="register page-login">
+    <body class="register page-login">
     <div class="dash-board-main-wrapper pt--40">
         {% include 'Dashboard/layouts/sidebar/DashboardSide.html' %}
         <div class="main-center-content-m-left center-content">
@@ -17,7 +17,8 @@
                         <div class="col-lg-12">
                             <!-- single login area start -->
                             <div style="width: 65%; margin: 0 auto;" class="mb-2">
-                                <a href="{% url 'mainPage' %}"><i class="bi bi-arrow-left"><span class="ms-3">Go home</span></i></a>
+                                <a href="{% url 'mainPage' %}"><i class="bi bi-arrow-left"><span
+                                        class="ms-3">Go home</span></i></a>
                             </div>
                             <div class="single-form-s-wrapper">
                                 <div class="head">
@@ -29,28 +30,32 @@
                                         {% csrf_token %}
 
                                         <div id="div_id_email" class="mb-3">
-                                            <input type="email" name="email" maxlength="320" class="emailinput form-control" required="" id="id_email" placeholder="Email">
+                                            <input type="email" name="email" maxlength="320"
+                                                   class="emailinput form-control" required="" id="id_email"
+                                                   placeholder="Email">
                                         </div>
 
                                         <div id="div_id_password" class="mb-3">
-                                            <input type="password" name="password" class="passwordinput form-control" required="" id="id_password" placeholder="Password">
+                                            <input type="password" name="password" class="passwordinput form-control"
+                                                   required="" id="id_password" placeholder="Password">
                                         </div>
 
-{#                                        <div class="input-wrapper">#}
-{#                                            <input type="email" placeholder="Enter your mail" required="">#}
-{#                                            <input type="password" placeholder="Password">#}
-{#                                        </div>#}
+                                        {#                                        <div class="input-wrapper">#}
+                                        {#                                            <input type="email" placeholder="Enter your mail" required="">#}
+                                        {#                                            <input type="password" placeholder="Password">#}
+                                        {#                                        </div>#}
                                         <div class="check-wrapper">
-{#                                            <div class="form-check">#}
-{#                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required="">#}
-{#                                                <label class="form-check-label" for="flexCheckDefault">#}
-{#                                                    Default checkbox#}
-{#                                                </label>#}
-{#                                            </div>#}
+                                            {#                                            <div class="form-check">#}
+                                            {#                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required="">#}
+                                            {#                                                <label class="form-check-label" for="flexCheckDefault">#}
+                                            {#                                                    Default checkbox#}
+                                            {#                                                </label>#}
+                                            {#                                            </div>#}
                                             <a href="{% url 'reset-password' %}">Forgot password?</a>
                                         </div>
                                         <button type="submit" class="rts-btn btn-primary">Sing In</button>
-                                        <p>Don't have an account? <a class="ml--5" href="{% url 'register' %}">Sign Up for Free</a></p>
+                                        <p>Don't have an account? <a class="ml--5" href="{% url 'register' %}">Sign Up
+                                            for Free</a></p>
                                     </form>
                                 </div>
                                 <div class="other-separator">
@@ -58,27 +63,69 @@
                                 </div>
                                 <div class="sign-in-otherway">
                                     <!-- ingle -->
-                                    <div class="single">
-                                        <div class="icon">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3.98918 10.878L3.36263 13.217L1.07258 13.2654C0.388195 11.996 0 10.5437 0 9.00034C0 7.50793 0.362953 6.10055 1.00631 4.86133H1.0068L3.04559 5.23511L3.9387 7.26166C3.75177 7.80661 3.64989 8.39161 3.64989 9.00034C3.64996 9.661 3.76963 10.294 3.98918 10.878Z" fill="#FBBB00"></path>
-                                                <path d="M17.8422 7.31836C17.9455 7.86279 17.9994 8.42504 17.9994 8.99967C17.9994 9.64402 17.9317 10.2725 17.8026 10.8788C17.3645 12.9419 16.2197 14.7434 14.6338 16.0182L14.6333 16.0177L12.0654 15.8867L11.7019 13.6179C12.7542 13.0007 13.5766 12.035 14.0098 10.8788H9.19727V7.31836H17.8422Z" fill="#518EF8"></path>
-                                                <path d="M14.6336 16.0173L14.6341 16.0178C13.0917 17.2575 11.1325 17.9993 8.99968 17.9993C5.57227 17.9993 2.59239 16.0836 1.07227 13.2644L3.98886 10.877C4.74891 12.9054 6.70567 14.3494 8.99968 14.3494C9.98571 14.3494 10.9095 14.0828 11.7021 13.6175L14.6336 16.0173Z" fill="#28B446"></path>
-                                                <path d="M14.7442 2.07197L11.8286 4.45894C11.0082 3.94615 10.0385 3.64992 8.99955 3.64992C6.65361 3.64992 4.66025 5.16013 3.93828 7.26131L1.00635 4.86098H1.00586C2.50373 1.97307 5.52119 0 8.99955 0C11.1833 0 13.1855 0.777867 14.7442 2.07197Z" fill="#F14336"></path>
-                                            </svg>
+                                    <a href="{% url 'google_login' %}">
+                                        <div class="single">
+                                            <div class="icon">
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.98918 10.878L3.36263 13.217L1.07258 13.2654C0.388195 11.996 0 10.5437 0 9.00034C0 7.50793 0.362953 6.10055 1.00631 4.86133H1.0068L3.04559 5.23511L3.9387 7.26166C3.75177 7.80661 3.64989 8.39161 3.64989 9.00034C3.64996 9.661 3.76963 10.294 3.98918 10.878Z"
+                                                          fill="#FBBB00"></path>
+                                                    <path d="M17.8422 7.31836C17.9455 7.86279 17.9994 8.42504 17.9994 8.99967C17.9994 9.64402 17.9317 10.2725 17.8026 10.8788C17.3645 12.9419 16.2197 14.7434 14.6338 16.0182L14.6333 16.0177L12.0654 15.8867L11.7019 13.6179C12.7542 13.0007 13.5766 12.035 14.0098 10.8788H9.19727V7.31836H17.8422Z"
+                                                          fill="#518EF8"></path>
+                                                    <path d="M14.6336 16.0173L14.6341 16.0178C13.0917 17.2575 11.1325 17.9993 8.99968 17.9993C5.57227 17.9993 2.59239 16.0836 1.07227 13.2644L3.98886 10.877C4.74891 12.9054 6.70567 14.3494 8.99968 14.3494C9.98571 14.3494 10.9095 14.0828 11.7021 13.6175L14.6336 16.0173Z"
+                                                          fill="#28B446"></path>
+                                                    <path d="M14.7442 2.07197L11.8286 4.45894C11.0082 3.94615 10.0385 3.64992 8.99955 3.64992C6.65361 3.64992 4.66025 5.16013 3.93828 7.26131L1.00635 4.86098H1.00586C2.50373 1.97307 5.52119 0 8.99955 0C11.1833 0 13.1855 0.777867 14.7442 2.07197Z"
+                                                          fill="#F14336"></path>
+                                                </svg>
+                                            </div>
+                                            <p>Continue with Google</p>
                                         </div>
-                                        <p>Continue with Google</p>
-                                    </div>
+                                    </a>
+
+                                    <a href="{% url 'github_login' %}">
+                                        <div class="single">
+                                            <div class="icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                          d="M12 0C5.37 0 0 5.37 0 12C0 17.303 3.438 21.826 8.205 23.537C8.805 23.647 9.025 23.267 9.025 22.941C9.025 22.651 9.015 21.938 9.01 21.036C5.672 21.727 4.967 19.4 4.967 19.4C4.432 18.065 3.712 17.693 3.712 17.693C2.696 17.01 3.79 17.025 3.79 17.025C4.914 17.105 5.48 18.14 5.48 18.14C6.463 19.787 8.056 19.3 8.655 19.043C8.748 18.312 9.047 17.793 9.38 17.51C6.812 17.223 4.1 16.188 4.1 11.531C4.1 10.203 4.565 9.124 5.335 8.294C5.218 7.992 4.805 6.746 5.435 5.064C5.435 5.064 6.44 4.76 9.005 6.34C9.975 6.064 11.005 5.935 12.005 5.93C13.005 5.935 14.035 6.064 15.005 6.34C17.565 4.76 18.565 5.064 18.565 5.064C19.205 6.746 18.785 7.992 18.665 8.294C19.445 9.124 19.905 10.203 19.905 11.531C19.905 16.204 17.185 17.213 14.61 17.498C15.005 17.862 15.39 18.594 15.39 19.706C15.39 21.376 15.38 22.569 15.38 22.941C15.38 23.267 15.6 23.652 16.205 23.537C20.965 21.826 24.405 17.304 24.405 12C24.405 5.37 18.635 0 12 0Z"
+                                                          fill="#181717"></path>
+                                                </svg>
+
+                                            </div>
+                                            <p>Continue with Github</p>
+                                        </div>
+                                    </a>
+                                    
+                                    
+{#                                        facebook              #}
+                                    
+{#                                    <a href="#">#}
+{#                                        <div class="single">#}
+{#                                            <div class="icon">#}
+{#                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"#}
+{#                                                     xmlns="http://www.w3.org/2000/svg">#}
+{#                                                    <path d="M24 12C24 5.373 18.627 0 12 0C5.373 0 0 5.373 0 12C0 17.991 4.388 22.902 10.125 23.854V15.468H7.078V12H10.125V9.356C10.125 6.348 11.916 4.687 14.656 4.687C15.953 4.687 17.297 4.922 17.297 4.922V7.875H15.824C14.375 7.875 13.875 8.76 13.875 9.681V12H17.156L16.625 15.468H13.875V23.854C19.612 22.902 24 17.991 24 12Z"#}
+{#                                                          fill="#1877F2"></path>#}
+{#                                                    <path d="M16.625 15.468L17.156 12H13.875V9.681C13.875 8.76 14.375 7.875 15.824 7.875H17.297V4.922C17.297 4.922 15.953 4.687 14.656 4.687C11.916 4.687 10.125 6.348 10.125 9.356V12H7.078V15.468H10.125V23.854C10.749 23.95 11.374 24 12 24C12.626 24 13.251 23.95 13.875 23.854V15.468H16.625Z"#}
+{#                                                          fill="white"></path>#}
+{#                                                </svg>#}
+{##}
+{#                                            </div>#}
+{#                                            <p>Continue with Facebook</p>#}
+{#                                        </div>#}
+{#                                    </a>#}
+                                    
                                     <!-- ingle end -->
                                     <!-- ingle -->
-{#                                    <div class="single">#}
-{#                                        <div class="icon">#}
-{#                                            <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">#}
-{#                                                <path d="M10.9133 0H11.0427C11.1465 1.2826 10.6569 2.24096 10.062 2.93497C9.47815 3.62419 8.67872 4.29264 7.38574 4.19122C7.29949 2.92698 7.78985 2.0397 8.38403 1.34729C8.93508 0.701997 9.94535 0.127781 10.9133 0ZM14.8274 13.3499V13.3859C14.464 14.4864 13.9457 15.4296 13.3132 16.3048C12.7358 17.0995 12.0282 18.1689 10.7647 18.1689C9.67302 18.1689 8.94786 17.4669 7.82898 17.4477C6.64541 17.4285 5.99452 18.0347 4.91238 18.1872H4.54341C3.74877 18.0722 3.10747 17.4429 2.64027 16.8759C1.26264 15.2003 0.19806 13.0361 0 10.2664V9.4526C0.0838563 7.47039 1.04701 5.85876 2.32721 5.0777C3.00285 4.66241 3.93166 4.30861 4.96589 4.46674C5.40913 4.53543 5.86195 4.68717 6.25887 4.83731C6.63503 4.98186 7.10542 5.23822 7.55106 5.22464C7.85294 5.21586 8.15322 5.05853 8.4575 4.94752C9.34877 4.62567 10.2225 4.2567 11.3741 4.43001C12.7581 4.63925 13.7404 5.25419 14.3474 6.20297C13.1766 6.94809 12.251 8.07096 12.4091 9.98848C12.5497 11.7303 13.5624 12.7493 14.8274 13.3499Z" fill="black"></path>#}
-{#                                            </svg>#}
-{#                                        </div>#}
-{#                                        <p>Continue with Google</p>#}
-{#                                    </div>#}
+                                    {#                                    <div class="single">#}
+                                    {#                                        <div class="icon">#}
+                                    {#                                            <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+                                    {#                                                <path d="M10.9133 0H11.0427C11.1465 1.2826 10.6569 2.24096 10.062 2.93497C9.47815 3.62419 8.67872 4.29264 7.38574 4.19122C7.29949 2.92698 7.78985 2.0397 8.38403 1.34729C8.93508 0.701997 9.94535 0.127781 10.9133 0ZM14.8274 13.3499V13.3859C14.464 14.4864 13.9457 15.4296 13.3132 16.3048C12.7358 17.0995 12.0282 18.1689 10.7647 18.1689C9.67302 18.1689 8.94786 17.4669 7.82898 17.4477C6.64541 17.4285 5.99452 18.0347 4.91238 18.1872H4.54341C3.74877 18.0722 3.10747 17.4429 2.64027 16.8759C1.26264 15.2003 0.19806 13.0361 0 10.2664V9.4526C0.0838563 7.47039 1.04701 5.85876 2.32721 5.0777C3.00285 4.66241 3.93166 4.30861 4.96589 4.46674C5.40913 4.53543 5.86195 4.68717 6.25887 4.83731C6.63503 4.98186 7.10542 5.23822 7.55106 5.22464C7.85294 5.21586 8.15322 5.05853 8.4575 4.94752C9.34877 4.62567 10.2225 4.2567 11.3741 4.43001C12.7581 4.63925 13.7404 5.25419 14.3474 6.20297C13.1766 6.94809 12.251 8.07096 12.4091 9.98848C12.5497 11.7303 13.5624 12.7493 14.8274 13.3499Z" fill="black"></path>#}
+                                    {#                                            </svg>#}
+                                    {#                                        </div>#}
+                                    {#                                        <p>Continue with Google</p>#}
+                                    {#                                    </div>#}
                                     <!-- ingle end -->
                                 </div>
                             </div>
