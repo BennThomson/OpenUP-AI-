@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django.utils.translation.trans_real import activate
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser
+from .models import CustomUser, ProfileModel
 
 
 class CustomUserAdmin(UserAdmin):
@@ -29,3 +30,10 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
+
+@admin.register(ProfileModel)
+class ProfileModelAdmin(admin.ModelAdmin):
+    list_display = ['id', 'created_at', 'type_of_plan', 'active']
+    list_filter = ['type_of_plan', 'active', 'id']
+    search_fields = ['id', 'user__first_name']
+    readonly_fields = ['type_of_plan', 'active']

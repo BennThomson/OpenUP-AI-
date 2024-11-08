@@ -66,6 +66,5 @@ def user_edit_view(request, id):
         'message': message
     }
     return render(request, 'Dashboard/profile.html')
-def reset_password_view(request):
-    return render(request, 'Openup/light/user_authentication/reset.html')
+
 
