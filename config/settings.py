@@ -1,13 +1,16 @@
 from pathlib import Path
+from decouple import config
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'django-insecure-yf#rke042t%*v-kbg+iu_l*jhzb8pmo04evyksl0*xm$-&uv)t'
+SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
+
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'mainPage'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
@@ -46,7 +49,6 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
-
 
 
 MIDDLEWARE = [
@@ -92,11 +94,14 @@ AUTHENTICATION_BACKENDS = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'HOST': config('DB_HOST'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'PORT': config('DB_PORT'),
     }
 }
 
@@ -136,11 +141,13 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "bmbayrambek1600@gmail.com"
-EMAIL_HOST_PASSWORD = "mknijouxzkkwsabs"
+
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
 
 DEFAULT_FROM_EMAIL = 'bmbayrambek1600@gmail.com'
 
@@ -165,3 +172,7 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 
+try:
+    from config.local_settings import *
+except ImportError:
+    pass
