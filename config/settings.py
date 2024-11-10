@@ -165,7 +165,3 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 
-
-
-# AI
-# code: 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
