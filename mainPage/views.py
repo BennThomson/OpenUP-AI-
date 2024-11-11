@@ -1,9 +1,15 @@
 from django.contrib.auth.views import PasswordContextMixin
 from django.shortcuts import render, redirect
 from .forms import ContactForm
+from .models import FaqsModel
 
 def MainPage(request):
-    return render(request, 'Openup/light/index-two.html')
+    faqs = FaqsModel.objects.all()
+    context = {
+        'faqs': faqs
+    }
+
+    return render(request, 'Openup/light/index-two.html', context)
 
 def contact_page(request):
     form = ContactForm()
@@ -23,6 +29,8 @@ def contact_page(request):
         'message': message
     }
     return render(request, 'Openup/light/contact.html', context)
+
+
 
 
 

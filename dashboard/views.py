@@ -1,12 +1,23 @@
-from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from users.models import ProfileModel
+from .models import saved_documents
 
 
 @login_required
 def dashboard_main_view(request):
-    return render(request, 'Dashboard/index.html')
+    user = request.user
+    profile = ProfileModel.objects.get(user=user)
+    try:
+        documents = saved_documents.objects.filter(user=user)
+    except saved_documents.DoesNotExist:
+        documents = None
+        
+    context = {
+        'profile': profile,
+        'documents': documents
+    }
+    return render(request, 'Dashboard/index.html', context=context)
 
 @login_required
 def dashboard_community_view(request):
