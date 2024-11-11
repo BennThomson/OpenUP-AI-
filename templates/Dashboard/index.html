@@ -23,367 +23,129 @@
                     </div>
                 </div>
             </div>
-            
             <div class="search__generator mt--50">
-                {% include 'Dashboard/layouts/ThreeChoices/choices.html' %}
-
-                <!-- search option area -->
-                <div class="searchoptopn-area">
-                    <input type="text" placeholder="Describe what you would like to see...">
-                    <button>Generate <img src="{% static 'main/Dashboard/images/icons/13.png' %}" alt=""></button>
-                </div>
-                <!-- search option area mend -->
-
 
                 <div class="tab-content mt--50" id="pills-tabContent">
                     <!-- single tab content area start -->
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                         aria-labelledby="pills-home-tab">
-                        <div class="row g-5">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="row g-5 ">
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <!-- single image generator area start -->
-                                <div class="single-image-generator">
-                                    <a href="#" class="thumbnail">
-                                        <img src="{% static 'main/Dashboard/images/generator/01.jpg' %}" alt="images">
-                                    </a>
+                                <div class="card bg-color-primary p-3">
                                     <div class="inner-content">
                                         <div class="left-content-area">
-                                            <h5 class="title">Create Image</h5>
-                                            <p class="disc">
-                                                Our text-to-image feature turns your words into beautiful AI visuals.
+                                            <h5 class="title text-white text-center">Words Available: {{ profile.available_words }}</h5>
+                                            <p class="disc my-5 text-white text-center">
+                                                    You have
+                                                    {% if profile.available_words > 700 %}
+                                                    <span class="badge bg-success">Good</span> level of words available.
+                                                    {% elif profile.available_words > 300 %}
+                                                    <span class="badge bg-warning">Average</span> level of words available.
+                                                    {% else %}
+                                                    <span class="badge bg-danger">Bad</span> level of words available.
+                                                    {% endif %}
                                             </p>
                                         </div>
-                                        <button class="rts-btn btn-primary">Generate</button>
+                                        <button class="rts-btn btn-primary" style="font-size: 20px; border: 1px solid">Generate</button>
                                     </div>
                                 </div>
-                                <!-- single image generator area end -->
                             </div>
+
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <!-- single image generator area start -->
-                                <div class="single-image-generator">
-                                    <a href="#" class="thumbnail">
-                                        <img src="{% static 'main/Dashboard/images/generator/02.jpg' %}" alt="images">
-                                    </a>
+                                <div class="card bg-color-primary p-3">
                                     <div class="inner-content">
                                         <div class="left-content-area">
-                                            <h5 class="title">Create Image</h5>
-                                            <p class="disc">
-                                                Our text-to-image feature turns your words into beautiful AI visuals.
+                                            <h5 class="title text-white text-center">Type of plan</h5>
+                                            <p class="disc my-5 text-white text-center" style="font-size: 20px; font-weight: bold">
+                                                {{ profile.type_of_plan }}
                                             </p>
                                         </div>
-                                        <button class="rts-btn btn-primary">Generate</button>
+                                        <button class="rts-btn btn-primary" style="font-size: 20px; border: 1px solid">Generate</button>
                                     </div>
                                 </div>
-                                <!-- single image generator area end -->
                             </div>
+
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <!-- single image generator area start -->
-                                <div class="single-image-generator">
-                                    <a href="#" class="thumbnail">
-                                        <img src="{% static 'main/Dashboard/images/generator/03.jpg' %}" alt="images">
-                                    </a>
+                                <div class="card bg-color-primary p-3">
+
                                     <div class="inner-content">
                                         <div class="left-content-area">
-                                            <h5 class="title">Create Image</h5>
-                                            <p class="disc">
-                                                Our text-to-image feature turns your words into beautiful AI visuals.
+                                            <h5 class="title text-white text-center">Saved Documents</h5>
+                                            <p class="disc my-5 text-white text-center" style="font-size: 20px; font-weight: bold">
+                                                {% if not documents %} 
+                                                    O documents available
+                                                {% else %} 
+                                                    {{ documents }} documents
+                                                {% endif %}
                                             </p>
                                         </div>
-                                        <button class="rts-btn btn-primary">Generate</button>
-                                    </div>
-                                </div>
-                                <!-- single image generator area end -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single tab content area end -->
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <div class="row g-5">
-                            <div class="col-lg-12">
-                                <div class="question_answer__wrapper__chatbot">
-                                    <div class="single__question__answer">
-                                        <div class="question_user">
-                                            <div class="left_user_info">
-                                                <img src="{% static 'main/Dashboard/images/avatar/03.png' %}" alt="avatar">
-                                                <div class="question__user">what is openup?</div>
-                                            </div>
-                                            <div class="edit__icon">
-                                                <i class="fa-regular fa-pen-to-square"></i>
-                                            </div>
-                                        </div>
-                                        <div class="answer__area">
-                                            <div class="thumbnail">
-                                                <img src="{% static 'main/Dashboard/images/avatar/04.png' %}" alt="avatar">
-                                            </div>
-                                            <div class="answer_main__wrapper">
-                                                <h4 class="common__title">Openup</h4>
-                                                <p class="disc">
-                                                    The Open Unified Process, is a simplified version of the Rational
-                                                    Unified Process (RUP) used for agile and iterative software
-                                                    development. It was developed within the Eclipse Foundation and is
-                                                    based on the donation of process content by IBM. OpenUP targets
-                                                    small and colocated teams interested in agile and iterative
-                                                    development and is a lean Unified Process that applies iterative and
-                                                    incremental approaches within a structured lifecycle. It embraces a
-                                                    pragmatic approach and is positioned as an easy and flexible version
-                                                    of RUP [1][2][3]
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="share-reaction-area">
-                                            <ul>
-                                                <li><a href="#"><i class="fa-regular fa-bookmark"></i></a></li>
-                                                <li><a href="#"><i class="fa-light fa-thumbs-up"></i></a></li>
-                                                <li><a href="#"><i class="fa-regular fa-thumbs-down"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="single__question__answer">
-                                        <div class="question_user">
-                                            <div class="left_user_info">
-                                                <img src="{% static 'main/Dashboard/images/avatar/03.png' %}" alt="avatar">
-                                                <div class="question__user">what is openup?</div>
-                                            </div>
-                                            <div class="edit__icon">
-                                                <i class="fa-regular fa-pen-to-square"></i>
-                                            </div>
-                                        </div>
-                                        <div class="answer__area">
-                                            <div class="thumbnail">
-                                                <img src="{% static 'main/Dashboard/images/avatar/04.png' %}" alt="avatar">
-                                            </div>
-                                            <div class="answer_main__wrapper">
-                                                <h4 class="common__title">Openup</h4>
-                                                <p class="disc">
-                                                    The Open Unified Process, is a simplified version of the Rational
-                                                    Unified Process (RUP) used for agile and iterative software
-                                                    development. It was developed within the Eclipse Foundation and is
-                                                    based on the donation of process content by IBM. OpenUP targets
-                                                    small and colocated teams interested in agile and iterative
-                                                    development and is a lean Unified Process that applies iterative and
-                                                    incremental approaches within a structured lifecycle. It embraces a
-                                                    pragmatic approach and is positioned as an easy and flexible version
-                                                    of RUP [1][2][3]
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="share-reaction-area">
-                                            <ul>
-                                                <li><a href="#"><i class="fa-regular fa-bookmark"></i></a></li>
-                                                <li><a href="#"><i class="fa-light fa-thumbs-up"></i></a></li>
-                                                <li><a href="#"><i class="fa-regular fa-thumbs-down"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="single__question__answer">
-                                        <div class="question_user">
-                                            <div class="left_user_info">
-                                                <img src="{% static 'main/Dashboard/images/avatar/03.png' %}" alt="avatar">
-                                                <div class="question__user">what is openup?</div>
-                                            </div>
-                                            <div class="edit__icon">
-                                                <i class="fa-regular fa-pen-to-square"></i>
-                                            </div>
-                                        </div>
-                                        <div class="answer__area">
-                                            <div class="thumbnail">
-                                                <img src="{% static 'main/Dashboard/images/avatar/04.png' %}" alt="avatar">
-                                            </div>
-                                            <div class="answer_main__wrapper">
-                                                <h4 class="common__title">Openup</h4>
-                                                <p class="disc">
-                                                    Working with a chatbot involves several steps, from designing and
-                                                    building the bot to deploying and maintaining it. Here's a general
-                                                    overview of how to work with a chatbot:
-                                                </p>
-                                                <div class="order_list_answer">
-                                                    <ol>
-                                                        <li>
-                                                            <p>Define the Purpose: Determine the purpose and goals of
-                                                                the chatbot. What tasks or interactions do you want the
-                                                                bot to handle? Who is the target audience?</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Define the Purpose: Determine the purpose and goals of
-                                                                the chatbot. What tasks or interactions do you want the
-                                                                bot to handle? Who is the target audience?</p>
-                                                        </li>
-                                                    </ol>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="share-reaction-area">
-                                            <ul>
-                                                <li><a href="#"><i class="fa-regular fa-bookmark"></i></a></li>
-                                                <li><a href="#"><i class="fa-light fa-thumbs-up"></i></a></li>
-                                                <li><a href="#"><i class="fa-regular fa-thumbs-down"></i></a></li>
-                                            </ul>
-                                        </div>
+                                        <button class="rts-btn btn-primary" style="font-size: 20px; border: 1px solid">Explore</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                        <div class="row g-5">
-                            <div class="col-lg-12">
-                                <div class="audio-main-generator-start">
-                                    <form action="#">
-                                        <div class="ask-for-audio">
-                                            <textarea placeholder="Here write text" required=""></textarea>
-                                            <i class="fa-light fa-pen-to-square"></i>
-                                            <div class="button-wrapper-generator">
-                                                <button class="rts-btn btn-primary">Generate
-                                                    <img src="{% static 'main/Dashboard/images/icons/06.svg' %}" alt="icons">
-                                                </button>
-                                                <button class="mp3 rts-btn btn-border">
-                                                    MP3
-                                                    <i class="fa-sharp fa-light fa-chevron-down"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="audio-main-wrapper-top-bottom mb--60">
-                                    <div class="audio-main-wrapper">
-                                        <div class="audio-player">
-                                            <div class="timeline">
-                                                <div class="progress" style="width: 0%;"></div>
-                                            </div>
-                                            <div class="controls">
-                                                <div class="play-container">
-                                                    <div class="toggle-play play">
-                                                    </div>
-                                                </div>
-                                                <div class="time">
-                                                    <div class="current">0:00</div>
-                                                    <!-- <div class="divider">/</div> -->
-                                                    <div class="length">1:44</div>
-                                                </div>
-                                                <div class="volume-container">
-                                                    <div class="volume-button">
-                                                        <div class="volume icono-volumeMedium"></div>
-                                                    </div>
 
-                                                    <div class="volume-slider">
-                                                        <div class="volume-percentage"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="rts-btn btn-primary mt--30">Downloaded
-                                        <i class="fa-light fa-download"></i>
-                                    </button>
-                                </div>
-                                <div class="audio-main-generator-start">
-                                    <form action="#">
-                                        <div class="ask-for-audio">
-                                            <textarea placeholder="Here write text" required=""></textarea>
-                                            <i class="fa-light fa-pen-to-square"></i>
-                                            <div class="button-wrapper-generator">
-                                                <button class="rts-btn btn-primary">Generate
-                                                    <img src="{% static 'main/Dashboard/images/icons/06.svg' %}" alt="icons">
-                                                </button>
-                                                <button class="mp3 rts-btn btn-border">
-                                                    MP3
-                                                    <i class="fa-sharp fa-light fa-chevron-down"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="audio-main-wrapper-top-bottom mb--60">
-                                    <div class="audio-main-wrapper">
-                                        <div class="audio-players">
-                                            <div class="timeline">
-                                                <div class="progress" style="width: 0%;"></div>
-                                            </div>
-                                            <div class="controls">
-                                                <div class="play-container">
-                                                    <div class="toggle-play play">
-                                                    </div>
-                                                </div>
-                                                <div class="time">
-                                                    <div class="current">0:00</div>
-                                                    <!-- <div class="divider">/</div> -->
-                                                    <div class="length">1:44</div>
-                                                </div>
-                                                <div class="volume-container">
-                                                    <div class="volume-button">
-                                                        <div class="volume icono-volumeMedium"></div>
-                                                    </div>
 
-                                                    <div class="volume-slider">
-                                                        <div class="volume-percentage"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="rts-btn btn-primary mt--30">Downloaded
-                                        <i class="fa-light fa-download"></i>
-                                    </button>
-                                </div>
-                                <div class="audio-main-generator-start">
-                                    <form action="#">
-                                        <div class="ask-for-audio">
-                                            <textarea placeholder="Here write text" required=""></textarea>
-                                            <i class="fa-light fa-pen-to-square"></i>
-                                            <div class="button-wrapper-generator">
-                                                <button class="rts-btn btn-primary">Generate
-                                                    <img src="{% static 'main/Dashboard/images/icons/06.svg' %}" alt="icons">
-                                                </button>
-                                                <button class="mp3 rts-btn btn-border">
-                                                    MP3
-                                                    <i class="fa-sharp fa-light fa-chevron-down"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="audio-main-wrapper-top-bottom mb--60">
-                                    <div class="audio-main-wrapper">
-                                        <div class="audio-playerer">
-                                            <div class="timeline">
-                                                <div class="progress" style="width: 0%;"></div>
-                                            </div>
-                                            <div class="controls">
-                                                <div class="play-container">
-                                                    <div class="toggle-play play">
-                                                    </div>
-                                                </div>
-                                                <div class="time">
-                                                    <div class="current">0:00</div>
-                                                    <!-- <div class="divider">/</div> -->
-                                                    <div class="length">1:44</div>
-                                                </div>
-                                                <div class="volume-container">
-                                                    <div class="volume-button">
-                                                        <div class="volume icono-volumeMedium"></div>
-                                                    </div>
 
-                                                    <div class="volume-slider">
-                                                        <div class="volume-percentage"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="rts-btn btn-primary mt--30">Downloaded
-                                        <i class="fa-light fa-download"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
+
+{#                <div class="tab-content mt--50" id="pills-tabContent">#}
+{#                    <!-- single tab content area start -->#}
+{#                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"#}
+{#                         aria-labelledby="pills-home-tab">#}
+{#                        <div class="row g-5">#}
+{#                            <div class="col-4">#}
+{#                                <!-- single image generator area start -->#}
+{#                                <div class="card" style="width: 45rem;">#}
+{#                                  <div class="card-body d-flex flex-column align-items-center">#}
+{#                                    <h5 class="card-title">Words Available: {{ profile.available_words }}/ 1000</h5>#}
+{#                                    <p class="card-text pt-3" style="font-size: larger"> You have#}
+{#                                        {% if profile.available_words > 700 %}#}
+{#                                        <span class="badge bg-success">Good</span> level of words available.#}
+{#                                        {% elif profile.available_words > 300 %}#}
+{#                                        <span class="badge bg-warning">Average</span> level of words available.#}
+{#                                        {% else %}#}
+{#                                        <span class="badge bg-danger">Bad</span> level of words available.#}
+{#                                        {% endif %}#}
+{#                                    </p>#}
+{#                                    {% if profile.type_of_plan == 'Free' %}#}
+{#                                    	<a href="{% url 'dashboard-subscription' %}" class="btn btn-primary px-4 py-3"><p class="text-white">Upgrade Plan</p></a>#}
+{#                                    {% else %}#}
+{#                                        <a href="{% url 'mainPage' %}" class="btn btn-primary px-4 py-3"><p class="text-white">Practice with AI</p></a>#}
+{#                                    {% endif %}#}
+{##}
+{#                                  </div>#}
+{#                                </div>#}
+{#                                <!-- single image generator area end -->#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-4">#}
+{#                                <!-- single image generator area start -->#}
+{#                                <div class="card" style="width: 45rem;">#}
+{#                                  <div class="card-body d-flex flex-column align-items-center">#}
+{#                                    <h5 class="card-title text-center">Plan of an account</h5>#}
+{#                                    <p class="card-text text-center py-2" style="font-size: 30px; font-weight: bold">{{ profile.type_of_plan }}</p>#}
+{#                                    <a href="#" class="btn btn-primary px-4 py-3"><p class="text-white">Upgrade Plan</p></a>#}
+{#                                  </div>#}
+{#                                </div>#}
+{#                                <!-- single image generator area end -->#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-4">#}
+{#                                <!-- single image generator area start -->#}
+{#                                <div class="">#}
+{#                                    <div class="banner-badge bg_image">#}
+{#                                        <div class="inner">#}
+{#                                            <h3 class="title">Hello mello</h3>#}
+{#                                            <p class="dsic">#}
+{#                                            </p>#}
+{#                                            <a class="rts-btn btn-blur" readonly>Soon available</a>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                <!-- single image generator area end -->#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
 {% endblock %}
