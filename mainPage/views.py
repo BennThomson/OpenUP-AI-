@@ -12,6 +12,7 @@ def MainPage(request):
     return render(request, 'Openup/light/index-two.html', context)
 
 def contact_page(request):
+    request.META['title'] = 'Contact'
     form = ContactForm()
     message = ''
     print('keldi')
