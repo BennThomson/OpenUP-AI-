@@ -8,52 +8,165 @@
 
     <!-- rts banner area start -->
     <div class="banner-two-area bg-deam pt--140 pt_md--70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="banner-two-inner-content pb--180 pb_md--180 pb_sm--100 pt--200 pt_md--100 pt_sm--20">
-                        <span class="pre-title">Welcome to Openup</span>
-                        <h1 class="title">
-                            Best AI Writer for <br>
-                            Creating <span>Blog Articles.</span>
-                        </h1>
-                        <p class="disc">
-                            Create SEO-optimized and plagiarism-free contentfor your blogs, ads, emails, and website 10X faster.
-                        </p>
-                        <form action="#">
-                            <div class="input-area">
-                                <input type="email" placeholder="Enter your mail address" required>
-                                <button><a href="#">Sign Up Free</a><i class="fa-regular fa-arrow-right"></i></button>
+        {% if user.is_authenticated %}
+            <div class="container">
+                <form action="{% url 'text_checker' %}" method="post" class="text-center" style="margin-top: 100px"> 
+                    {% csrf_token %}
+                     <div class="form-check form-check-inline d-inline me-5">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="task1" Checked>
+                        <label class="form-check-label" for="inlineRadio1">Task 1</label> 
+                      </div>
+                      <div class="form-check form-check-inline d-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="task2">
+                        <label class="form-check-label" for="inlineRadio2">Task 2</label>
+                      </div>
+                    <textarea style="border: 10px solid antiquewhite; border-radius: 20px; resize: none" class="p-3" name="text" id="" cols="15" rows="15" placeholder='write'></textarea>
+                
+                    <button type="submit" style="border-radius: 20px" class=" btn-success py-3 px-4 w-25 my-4">Check for AI</button>
+                </form>
+            </div>
+            {% if results %}
+                <div class="rts-faq-area rts-section-gap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="title-conter-area">
+                                    <h2 class="title">
+                                        Your overall score: <span style='color: green'>{{ overall_band_score }}</span>
+                                    </h2>
+                                    <p class="disc">
+                                        Below you can find the detailed feedback on your text.
+                                    </p>
+                                </div>
                             </div>
-                        </form>
-                        <div class="rating-area">
-                            <div class="rating">
-                                <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start" loading="lazy">
-                                <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start" loading="lazy">
-                                <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start" loading="lazy">
-                                <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start" loading="lazy">
-                                <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start" loading="lazy">
-                            </div>'
-                            <p class="disc">Based on 10,000+ reviews on</p>'
                         </div>
-                        <div class="brand-arae">
-                            <img src="{% static 'main/Openup/images/banner/brand/01.png' %}" alt="brand" loading="lazy">
-                            <img src="{% static 'main/Openup/images/banner/brand/02.png' %}" alt="brand" loading="lazy">
-                            <img src="{% static 'main/Openup/images/banner/brand/03.png' %}" alt="brand" loading="lazy">
-                            <img src="{% static 'main/Openup/images/banner/brand/04.png' %}" alt="brand" loading="lazy">
-                        </div>'
-                    </div>'
+                        <div class="row mt--60">
+                            <div class="col-lg-12">
+                                <div class="accordion-area-one">
+                                    <div class="accordion" id="accordionExample">
+                                        {% comment %} tr {% endcomment %}
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    Task Response: {{ band_range_tr }}
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    {{ task_response|safe }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% comment %} cr {% endcomment %}
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Coherence Response: {{ band_range_cr }}
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    {{ coherence_response|safe }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% comment %} lr {% endcomment %}
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    Lexical response: {{ band_range_lr }}
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    {{ lexical_response|safe }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% comment %} gr {% endcomment %}
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFour">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    Grammatical Response: {{ band_range_gr }}
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    {{ grammatical_response|safe }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class='text-center mt-3'>Recommendations and Improvements</h3> 
+                                    <h6 class='text-center p-2'> 
+                                        {{ improvement_suggestions }}
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}    
+        {% else %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="banner-two-inner-content pb--180 pb_md--180 pb_sm--100 pt--200 pt_md--100 pt_sm--20">
+                            <span class="pre-title">Welcome to Openup</span>
+                            <h1 class="title">
+                                Best AI Writer for <br>
+                                Creating <span>Blog Articles.</span>
+                            </h1>
+                            <p class="disc">
+                                Create SEO-optimized and plagiarism-free contentfor your blogs, ads, emails, and website
+                                10X faster.
+                            </p>
+                            <form action="#">
+                                <div class="input-area">
+                                    <input type="email" placeholder="Enter your mail address" required>
+                                    <button><a href="#">Sign Up Free</a><i class="fa-regular fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="rating-area">
+                                <div class="rating">
+                                    <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start"
+                                         loading="lazy">
+                                    <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start"
+                                         loading="lazy">
+                                    <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start"
+                                         loading="lazy">
+                                    <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start"
+                                         loading="lazy">
+                                    <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start"
+                                         loading="lazy">
+                                </div>
+                                '
+                                <p class="disc">Based on 10,000+ reviews on</p>'
+                            </div>
+                            <div class="brand-arae">
+                                <img src="{% static 'main/Openup/images/banner/brand/01.png' %}" alt="brand"
+                                     loading="lazy">
+                                <img src="{% static 'main/Openup/images/banner/brand/02.png' %}" alt="brand"
+                                     loading="lazy">
+                                <img src="{% static 'main/Openup/images/banner/brand/03.png' %}" alt="brand"
+                                     loading="lazy">
+                                <img src="{% static 'main/Openup/images/banner/brand/04.png' %}" alt="brand"
+                                     loading="lazy">
+                            </div>
+                            '
+                        </div>
+                        '
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="banner-right-img">
-            <img src="{% static 'main/Openup/images/banner/02.png' %}" alt="">
-        </div>
+            <div class="banner-right-img">
+                <img src="{% static 'main/Openup/images/banner/02.png' %}" alt="">
+            </div>
+        {% endif %}
     </div>
     <!-- rts banner area end -->
 
-    
-    
     
     <!-- rts eaxty steps area start -->
     <div class="rts-easy-steps-area rts-section-gapTop">

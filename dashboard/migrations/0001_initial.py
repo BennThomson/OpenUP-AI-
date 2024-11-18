@@ -15,32 +15,60 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='humanized_texts_model',
+            name="humanized_texts_model",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('original_text', models.TextField()),
-                ('humanized_text', models.TextField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("original_text", models.TextField()),
+                ("humanized_text", models.TextField()),
             ],
             options={
-                'verbose_name': 'text',
-                'verbose_name_plural': 'texts',
-                'db_table': 'texts',
+                "verbose_name": "text",
+                "verbose_name_plural": "texts",
+                "db_table": "texts",
             },
         ),
         migrations.CreateModel(
-            name='saved_documents',
+            name="saved_documents",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('number_of_words', models.PositiveBigIntegerField()),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('purpose', models.CharField(max_length=500)),
-                ('text', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dashboard.humanized_texts_model')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("number_of_words", models.PositiveBigIntegerField()),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("purpose", models.CharField(max_length=500)),
+                (
+                    "text",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="dashboard.humanized_texts_model",
+                    ),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'document',
-                'verbose_name_plural': 'documents',
-                'db_table': 'documents',
+                "verbose_name": "document",
+                "verbose_name_plural": "documents",
+                "db_table": "documents",
             },
         ),
     ]
