@@ -6,13 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0002_profilemodel'),
+        ("users", "0002_profilemodel"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='profilemodel',
-            name='type_of_plan',
-            field=models.CharField(choices=[('Free', 'Free'), ('Premium', 'Premium')], default='Free', max_length=10),
+            model_name="profilemodel",
+            name="type_of_plan",
+            field=models.CharField(
+                choices=[("Free", "Free"), ("Premium", "Premium")],
+                default="Free",
+                max_length=10,
+            ),
         ),
     ]

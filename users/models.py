@@ -17,27 +17,25 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.email
 
+
 class ProfileModel(models.Model):
     class PlanChoices(models.TextChoices):
         FREE = "Free", _("Free")
         PREMIUM = "Premium", _("Premium")
+
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    type_of_plan = models.CharField(choices=PlanChoices, max_length=10, default=PlanChoices.FREE)
-    available_words = models.IntegerField(default=1000)
+    type_of_plan = models.CharField(
+        choices=PlanChoices, max_length=10, default=PlanChoices.FREE
+    )
+    available_words = models.PositiveIntegerField(default=5000)
     active = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} Profile"
 
     class Meta:
-        verbose_name = 'Profile'
-        verbose_name_plural = 'Profiles'
-        db_table = 'profiles'
-
-
-
-
-
-
+        verbose_name = "Profile"
+        verbose_name_plural = "Profiles"
+        db_table = "profiles"
