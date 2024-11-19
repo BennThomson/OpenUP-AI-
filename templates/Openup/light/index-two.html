@@ -10,6 +10,21 @@
     <div class="banner-two-area bg-deam pt--140 pt_md--70">
         {% if user.is_authenticated %}
             <div class="container">
+                {% if not_availability_of_words %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{ request.user }}</strong> {{ not_availability_of_words }}, Go to your <a href="{% url 'dashboard-subscription' %}">profile management!</a>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+
+                {% if try_again %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{ request.user }}</strong> We are really sorry for this happened! Try again!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+                    
+                
                 <form action="{% url 'text_checker' %}" method="post" class="text-center" style="margin-top: 100px"> 
                     {% csrf_token %}
                      <div class="form-check form-check-inline d-inline me-5">
