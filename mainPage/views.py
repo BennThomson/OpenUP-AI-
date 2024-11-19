@@ -40,44 +40,51 @@ def text_checker(request):
 
     text = f"\"{text}\""
     len_of_text = len(text.split(' '))
-    print(len_of_text)
     yes_words = person.available_words > len_of_text
 
-    if text and yes_words:
-        print('ishladi')
-        try: 
-            result = check_essay(text, task)
-        except Exception as e:
-            result = ()
-        if result:
-            person.available_words -= len_of_text
-            person.save()
-            
-            # info
-            task_response = result['criteria']['Task Achievement']
-            band_range_tr = task_response['band_range']
-            coherence_response = result['criteria']['Coherence and Cohesion']
-            band_range_cr = coherence_response['band_range']
-            lexical_response = result['criteria']['Lexical Resource']
-            band_range_lr = lexical_response['band_range']
-            grammatical_response = result['criteria']['Grammatical Range and Accuracy']
-            band_range_gr = grammatical_response['band_range']
-            overall_band_score = result['output_format']['overall_band_score']
-            improvement_suggestions = result['output_format']['improvement_suggestions']
+    if text:
+        if yes_words:
+            try: 
+                result = check_essay(text, task)
+            except Exception as e:
+                result = ()
+            if result:
+                person.available_words -= len_of_text
+                person.save()
+                
+                # info
+                task_response = result['criteria']['Task Achievement']
+                band_range_tr = task_response['band_range']
+                coherence_response = result['criteria']['Coherence and Cohesion']
+                band_range_cr = coherence_response['band_range']
+                lexical_response = result['criteria']['Lexical Resource']
+                band_range_lr = lexical_response['band_range']
+                grammatical_response = result['criteria']['Grammatical Range and Accuracy']
+                band_range_gr = grammatical_response['band_range']
+                overall_band_score = result['output_format']['overall_band_score']
+                improvement_suggestions = result['output_format']['improvement_suggestions']
 
+                context = {
+                    'text': text,
+                    'results': result,
+                    # results
+                    'task_response': task_response,
+                    'band_range_tr': band_range_tr,
+                    'coherence_response': coherence_response,
+                    'band_range_cr': band_range_cr,
+                    'lexical_response': lexical_response,
+                    'band_range_lr': band_range_lr,
+                    'grammatical_response': grammatical_response,
+                    'band_range_gr': band_range_gr,
+                    'overall_band_score': overall_band_score,
+                    'improvement_suggestions': improvement_suggestions,
+                }
+        else:
             context = {
-                'text': text,
-                'results': result,
-                # results
-                'task_response': task_response,
-                'band_range_tr': band_range_tr,
-                'coherence_response': coherence_response,
-                'band_range_cr': band_range_cr,
-                'lexical_response': lexical_response,
-                'band_range_lr': band_range_lr,
-                'grammatical_response': grammatical_response,
-                'band_range_gr': band_range_gr,
-                'overall_band_score': overall_band_score,
-                'improvement_suggestions': improvement_suggestions,
+                'not_availability_of_words': 'You have not enough words in your profile',
             }
+    else:
+        context = {
+            'try_again': 'Try again!'
+        }
     return render(request, "Openup/light/index-two.html", context)
