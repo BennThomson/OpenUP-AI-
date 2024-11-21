@@ -29,3 +29,32 @@ class saved_documents(models.Model):
         verbose_name = "document"
         verbose_name_plural = "documents"
         db_table = "documents"
+
+class content_artices_model(models.Model):
+    class textChoices(models.TextChoices):
+        Blog_content = "Blog content"
+        Content_write = "Content write"
+        News_content = "News content"
+        Scientific_content = "Scientific content"
+        Educational_content = "Educational content"
+        Other = "Other"
+        
+    type = models.CharField(max_length=50, choices=textChoices.choices)
+    title = models.CharField(max_length=500)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to="articles/images", blank=True, null=True)
+
+
+    def __str__(self):
+        return f"{self.title}"
+
+    class Meta:
+        verbose_name = "article"
+        verbose_name_plural = "articles"
+        db_table = "articles"
+
+
+
+        

@@ -7,6 +7,7 @@ from .models import CustomUser
 
 
 def user_register_view(request):
+    request.META["title"] = "Register"
     if request.user.is_authenticated:
         return redirect("dashboard-main")
 
@@ -25,6 +26,7 @@ def user_register_view(request):
 
 
 def user_login_view(request):
+    request.META["title"] = "Login"
     if request.user.is_authenticated:
         return redirect("dashboard-main")
     form = CustomUserLoginForm()

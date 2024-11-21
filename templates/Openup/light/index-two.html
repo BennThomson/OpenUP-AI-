@@ -533,106 +533,6 @@
     <!-- use case area end -->
 
 
-    <!-- clients with openup -->
-    <div class="rts-clients-area rts-section-gap bg-deam">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-conter-area">
-                        <span class="pre-title-bg">Our Clients</span>
-                        <h2 class="title">
-                            You're In Good Company <br>
-                            With Openup
-                        </h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-5 mt--5">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                    <!-- single team area start -->
-                    <div class="single-team-area">
-                        <img src="{% static 'main/Openup/images/team/brand/quote.png' %}" alt="" loading="lazy" class="quote">
-                        <div class="star">
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <p class="disc">
-                            I have used some AI writing tools liked Rytr, Peppertype, and Jasper but I found Writesonic to be the best for writing complete blog posts.
-                        </p>
-                        <div class="authore-area">
-                            <div class="author">
-                                <img src="{% static 'main/Openup/images/team/01.png' %}" alt="team">
-                                <div class="info">
-                                    <p>Samuel</p>
-                                    <span>Blogger</span>
-                                </div>
-                            </div>
-                            <img src="{% static 'main/Openup/images/team/brand/01.png' %}" alt="images" loading="lazy">
-                        </div>
-                    </div>
-                    <!-- single tream area end -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                    <!-- single team area start -->
-                    <div class="single-team-area">
-                        <img src="{% static 'main/Openup/images/team/brand/quote.png' %}" alt="images" loading="lazy" class="quote">
-                        <div class="star">
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <p class="disc">
-                            I have used some AI writing tools liked Rytr, Peppertype, and Jasper but I found Writesonic to be the best for writing complete blog posts.
-                        </p>
-                        <div class="authore-area">
-                            <div class="author">
-                                <img src="{% static 'main/Openup/images/team/01.png' %}" alt="team">
-                                <div class="info">
-                                    <p>Samuel</p>
-                                    <span>Blogger</span>
-                                </div>
-                            </div>
-                            <img src="{% static 'main/Openup/images/team/brand/01.png' %}" alt="images" loading="lazy">
-                        </div>
-                    </div>
-                    <!-- single tream area end -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                    <!-- single team area start -->
-                    <div class="single-team-area">
-                        <img src="{% static 'main/Openup/images/team/brand/quote.png' %}" alt="images" loading="lazy" class="quote">
-                        <div class="star">
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <p class="disc">
-                            I have used some AI writing tools liked Rytr, Peppertype, and Jasper but I found Writesonic to be the best for writing complete blog posts.
-                        </p>
-                        <div class="authore-area">
-                            <div class="author">
-                                <img src="{% static 'main/Openup/images/team/01.png' %}" alt="team">
-                                <div class="info">
-                                    <p>Samuel</p>
-                                    <span>Blogger</span>
-                                </div>
-                            </div>
-                            <img src="{% static 'main/Openup/images/team/brand/01.png' %}" alt="images" loading="lazy">
-                        </div>
-                    </div>
-                    <!-- single tream area end -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- clients with openup end -->
 
 
     <!-- rts blog area start -->
@@ -650,99 +550,38 @@
                 </div>
             </div>
             <div class="row g-5 mt--5">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                    <!-- single blog area start -->
-                    <div class="single-blog-area-wrapper">
-                        <a href=blog-details.html#" class="thumbnail">
-                            <img src="{% static 'main/Openup/images/blog/01.jpg' %}" alt="Blog_images">
-                        </a>
-                        <div class="inner-content">
-                            <div class="head">
-                                <span class="tag">Content Write</span>
-                                <span class="time">7 min Read</span>
-                            </div>
-                            <div class="body">
-                                <a href="blog-details.html">
-                                    <h5 class="title">Five Things You Need to Know
-                                        about Writing Articles</h5>
-                                </a>
-                                <div class="author-area">
-                                    <div class="author">
-                                        <img src="{% static 'main/Openup/images/blog/04.png' %}" alt="blog-area">
-                                        <div class="info">
-                                            <p>samuel</p>
-                                            <span>Author</span>
-                                        </div>
+
+
+                {% for article in articles %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                        <!-- single blog area start -->
+                        <div class="single-blog-area-wrapper">
+                            <a href="{% url 'article_detail' article.id %}" class="thumbnail">
+                                <img src="{{ article.image.url }}" alt="Blog_images">
+                            </a>
+                            <div class="inner-content">
+                                <div class="head">
+                                    <span class="tag">{{ article.type }}</span>
+                                    <span class="time">4 min Read</span>
+                                </div>
+                                <div class="body">
+                                    <a href="blog-details.html">
+                                        <h5 class="title">{{ article.title }}</h5>
+                                    </a>
+                                    <div class="author-area">
+                                        
+                                        <a href="{% url 'article_detail' article.id %}">Read More <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
-                                    <a href="blog-details.html">Read More <i class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
+                        <!-- single blog area end -->
                     </div>
-                    <!-- single blog area end -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                    <!-- single blog area start -->
-                    <div class="single-blog-area-wrapper">
-                        <a href=blog-details.html#" class="thumbnail">
-                            <img src="{% static 'main/Openup/images/blog/02.jpg' %}" alt="Blog_images">
-                        </a>
-                        <div class="inner-content">
-                            <div class="head">
-                                <span class="tag">blog Content</span>
-                                <span class="time">4 min Read</span>
-                            </div>
-                            <div class="body">
-                                <a href="blog-details.html">
-                                    <h5 class="title">15 AI Prompts to Supercharge
-                                        Sales & Marketing Teams</h5>
-                                </a>
-                                <div class="author-area">
-                                    <div class="author">
-                                        <img src="{% static 'main/Openup/images/blog/05.png' %}" alt="blog-area">
-                                        <div class="info">
-                                            <p>samuel</p>
-                                            <span>Author</span>
-                                        </div>
-                                    </div>
-                                    <a href="blog-details.html">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single blog area end -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                    <!-- single blog area start -->
-                    <div class="single-blog-area-wrapper">
-                        <a href=blog-details.html#" class="thumbnail">
-                            <img src="{% static 'main/Openup/images/blog/03.jpg' %}" alt="Blog_images">
-                        </a>
-                        <div class="inner-content">
-                            <div class="head">
-                                <span class="tag">Content Write</span>
-                                <span class="time">7 min Read</span>
-                            </div>
-                            <div class="body">
-                                <a href="blog-details.html">
-                                    <h5 class="title">Introducing Infobase by Copy
-                                        ai: Your Team’s Brand Center</h5>
-                                </a>
-                                <div class="author-area">
-                                    <div class="author">
-                                        <img src="{% static 'main/Openup/images/blog/06.png' %}" alt="blog-area">
-                                        <div class="info">
-                                            <p>samuel</p>
-                                            <span>Author</span>
-                                        </div>
-                                    </div>
-                                    <a href="blog-details.html">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single blog area end -->
-                </div>
+                {% endfor %}
+
+
+
+
             </div>
         </div>
     </div>
