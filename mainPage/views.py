@@ -3,14 +3,22 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from .models import FaqsModel
 from users.models import ProfileModel
+from dashboard.models import content_artices_model
 from .essay_checker import check_essay
 
 
 def MainPage(request):
     faqs = FaqsModel.objects.all()
-    context = {"faqs": faqs}
+    articles = content_artices_model.objects.all()[:3]
+    context = {"faqs": faqs,
+               "articles": articles,}
     return render(request, "Openup/light/index-two.html", context)
 
+def article_detail(request, pk):
+    request.META["title"] = "Content detail"
+    article = content_artices_model.objects.get(pk=pk)
+    context = {"article": article}
+    return render(request, "Openup/light/blog-details.html", context)
 
 def contact_page(request):
     request.META["title"] = "Contact"

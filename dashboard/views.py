@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from users.models import ProfileModel
-from .models import saved_documents
+from .models import saved_documents, content_artices_model
 
 
 @login_required
