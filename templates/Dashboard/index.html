@@ -1,6 +1,6 @@
 {% extends 'Dashboard/layouts/dashboardMain.html' %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
     <body>
 
@@ -12,12 +12,14 @@
         <div class="main-center-content-m-left main-center-content-m-left">
             <div class="banner-badge bg_image">
                 <div class="inner">
-                    <h3 class="title">Openup AI Generator</h3>
+                    <h3 class="title">{% trans 'Openup AI Generator' %}</h3>
                     <p class="dsic">
-                        Openup is the place to create, publish and monetize content using the power of AI. Use the
-                        Openup AI Studio to create amazing generative images, music, and audio.
+                        {% blocktrans %}
+                            Openup is the place to create, publish and monetize content using the power of AI. Use the
+                            Openup AI Studio to create amazing generative images, music, and audio.
+                        {% endblocktrans %}
                     </p>
-                    <a class="rts-btn btn-blur" readonly>Soon available</a>
+                    <a class="rts-btn btn-blur" readonly>{% trans 'Soon available' %}</a>
                     <div class="inner-right-iamge">
                         <img src="{% static 'main/Dashboard/images/banner/01.png' %}" alt="banner">
                     </div>
@@ -27,125 +29,76 @@
 
                 <div class="tab-content mt--50" id="pills-tabContent">
                     <!-- single tab content area start -->
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                         aria-labelledby="pills-home-tab">
                         <div class="row g-5 ">
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card bg-color-primary p-3">
                                     <div class="inner-content">
                                         <div class="left-content-area">
-                                            <h5 class="title text-white text-center">Words Available: {{ profile.available_words }}</h5>
+                                            <h5 class="title text-white text-center">{% trans 'Words Available' %}: {{ profile.available_words }}</h5>
                                             <p class="disc my-5 text-white text-center">
-                                                    You have
-                                                    {% if profile.available_words > 700 %}
-                                                    <span class="badge bg-success">Good</span> level of words available.
-                                                    {% elif profile.available_words > 300 %}
-                                                    <span class="badge bg-warning">Average</span> level of words available.
-                                                    {% else %}
-                                                    <span class="badge bg-danger">Bad</span> level of words available.
-                                                    {% endif %}
-                                            </p>
-                                        </div>
-                                        <button class="rts-btn btn-primary" style="font-size: 20px; border: 1px solid">Generate</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card bg-color-primary p-3">
-                                    <div class="inner-content">
-                                        <div class="left-content-area">
-                                            <h5 class="title text-white text-center">Type of plan</h5>
-                                            <p class="disc my-5 text-white text-center" style="font-size: 20px; font-weight: bold">
-                                                {{ profile.type_of_plan }}
-                                            </p>
-                                        </div>
-                                        <button class="rts-btn btn-primary" style="font-size: 20px; border: 1px solid">Generate</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card bg-color-primary p-3">
-
-                                    <div class="inner-content">
-                                        <div class="left-content-area">
-                                            <h5 class="title text-white text-center">Saved Documents</h5>
-                                            <p class="disc my-5 text-white text-center" style="font-size: 20px; font-weight: bold">
-                                                {% if not documents %} 
-                                                    O documents available
-                                                {% else %} 
-                                                    {{ documents }} documents
+                                                {% trans 'You have' %}
+                                                {% if profile.available_words > 700 %}
+                                                    <span class="badge bg-success">{% trans 'Good' %}</span>
+                                                    {% trans 'level of words available.' %}
+                                                {% elif profile.available_words > 300 %}
+                                                    <span class="badge bg-warning">{% trans 'Average' %}</span>
+                                                    {% trans 'level of words available.' %}
+                                                {% else %}
+                                                    <span class="badge bg-danger">{% trans 'Bad' %}</span>
+                                                    {% trans 'level of words available.' %}
                                                 {% endif %}
                                             </p>
                                         </div>
-                                        <button class="rts-btn btn-primary" style="font-size: 20px; border: 1px solid">Explore</button>
+                                        <button class="rts-btn btn-primary" style="font-size: 20px; border: 1px solid">
+                                            {% trans 'Generate' %}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card bg-color-primary p-3">
+                                    <div class="inner-content">
+                                        <div class="left-content-area">
+                                            <h5 class="title text-white text-center">{% trans 'Type of plan' %}</h5>
+                                            <p class="disc my-5 text-white text-center"
+                                               style="font-size: 20px; font-weight: bold">
+                                                {{ profile.type_of_plan }}
+                                            </p>
+                                        </div>
+                                        <button class="rts-btn btn-primary" style="font-size: 20px; border: 1px solid">
+                                            {% trans 'Generate' %}
+                                        </button>
                                     </div>
                                 </div>
                             </div>
 
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card bg-color-primary p-3">
 
-
+                                    <div class="inner-content">
+                                        <div class="left-content-area">
+                                            <h5 class="title text-white text-center">{% trans 'Saved Documents' %}</h5>
+                                            <p class="disc my-5 text-white text-center"
+                                               style="font-size: 20px; font-weight: bold">
+                                                {% if not documents %}
+                                                    {% trans 'O documents available' %}
+                                                {% else %}
+                                                    {{ documents }} {% trans 'documents' %}
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                        <button class="rts-btn btn-primary" style="font-size: 20px; border: 1px solid">
+                                            {% trans 'Explore' %}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-
-
-{#                <div class="tab-content mt--50" id="pills-tabContent">#}
-{#                    <!-- single tab content area start -->#}
-{#                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"#}
-{#                         aria-labelledby="pills-home-tab">#}
-{#                        <div class="row g-5">#}
-{#                            <div class="col-4">#}
-{#                                <!-- single image generator area start -->#}
-{#                                <div class="card" style="width: 45rem;">#}
-{#                                  <div class="card-body d-flex flex-column align-items-center">#}
-{#                                    <h5 class="card-title">Words Available: {{ profile.available_words }}/ 1000</h5>#}
-{#                                    <p class="card-text pt-3" style="font-size: larger"> You have#}
-{#                                        {% if profile.available_words > 700 %}#}
-{#                                        <span class="badge bg-success">Good</span> level of words available.#}
-{#                                        {% elif profile.available_words > 300 %}#}
-{#                                        <span class="badge bg-warning">Average</span> level of words available.#}
-{#                                        {% else %}#}
-{#                                        <span class="badge bg-danger">Bad</span> level of words available.#}
-{#                                        {% endif %}#}
-{#                                    </p>#}
-{#                                    {% if profile.type_of_plan == 'Free' %}#}
-{#                                    	<a href="{% url 'dashboard-subscription' %}" class="btn btn-primary px-4 py-3"><p class="text-white">Upgrade Plan</p></a>#}
-{#                                    {% else %}#}
-{#                                        <a href="{% url 'mainPage' %}" class="btn btn-primary px-4 py-3"><p class="text-white">Practice with AI</p></a>#}
-{#                                    {% endif %}#}
-{##}
-{#                                  </div>#}
-{#                                </div>#}
-{#                                <!-- single image generator area end -->#}
-{#                            </div>#}
-{##}
-{#                            <div class="col-4">#}
-{#                                <!-- single image generator area start -->#}
-{#                                <div class="card" style="width: 45rem;">#}
-{#                                  <div class="card-body d-flex flex-column align-items-center">#}
-{#                                    <h5 class="card-title text-center">Plan of an account</h5>#}
-{#                                    <p class="card-text text-center py-2" style="font-size: 30px; font-weight: bold">{{ profile.type_of_plan }}</p>#}
-{#                                    <a href="#" class="btn btn-primary px-4 py-3"><p class="text-white">Upgrade Plan</p></a>#}
-{#                                  </div>#}
-{#                                </div>#}
-{#                                <!-- single image generator area end -->#}
-{#                            </div>#}
-{##}
-{#                            <div class="col-4">#}
-{#                                <!-- single image generator area start -->#}
-{#                                <div class="">#}
-{#                                    <div class="banner-badge bg_image">#}
-{#                                        <div class="inner">#}
-{#                                            <h3 class="title">Hello mello</h3>#}
-{#                                            <p class="dsic">#}
-{#                                            </p>#}
-{#                                            <a class="rts-btn btn-blur" readonly>Soon available</a>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                <!-- single image generator area end -->#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
+    </div>
 {% endblock %}

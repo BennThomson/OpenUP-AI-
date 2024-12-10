@@ -1,25 +1,26 @@
 {% load static %}
+{% load i18n %}
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
     <li class="nav-item" role="presentation">
         <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
                 type="button" role="tab" aria-controls="pills-home" aria-selected="true">
             <img src="{% static 'main/Dashboard/images/icons/10.png' %}" alt="icons">
-            Image
+            {% trans 'Image' %}
         </button>
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
                 type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
             <img src="{% static 'main/Dashboard/images/icons/11.png' %}" alt="icons">
-            Content
+            {% trans 'Content' %}
         </button>
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
                 type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
             <img src="{% static 'main/Dashboard/images/icons/12.png' %}" alt="icons">
-            Voice
+            {% trans 'Voice' %}' %}
         </button>
     </li>
 </ul>

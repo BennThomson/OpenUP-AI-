@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!-- rts footer area start -->
 <div class="rts-footer-area footer-two footer-mid bg-footer">
@@ -16,8 +17,10 @@
                         </div>
                         <div class="body">
                             <p class="dsic mb--25">
-                                Openup is artificial intelligence trained to automate important tasks such as writing
-                                optimized product descriptions.
+                                {% blocktranslate %}
+                                    Openup is artificial intelligence trained to automate important tasks such as writing
+                                    optimized product descriptions.
+                                {% endblocktranslate %}
                             </p>
                             <div class="social-area-one">
                                 <ul>
@@ -67,7 +70,9 @@
                         </div>
                         <div class="body">
                             <p class="disc">
+                                {% blocktrans %}
                                 Maxuel Street, Frankfurt <br> 2589 Germany.
+                                {% endblocktrans %}
                             </p>
                             <a href="#" class="f-link">
                                 <h6 class="link">information.mighty.com</h6>

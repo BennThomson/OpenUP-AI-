@@ -1,0 +1,1235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-05 13:19+0500\n"
+"PO-Revision-Date: 2024-12-10 11:50+0500\n"
+"Last-Translator: Bayrambek Matchanov <admin@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
+
+#: dashboard/models.py:7
+msgid "original text"
+msgstr "оригинальный текст"
+
+#: dashboard/models.py:8
+msgid "humanized text"
+msgstr "гуманизированный текст"
+
+#: dashboard/models.py:14 dashboard/models.py:24
+msgid "text"
+msgstr "текст"
+
+#: dashboard/models.py:15
+msgid "texts"
+msgstr "тексти"
+
+#: dashboard/models.py:21 users/models.py:28
+msgid "user"
+msgstr "пользователь"
+
+#: dashboard/models.py:26
+msgid "number of words"
+msgstr "количество слов"
+
+#: dashboard/models.py:27 dashboard/models.py:51 users/models.py:30
+msgid "created at"
+msgstr "создано в"
+
+#: dashboard/models.py:28
+msgid "purpose"
+msgstr "цель"
+
+#: dashboard/models.py:31
+#, python-format
+msgid "%(first_name)s Document"
+msgstr "Документ %(first_name)s"
+
+#: dashboard/models.py:34
+msgid "document"
+msgstr "Документ"
+
+#: dashboard/models.py:35 templates/Dashboard/index.html:89
+msgid "documents"
+msgstr "Документи"
+
+#: dashboard/models.py:41
+msgid "Blog content"
+msgstr "Содержание блога"
+
+#: dashboard/models.py:42
+msgid "Content write"
+msgstr "Написание контента"
+
+#: dashboard/models.py:43
+msgid "News content"
+msgstr "Новостной контент"
+
+#: dashboard/models.py:44
+msgid "Scientific content"
+msgstr "Научное содержание"
+
+#: dashboard/models.py:45
+msgid "Educational content"
+msgstr "Образовательный контент"
+
+#: dashboard/models.py:46
+msgid "Other"
+msgstr "Другой"
+
+#: dashboard/models.py:48
+msgid "type"
+msgstr "тип"
+
+#: dashboard/models.py:49
+msgid "title"
+msgstr "заголовок"
+
+#: dashboard/models.py:50
+msgid "content"
+msgstr "контент"
+
+#: dashboard/models.py:52 users/models.py:31
+msgid "updated at"
+msgstr "обновлено в"
+
+#: dashboard/models.py:54
+msgid "image"
+msgstr "изображение"
+
+#: dashboard/models.py:61
+msgid "article"
+msgstr "статья"
+
+#: dashboard/models.py:62
+msgid "articles"
+msgstr "статьи"
+
+#: mainPage/models.py:6
+msgid "name"
+msgstr "имя"
+
+#: mainPage/models.py:7
+msgid "email"
+msgstr "электронная почта"
+
+#: mainPage/models.py:8
+msgid "message"
+msgstr "Сообщение"
+
+#: mainPage/models.py:11
+#, python-format
+msgid "Message by %(email)s"
+msgstr "Сообщение от %(email)s"
+
+#: mainPage/models.py:14
+msgid "contact"
+msgstr "контакт"
+
+#: mainPage/models.py:15
+msgid "contacts"
+msgstr "контакти"
+
+#: mainPage/models.py:20
+msgid "question"
+msgstr "вопрос"
+
+#: mainPage/models.py:21
+msgid "answer"
+msgstr "отвечать"
+
+#: mainPage/models.py:24
+#, python-format
+msgid "Question: %(question)s"
+msgstr "Вопрос: %(question)s"
+
+#: mainPage/models.py:27
+msgid "FAQ"
+msgstr "ЧЗВ"
+
+#: mainPage/models.py:28
+msgid "FAQs"
+msgstr "ЧЗВи"
+
+#: templates/404.html:20 templates/404.html:23 templates/404.html:42
+msgid "Page Not Found"
+msgstr "Страница не найдена"
+
+#: templates/404.html:22 templates/404.html:75
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:12
+#: templates/Openup/light/index-two.html:646
+#: templates/Openup/light/layouts/header/header.html:67
+msgid "Home"
+msgstr "Начало"
+
+#: templates/404.html:44
+msgid ""
+"\n"
+"                                We're sorry, the page you requested could not be found <br> please go back to the homepage\n"
+"                                "
+msgstr ""
+"\n"
+"К сожалению, запрошенная вами страница не найдена <br>, вернитесь на домашнюю страницу."
+
+#: templates/404.html:48
+msgid "Back to Home"
+msgstr "Вернуться к начало"
+
+#: templates/404.html:77 templates/Openup/light/index-two.html:648
+#: templates/Openup/light/layouts/header/header.html:69
+msgid "Ai Chat Bot"
+msgstr "чат-бот с AI"
+
+#: templates/404.html:78 templates/Openup/light/index-two.html:649
+#: templates/Openup/light/layouts/header/header.html:70
+msgid "Photo Stock"
+msgstr "Фотосток"
+
+#: templates/404.html:85 templates/Openup/light/index-two.html:656
+msgid "Languages"
+msgstr "Языки"
+
+#: templates/404.html:88 templates/Openup/light/index-two.html:659
+msgid "Uzbek"
+msgstr "Узбекский"
+
+#: templates/404.html:89 templates/Openup/light/index-two.html:660
+msgid "English"
+msgstr "Английский"
+
+#: templates/404.html:90 templates/Openup/light/index-two.html:661
+msgid "Russian"
+msgstr "Русский"
+
+#: templates/404.html:95 templates/Openup/light/index-two.html:666
+#: templates/Openup/light/layouts/header/header.html:71
+msgid "Contact"
+msgstr "Контакт"
+
+#: templates/404.html:99 templates/Dashboard/layouts/dashboardMain.html:15
+#: templates/Openup/light/index-two.html:670
+#: templates/Openup/light/layouts/header/header.html:79
+msgid "Dashboard"
+msgstr "Панель управления"
+
+#: templates/404.html:103 templates/Dashboard/registration/login.html:44
+#: templates/Dashboard/registration/register.html:49
+#: templates/Openup/light/index-two.html:674
+#: templates/Openup/light/layouts/header/header.html:81
+#: templates/registration/password_reset_form.html:34
+msgid "Login"
+msgstr "Авторизоваться"
+
+#: templates/404.html:106 templates/Dashboard/registration/login.html:46
+#: templates/Openup/light/index-two.html:677
+#: templates/Openup/light/layouts/header/header.html:82
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
+
+#: templates/Dashboard/chatbot.html:18
+msgid "You"
+msgstr "Вы"
+
+#: templates/Dashboard/chatbot.html:30
+msgid "Openup"
+msgstr "Openup"
+
+#: templates/Dashboard/chatbot.html:52
+msgid "Message openup..."
+msgstr "Открытие сообщения..."
+
+#: templates/Dashboard/index.html:15
+msgid "Openup AI Generator"
+msgstr "Openup генератор AI"
+
+#: templates/Dashboard/index.html:17
+msgid ""
+"\n"
+"                            Openup is the place to create, publish and monetize content using the power of AI. Use the\n"
+"                            Openup AI Studio to create amazing generative images, music, and audio.\n"
+"                        "
+msgstr ""
+"\n"
+"Openup — это место для создания, публикации и монетизации контента с использованием возможностей AI. Используйте\n"
+"Откройте AI Studio, чтобы создавать потрясающие генеративные изображения, музыку и аудио."
+
+#: templates/Dashboard/index.html:22
+msgid "Soon available"
+msgstr "Скоро будет доступно"
+
+#: templates/Dashboard/index.html:39
+msgid "Words Available"
+msgstr "Доступные слова"
+
+#: templates/Dashboard/index.html:41
+msgid "You have"
+msgstr "У вас есть"
+
+#: templates/Dashboard/index.html:43
+msgid "Good"
+msgstr "Хороший"
+
+#: templates/Dashboard/index.html:44 templates/Dashboard/index.html:47
+#: templates/Dashboard/index.html:50
+msgid "level of words available."
+msgstr "уровень доступных слов."
+
+#: templates/Dashboard/index.html:46
+msgid "Average"
+msgstr "Средний"
+
+#: templates/Dashboard/index.html:49
+msgid "Bad"
+msgstr "Плохой"
+
+#: templates/Dashboard/index.html:55 templates/Dashboard/index.html:72
+msgid "Generate"
+msgstr "Генерировать"
+
+#: templates/Dashboard/index.html:65
+msgid "Type of plan"
+msgstr "Тип плана"
+
+#: templates/Dashboard/index.html:83
+msgid "Saved Documents"
+msgstr "Сохраненные документы"
+
+#: templates/Dashboard/index.html:87
+msgid "O documents available"
+msgstr "О документы имеются"
+
+#: templates/Dashboard/index.html:94
+msgid "Explore"
+msgstr "Исследовать"
+
+#: templates/Dashboard/layouts/ThreeChoices/choices.html:9
+msgid "Image"
+msgstr "Изображение"
+
+#: templates/Dashboard/layouts/ThreeChoices/choices.html:16
+msgid "Content"
+msgstr "Содержание"
+
+#: templates/Dashboard/layouts/ThreeChoices/choices.html:23
+msgid "Voice"
+msgstr "Голос"
+
+#: templates/Dashboard/layouts/header/DashboardHeader.html:50
+msgid "Notification will be available soon"
+msgstr "Уведомление скоро будет доступно"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:18
+msgid "Community Feed"
+msgstr "Лента сообщества"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:24
+msgid "Manage Subscription"
+msgstr "Управление подпиской"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:32
+msgid "AI Chat Bot"
+msgstr "Чат-бот с AI"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:41
+msgid "Settings"
+msgstr "Настройки"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:48
+msgid "Profile"
+msgstr "Профиль"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:58
+msgid "Logout"
+msgstr "Выход"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:74
+msgid "Enter your name"
+msgstr "Введите свое имя"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:78
+msgid "See your email"
+msgstr "Посмотрите свою e-mail"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:86
+msgid "Upgrade To Pro"
+msgstr "Обновите до Pro"
+
+#: templates/Dashboard/manage-subscription.html:20
+msgid ""
+"\n"
+"                                        Manage Subscription\n"
+"                                    "
+msgstr ""
+"\n"
+"Управление подпиской"
+
+#: templates/Dashboard/manage-subscription.html:35
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:24
+msgid "Monthly Pricing"
+msgstr "Ежемесячная цена"
+
+#: templates/Dashboard/manage-subscription.html:42
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:29
+msgid "Annual Pricing"
+msgstr "Годовые цены"
+
+#: templates/Dashboard/manage-subscription.html:46
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:33
+#, python-format
+msgid "SAVE 25%%"
+msgstr "СЭКОНОМЬТЕ 25%"
+
+#: templates/Dashboard/manage-subscription.html:57
+#: templates/Dashboard/manage-subscription.html:202
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:44
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:187
+msgid "Basic"
+msgstr "Базовый"
+
+#: templates/Dashboard/manage-subscription.html:59
+#: templates/Dashboard/manage-subscription.html:204
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:46
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:189
+msgid "$Free"
+msgstr "$Бесплатно"
+
+#: templates/Dashboard/manage-subscription.html:60
+#: templates/Dashboard/manage-subscription.html:99
+#: templates/Dashboard/manage-subscription.html:149
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:47
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:85
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:135
+msgid "/month"
+msgstr "/месяц"
+
+#: templates/Dashboard/manage-subscription.html:65
+msgid ""
+" A premium pricing plan is a pricing <br> structure\n"
+"                                                        that is designed."
+msgstr ""
+"Премиальный тарифный план — это структура ценообразования <br>.\n"
+"это предназначено."
+
+#: templates/Dashboard/manage-subscription.html:73
+#: templates/Dashboard/manage-subscription.html:220
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:59
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:204
+msgid "10,000 Monthly Word Limit"
+msgstr "Ежемесячный лимит слов: 10 000"
+
+#: templates/Dashboard/manage-subscription.html:80
+#: templates/Dashboard/manage-subscription.html:117
+#: templates/Dashboard/manage-subscription.html:167
+#: templates/Dashboard/manage-subscription.html:226
+#: templates/Dashboard/manage-subscription.html:264
+#: templates/Dashboard/manage-subscription.html:317
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:66
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:103
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:153
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:210
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:247
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:299
+msgid "Access to AI chatbot"
+msgstr "Доступ к чат-боту с AI"
+
+#: templates/Dashboard/manage-subscription.html:86
+#: templates/Dashboard/manage-subscription.html:137
+#: templates/Dashboard/manage-subscription.html:188
+#: templates/Dashboard/manage-subscription.html:231
+#: templates/Dashboard/manage-subscription.html:284
+#: templates/Dashboard/manage-subscription.html:333
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:72
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:123
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:173
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:215
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:267
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:315
+msgid "Get Started"
+msgstr "Начать"
+
+#: templates/Dashboard/manage-subscription.html:96
+#: templates/Dashboard/manage-subscription.html:240
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:82
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:224
+msgid "Diamond"
+msgstr "Алмаз"
+
+#: templates/Dashboard/manage-subscription.html:104
+#: templates/Dashboard/manage-subscription.html:154
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:90
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:140
+msgid "A premium pricing plan is a pricing <br> structure that is designed."
+msgstr ""
+"Премиальный тарифный план — <br> это разработанная структура "
+"ценообразования."
+
+#: templates/Dashboard/manage-subscription.html:111
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:97
+msgid "60,000 Monthly Word Limit"
+msgstr "Ежемесячный лимит слов: 60 000"
+
+#: templates/Dashboard/manage-subscription.html:123
+#: templates/Dashboard/manage-subscription.html:270
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:109
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:253
+msgid "All types of content"
+msgstr "Все типы контента"
+
+#: templates/Dashboard/manage-subscription.html:129
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:115
+msgid "Unlimited usage"
+msgstr "Неограниченное использование"
+
+#: templates/Dashboard/manage-subscription.html:133
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:119
+msgid "progress notifications"
+msgstr "уведомления о прогрессе"
+
+#: templates/Dashboard/manage-subscription.html:146
+#: templates/Dashboard/manage-subscription.html:293
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:132
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:276
+msgid "Silver"
+msgstr "Серебро"
+
+#: templates/Dashboard/manage-subscription.html:161
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:147
+msgid "30,000 Monthly Word Limit"
+msgstr "Ежемесячный лимит слов: 30 000"
+
+#: templates/Dashboard/manage-subscription.html:174
+msgid ""
+"\n"
+"                                                                <span class=\"text-danger\">Not</span> All types of\n"
+"                                                                content\n"
+"                                                            "
+msgstr ""
+"\n"
+"<span class=\"text-danger\">Нет</span> Все типы\n"
+"содержание"
+
+#: templates/Dashboard/manage-subscription.html:184
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:169
+msgid "Limited usage!"
+msgstr "Ограниченное использование!"
+
+#: templates/Dashboard/manage-subscription.html:205
+#: templates/Dashboard/manage-subscription.html:243
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:190
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:227
+msgid "/year"
+msgstr "/год"
+
+#: templates/Dashboard/manage-subscription.html:210
+#: templates/Dashboard/manage-subscription.html:248
+#: templates/Dashboard/manage-subscription.html:301
+msgid ""
+"\n"
+"                                                        A premium pricing plan is a pricing <br> structure that is\n"
+"                                                        designed.\n"
+"                                                    "
+msgstr ""
+"\n"
+"Тарифный план «Премиум» – это структура цен <br>, которая\n"
+"спроектирован."
+
+#: templates/Dashboard/manage-subscription.html:258
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:241
+msgid "720,000 yearly Word Limit"
+msgstr "Ограничение на 720 000 слов в год"
+
+#: templates/Dashboard/manage-subscription.html:276
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:259
+msgid "Unlimited Usage"
+msgstr "Неограниченное использование"
+
+#: templates/Dashboard/manage-subscription.html:280
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:263
+msgid "Progress notifications"
+msgstr "Уведомления о прогрессе"
+
+#: templates/Dashboard/manage-subscription.html:296
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:279
+msgid "year"
+msgstr "год"
+
+#: templates/Dashboard/manage-subscription.html:311
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:293
+msgid "120,000 Yearly Word Limit"
+msgstr "Ограничение на 120 000 слов в год"
+
+#: templates/Dashboard/manage-subscription.html:323
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:305
+msgid "Some types of content"
+msgstr "Некоторые типы контента"
+
+#: templates/Dashboard/manage-subscription.html:329
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:311
+msgid "Limited Usage"
+msgstr "Ограниченное использование"
+
+#: templates/Dashboard/profile.html:19
+msgid "Personal Account"
+msgstr "Личный кабинет"
+
+#: templates/Dashboard/profile.html:26
+msgid "Personal Details"
+msgstr "Личные данные"
+
+#: templates/Dashboard/profile.html:31
+msgid "First Name"
+msgstr "Имя"
+
+#: templates/Dashboard/profile.html:36 templates/Dashboard/profile.html:46
+msgid "No information"
+msgstr "Нет информации"
+
+#: templates/Dashboard/profile.html:41
+msgid "Last_name"
+msgstr "Фамилия"
+
+#: templates/Dashboard/profile.html:51
+#: templates/Dashboard/registration/login.html:34
+#: templates/Dashboard/registration/register.html:28
+msgid "Email"
+msgstr "Электронная почта"
+
+#: templates/Dashboard/profile.html:55
+#: templates/Dashboard/registration/login.html:38
+#: templates/Dashboard/registration/register.html:36
+msgid "Password"
+msgstr "Пароль"
+
+#: templates/Dashboard/profile.html:56
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: templates/Dashboard/profile.html:64
+msgid "Edit"
+msgstr "Редактировать"
+
+#: templates/Dashboard/profile.html:71
+msgid "Billing Information"
+msgstr "Платежная информация"
+
+#: templates/Dashboard/profile.html:79
+msgid "Plan"
+msgstr "План"
+
+#: templates/Dashboard/profile.html:80 users/models.py:24
+msgid "Free"
+msgstr "Бесплатно"
+
+#: templates/Dashboard/profile.html:87
+msgid "Payment Method"
+msgstr "Способ оплаты"
+
+#: templates/Dashboard/profile.html:88 templates/Dashboard/profile.html:96
+#: templates/Dashboard/profile.html:104
+msgid "No active subscription"
+msgstr "Нет активной подписки"
+
+#: templates/Dashboard/profile.html:95
+msgid "Recurring Payment"
+msgstr "Регулярный платеж"
+
+#: templates/Dashboard/profile.html:103
+msgid "Next due date"
+msgstr "Следующий срок сдачи"
+
+#: templates/Dashboard/profile.html:111
+msgid "Billing history"
+msgstr "История платежей"
+
+#: templates/Dashboard/profile.html:115
+msgid "No payment history available"
+msgstr "История платежей недоступна"
+
+#: templates/Dashboard/profile.html:129
+msgid "Modal title"
+msgstr "Модальное название"
+
+#: templates/Dashboard/profile.html:153
+msgid "Close"
+msgstr "Закрывать"
+
+#: templates/Dashboard/profile.html:157
+msgid "Save"
+msgstr "Сохранять"
+
+#: templates/Dashboard/registration/login.html:21
+msgid "Go home"
+msgstr "Иди начало"
+
+#: templates/Dashboard/registration/login.html:25
+msgid "Welcome Back"
+msgstr "Добро пожаловать"
+
+#: templates/Dashboard/registration/login.html:26
+msgid "Login to continue"
+msgstr "Войдите, чтобы продолжить"
+
+#: templates/Dashboard/registration/login.html:42
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+#: templates/Dashboard/registration/login.html:45
+msgid "Don't have an account?"
+msgstr "У вас нет учетной записи?"
+
+#: templates/Dashboard/registration/login.html:47
+msgid "for Free"
+msgstr "бесплатно"
+
+#: templates/Dashboard/registration/login.html:51
+#: templates/Dashboard/registration/register.html:54
+msgid "or"
+msgstr "или"
+
+#: templates/Dashboard/registration/login.html:70
+#: templates/Dashboard/registration/register.html:73
+msgid "Continue with Google"
+msgstr "Продолжить с Google"
+
+#: templates/Dashboard/registration/login.html:83
+#: templates/Dashboard/registration/register.html:88
+msgid "Continue with Github"
+msgstr "Продолжить с Github"
+
+#: templates/Dashboard/registration/register.html:18
+msgid "Start your Journey"
+msgstr "Начни свое путешествие"
+
+#: templates/Dashboard/registration/register.html:19
+msgid "Create an account"
+msgstr "Завести аккаунт"
+
+#: templates/Dashboard/registration/register.html:43
+msgid "confirmation password"
+msgstr "пароль подтверждения"
+
+#: templates/Dashboard/registration/register.html:47
+msgid "Create Account"
+msgstr "Зарегистрироваться"
+
+#: templates/Dashboard/registration/register.html:48
+msgid "If you have an account?"
+msgstr "Если у вас есть учетная запись?"
+
+#: templates/Openup/light/index-two.html:20
+msgid "go to your"
+msgstr "иди к себе"
+
+#: templates/Openup/light/index-two.html:20
+msgid "profile management!"
+msgstr "управление профилем!"
+
+#: templates/Openup/light/index-two.html:28
+msgid "We are really sorry for this happened! Try again!"
+msgstr "Нам очень жаль, что так произошло! Попробуйте еще раз!"
+
+#: templates/Openup/light/index-two.html:38
+msgid "Task 1"
+msgstr "Задача 1"
+
+#: templates/Openup/light/index-two.html:42
+msgid "Task 2"
+msgstr "Задача 2"
+
+#: templates/Openup/light/index-two.html:45
+msgid "Write or paste your essay below!"
+msgstr "Напишите или вставьте свое эссе ниже!"
+
+#: templates/Openup/light/index-two.html:46
+msgid "write"
+msgstr "писать"
+
+#: templates/Openup/light/index-two.html:47
+msgid "Check for AI"
+msgstr "Проверьте наличие AI"
+
+#: templates/Openup/light/index-two.html:57
+#, python-format
+msgid ""
+"\n"
+"                                        Your overall score: <span style='color: green'>%(overall_band_score)s</span>\n"
+"                                        "
+msgstr ""
+"\n"
+"Ваш общий балл: <span style='color: green'>%(overall_band_score)s</span>"
+
+#: templates/Openup/light/index-two.html:62
+msgid "Below you can find the detailed feedback on your text."
+msgstr "Ниже вы можете найти подробный отзыв о вашем тексте."
+
+#: templates/Openup/light/index-two.html:76
+#, python-format
+msgid ""
+"\n"
+"                                                    Task Response: %(band_range_tr)s\n"
+"                                                    "
+msgstr ""
+"\n"
+"Ответ задачи: %(band_range_tr)s"
+
+#: templates/Openup/light/index-two.html:92
+#, python-format
+msgid ""
+"\n"
+"                                                    Coherence Response: %(band_range_cr)s\n"
+"                                                    "
+msgstr ""
+"\n"
+"Ответ когерентности: %(band_range_cr)s"
+
+#: templates/Openup/light/index-two.html:108
+#, python-format
+msgid ""
+"\n"
+"                                                    Lexical response: %(band_range_lr)s\n"
+"                                                    "
+msgstr ""
+"\n"
+"Лексический ответ: %(band_range_lr)s"
+
+#: templates/Openup/light/index-two.html:124
+#, python-format
+msgid ""
+"\n"
+"                                                    Grammatical Response: %(band_range_gr)s\n"
+"                                                    "
+msgstr ""
+"\n"
+"Грамматический ответ: %(band_range_gr)s"
+
+#: templates/Openup/light/index-two.html:136
+msgid "Recommendations and Improvements"
+msgstr "Рекомендации и улучшения"
+
+#: templates/Openup/light/index-two.html:138
+#, python-format
+msgid ""
+"\n"
+"                                        %(improvement_suggestions)s\n"
+"                                        "
+msgstr ""
+"\n"
+"%(improvement_suggestions)s"
+
+#: templates/Openup/light/index-two.html:153
+msgid "Welcome to Openup"
+msgstr "Добро пожаловать в Опенап"
+
+#: templates/Openup/light/index-two.html:155
+msgid ""
+"\n"
+"                                Best AI Writer for <br>\n"
+"                                Creating <span>Blog Articles.</span>\n"
+"                                "
+msgstr ""
+"\n"
+"Лучший AI-писатель для <br>\n"
+"Создание <span>Blog Articles.</span>"
+
+#: templates/Openup/light/index-two.html:161
+msgid ""
+"Create SEO-optimized and plagiarism-free contentfor your blogs, ads, emails,"
+" and website 10X faster."
+msgstr ""
+"Создавайте SEO-оптимизированный и свободный от плагиата контент для своих "
+"блогов, рекламы, электронных писем и веб-сайтов в 10 раз быстрее."
+
+#: templates/Openup/light/index-two.html:165
+msgid "Enter your mail address"
+msgstr "Введите свой адрес электронной почты"
+
+#: templates/Openup/light/index-two.html:166
+msgid "Sign Up Free"
+msgstr "Зарегистрируйтесь бесплатно"
+
+#: templates/Openup/light/index-two.html:184
+msgid "Based on 10,000+ reviews on"
+msgstr "На основе более 10 000 отзывов на"
+
+#: templates/Openup/light/index-two.html:216
+msgid "IELTS content"
+msgstr "Содержание IELTS"
+
+#: templates/Openup/light/index-two.html:218
+msgid ""
+"\n"
+"                            Get valuable suggestion by <br>\n"
+"                            Checking your essay!\n"
+"                            "
+msgstr ""
+"\n"
+"Получите ценное предложение от <br>\n"
+"Проверяю ваше эссе!"
+
+#: templates/Openup/light/index-two.html:243
+msgid "Write or paste"
+msgstr "Напишите или вставьте"
+
+#: templates/Openup/light/index-two.html:245
+msgid ""
+"\n"
+"                                                Enter your essay and <br> check it for AI\n"
+"                                                "
+msgstr ""
+"\n"
+"Введите свое эссе и <br> проверьте его на наличие AI."
+
+#: templates/Openup/light/index-two.html:264
+msgid "See your results"
+msgstr "Посмотрите свои результаты"
+
+#: templates/Openup/light/index-two.html:266
+msgid ""
+"\n"
+"                                                See your weaknesses and power and<br> try to enhance the skill\n"
+"                                                "
+msgstr ""
+"\n"
+"Увидьте свои слабости и силу и<br> попытайтесь улучшить свои навыки."
+
+#: templates/Openup/light/index-two.html:283
+msgid "Let AI Write"
+msgstr "Пусть AI пишет"
+
+#: templates/Openup/light/index-two.html:285
+msgid ""
+"\n"
+"                                                Let AI write an essay by improving yours <br> By this you'll understand more\n"
+"                                                "
+msgstr ""
+"\n"
+"Позвольте AI написать эссе, улучшив ваше <br> Благодаря этому вы поймете больше"
+
+#: templates/Openup/light/index-two.html:313
+msgid "New"
+msgstr "Новый"
+
+#: templates/Openup/light/index-two.html:315
+msgid "Features"
+msgstr "Функции"
+
+#: templates/Openup/light/index-two.html:317
+msgid ""
+"\n"
+"                            What can you create <br>\n"
+"                            with Openup?\n"
+"                            "
+msgstr ""
+"\n"
+"Что вы можете создать <br>\n"
+"с Опенапом?"
+
+#: templates/Openup/light/index-two.html:411
+msgid "Blog Posts"
+msgstr "Сообщения в блоге"
+
+#: templates/Openup/light/index-two.html:417
+msgid "SEO Articles"
+msgstr "SEO-статьи"
+
+#: templates/Openup/light/index-two.html:422
+msgid "News Articles"
+msgstr "Новости Статьи"
+
+#: templates/Openup/light/index-two.html:427
+msgid "College Essays"
+msgstr "Эссе колледжа"
+
+#: templates/Openup/light/index-two.html:432
+msgid "Press Releases"
+msgstr "Пресс-релизы"
+
+#: templates/Openup/light/index-two.html:447
+#: templates/Openup/light/index-two.html:452
+msgid "Use Cases"
+msgstr "Варианты использования"
+
+#: templates/Openup/light/index-two.html:454
+msgid ""
+"\n"
+"                            AI Writing Copy <br>\n"
+"                            Favorite Tools\n"
+"                            "
+msgstr ""
+"\n"
+"AI Написание копий <br>\n"
+"Любимые инструменты"
+
+#: templates/Openup/light/index-two.html:471
+msgid "Blog Content"
+msgstr "Содержание блога"
+
+#: templates/Openup/light/index-two.html:474
+#: templates/Openup/light/index-two.html:495
+#: templates/Openup/light/index-two.html:517
+#: templates/Openup/light/index-two.html:538
+#: templates/Openup/light/index-two.html:557
+msgid ""
+"Write a first draft. The first draft should be written in long-form "
+"breaking."
+msgstr ""
+"Напишите первый черновик. Первый черновик должен быть написан в развернутой "
+"форме."
+
+#: templates/Openup/light/index-two.html:476
+msgid "Try Blog Content"
+msgstr "Попробуйте контент блога"
+
+#: templates/Openup/light/index-two.html:492
+msgid "Social Media Content"
+msgstr "Контент для социальных сетей"
+
+#: templates/Openup/light/index-two.html:497
+msgid "Try Blog Content "
+msgstr "Попробуйте контент блога"
+
+#: templates/Openup/light/index-two.html:514
+msgid "E-commerce copy"
+msgstr "Копия электронной коммерции"
+
+#: templates/Openup/light/index-two.html:519
+#: templates/Openup/light/index-two.html:540
+#: templates/Openup/light/index-two.html:559
+msgid "soon available"
+msgstr "скоро будет доступно"
+
+#: templates/Openup/light/index-two.html:535
+msgid "Sales Copy"
+msgstr "Продажный экземпляр"
+
+#: templates/Openup/light/index-two.html:555
+msgid "website copy"
+msgstr "копия веб-сайта"
+
+#: templates/Openup/light/index-two.html:577
+msgid "Article Samples"
+msgstr "Образцы статей"
+
+#: templates/Openup/light/index-two.html:579
+msgid ""
+"\n"
+"                            Fully unique content <br>\n"
+"                            generated by AI\n"
+"                            "
+msgstr ""
+"\n"
+"Полностью уникальный контент <br>\n"
+"созданный AI"
+
+#: templates/Openup/light/index-two.html:600
+msgid "4 min Read"
+msgstr "4 мин Чтение"
+
+#: templates/Openup/light/index-two.html:608
+msgid "Read More"
+msgstr "Читать далее"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:8
+msgid "Pricing Plan"
+msgstr "Тарифный план"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:10
+msgid ""
+"\n"
+"                        Ready to Get Started? <br>\n"
+"                        We'll Keep You Under Budget\n"
+"                        "
+msgstr ""
+"\n"
+"Готовы начать? <br>\n"
+"Мы уложим вас в бюджет"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:52
+msgid " A premium pricing plan is a pricing <br> structure that is designed."
+msgstr ""
+"Премиальный тарифный план — это разработанная структура ценообразования."
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:160
+msgid ""
+"\n"
+"                                                <span class=\"text-danger\">Not</span> All types of content\n"
+"                                                "
+msgstr ""
+"\n"
+"<span class=\"text-danger\">Не</span> Все типы контента"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:195
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:232
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:284
+msgid ""
+"\n"
+"                                        A premium pricing plan is a pricing <br> structure that is designed.\n"
+"                                        "
+msgstr ""
+"\n"
+"Премиальный тарифный план — это разработанная структура ценообразования."
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:337
+msgid "Faq's"
+msgstr "Faq's"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:339
+msgid ""
+"\n"
+"                        Questions About our OpenUp? <br>\n"
+"                        We have Answers!\n"
+"                        "
+msgstr ""
+"\n"
+"Вопросы о нашем OpenUp? <br>\n"
+"У нас есть ответы!"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:345
+msgid ""
+"please feel free to reach out to us. We are always happy to assist you and "
+"provide any additional."
+msgstr ""
+"пожалуйста, не стесняйтесь обращаться к нам. Мы всегда рады Вам помочь и "
+"предоставить любые дополнительные услуги."
+
+#: templates/Openup/light/layouts/footer/footer.html:20
+msgid ""
+"\n"
+"                                    Openup is artificial intelligence trained to automate important tasks such as writing\n"
+"                                    optimized product descriptions.\n"
+"                                "
+msgstr ""
+"\n"
+"Openup — это искусственный интеллект, обученный автоматизировать важные задачи, такие как написание\n"
+"оптимизированные описания товаров."
+
+#: templates/Openup/light/layouts/footer/footer.html:73
+msgid ""
+"\n"
+"                                Maxuel Street, Frankfurt <br> 2589 Germany.\n"
+"                                "
+msgstr ""
+"\n"
+"Максуэль-стрит, Франкфурт <br> 2589 Германия."
+
+#: templates/registration/password_reset_complete.html:18
+msgid "Successfully"
+msgstr "Успешно"
+
+#: templates/registration/password_reset_complete.html:20
+msgid "You have successfully changed your password"
+msgstr "Вы успешно изменили свой пароль"
+
+#: templates/registration/password_reset_confirm.html:18
+msgid "Enter your password"
+msgstr "Введите свой пароль"
+
+#: templates/registration/password_reset_confirm.html:19
+msgid "Password should be strong and contains more that 8 characters."
+msgstr "Пароль должен быть надежным и содержать более 8 символов."
+
+#: templates/registration/password_reset_confirm.html:32
+msgid "Change Password"
+msgstr "Изменить пароль"
+
+#: templates/registration/password_reset_confirm.html:34
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+"Ссылка для сброса пароля недействительна, возможно, потому, что она уже "
+"использовалась. Пожалуйста, запросите сброс нового пароля."
+
+#: templates/registration/password_reset_confirm.html:35
+msgid "Request a new password reset"
+msgstr "Запросить сброс нового пароля"
+
+#: templates/registration/password_reset_done.html:18
+msgid "Email sent!"
+msgstr "Письмо отправлено!"
+
+#: templates/registration/password_reset_done.html:19
+msgid "We have emailed you"
+msgstr "Мы отправили вам электронное письмо"
+
+#: templates/registration/password_reset_done.html:19
+msgid "If you do not get any message"
+msgstr "Если вы не получили никакого сообщения"
+
+#: templates/registration/password_reset_done.html:19
+msgid "try again"
+msgstr "Попробуйте еще раз"
+
+#: templates/registration/password_reset_form.html:18
+msgid "Enter your email"
+msgstr "Введите адрес электронной почты"
+
+#: templates/registration/password_reset_form.html:20
+msgid ""
+"You will be sent an email to reset your password after you have entered!"
+msgstr ""
+"После входа вам будет отправлено электронное письмо для сброса пароля!"
+
+#: templates/registration/password_reset_form.html:33
+msgid "Send email"
+msgstr "Отправить письмо"
+
+#: templates/registration/password_reset_form.html:34
+msgid "Back to login"
+msgstr "Вернуться к входу"
+
+#: users/managers.py:16
+msgid "The Email must be set"
+msgstr "Электронная почта должна быть установлена"
+
+#: users/managers.py:32
+msgid "Superuser must have is_staff=True."
+msgstr "Суперпользователь должен иметь is_staff=True."
+
+#: users/managers.py:34
+msgid "Superuser must have is_superuser=True."
+msgstr "Суперпользователь должен иметь is_superuser=True."
+
+#: users/models.py:10
+msgid "email address"
+msgstr "Адрес электронной почты"
+
+#: users/models.py:25
+msgid "Premium"
+msgstr "Премиум"
+
+#: users/models.py:33
+msgid "type of plan"
+msgstr "тип плана"
+
+#: users/models.py:38
+msgid "available words"
+msgstr "доступные слова"
+
+#: users/models.py:39
+msgid "active"
+msgstr "активный"
+
+#: users/models.py:42
+#, python-format
+msgid "%(first_name)s %(last_name)s Profile"
+msgstr "%(first_name)s %(last_name)s Профиль"
+
+#: users/models.py:48
+msgid "profile"
+msgstr "профиль"
+
+#: users/models.py:49
+msgid "profiles"
+msgstr "профили"

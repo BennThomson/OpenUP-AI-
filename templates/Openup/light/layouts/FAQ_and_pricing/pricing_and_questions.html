@@ -1,13 +1,16 @@
+{% load i18n %}
 <!-- rts pricing plane area start -->
 <div class="pricing-plane-area rts-section-gapTop">
     <div class="container">
         <div class="row">
             <div class="col-lgl-12">
                 <div class="title-conter-area">
-                    <span class="pre-title-bg">Pricing Plane</span>
+                    <span class="pre-title-bg">{% trans 'Pricing Plan' %}</span>
                     <h2 class="title">
+                        {% blocktrans %}
                         Ready to Get Started? <br>
                         We'll Keep You Under Budget
+                        {% endblocktrans %}
                     </h2>
                 </div>
             </div>
@@ -18,62 +21,106 @@
             <ul class="nav nav-tabs pricing-button-one two" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class=" active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-                            role="tab" aria-controls="home" aria-selected="true">Monthly Pricing
+                            role="tab" aria-controls="home" aria-selected="true">{% trans 'Monthly Pricing' %}
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
-                            role="tab" aria-controls="profile" aria-selected="false">Annual Pricing
+                            role="tab" aria-controls="profile" aria-selected="false">{% trans 'Annual Pricing' %}
                     </button>
                 </li>
                 <li class="save-badge">
-                    <span>SAVE 25%</span>
+                    <span>{% trans 'SAVE 25%' %}</span>
                 </li>
             </ul>
             <div class="tab-content mt--20" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row g-5 mt--10">
                         <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+
                             <!-- single pricing-area -->
                             <div class="single-pricing-single-two">
                                 <div class="head">
-                                    <span class="top">Basic</span>
+                                    <span class="top">{% trans 'Basic' %}</span>
                                     <div class="date-use">
-                                        <h4 class="title">$Free</h4>
-                                        <span>/month</span>
+                                        <h4 class="title">{% trans '$Free' %}</h4>
+                                        <span>{% trans '/month' %}</span>
                                     </div>
                                 </div>
                                 <div class="body">
-                                    <p class="para">A premium pricing plan is a pricing <br> structure that is designed.
+                                    <p class="para"> 
+                                        {% blocktrans %} A premium pricing plan is a pricing <br> structure that is designed.{% endblocktrans %}
                                     </p>
 
                                     <div class="check-wrapper">
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>10,000 Monthly Word Limit</p>
+                                            <p>{% trans '10,000 Monthly Word Limit' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>10+ Templates</p>
+                                            <p>
+                                                {% trans 'Access to AI chatbot' %}
+                                            </p>
+                                        </div>
+                                        <!-- single check end-->
+
+                                    </div>
+                                    <a href="#" class="pricing-btn">{% trans 'Get Started' %}</a>
+                                </div>
+                            </div>
+                            <!-- single pricing-area end -->
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single pricing-area -->
+                            <div class="single-pricing-single-two">
+                                <div class="head">
+                                    <span class="top">{% trans 'Diamond' %}</span>
+                                    <div class="date-use">
+                                        <h4 class="title">$10</h4>
+                                        <span>{% trans '/month' %}</span>
+                                    </div>
+                                </div>
+                                <div class="body">
+                                    <p class="para">
+                                        {% trans 'A premium pricing plan is a pricing <br> structure that is designed.' %}
+                                    </p>
+
+                                    <div class="check-wrapper">
+                                        <!-- single check -->
+                                        <div class="check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>{% trans '60,000 Monthly Word Limit' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>All types of content</p>
+                                            <p>{% trans 'Access to AI chatbot' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>10+ Languages</p>
+                                            <p>{% trans 'All types of content' %}</p>
+                                        </div>
+                                        <!-- single check end-->
+                                        <!-- single check -->
+                                        <div class="check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>{% trans 'Unlimited usage' %}</p>
+                                        </div>
+                                        <div class="check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>{% trans 'progress notifications' %}</p>
                                         </div>
                                         <!-- single check end-->
                                     </div>
-                                    <a href="#" class="pricing-btn">Get Started</a>
+                                    <a href="#" class="pricing-btn">{% trans 'Get Started' %}</a>
                                 </div>
                             </div>
                             <!-- single pricing-area end -->
@@ -82,137 +129,90 @@
                             <!-- single pricing-area -->
                             <div class="single-pricing-single-two">
                                 <div class="head">
-                                    <span class="top">Diamond</span>
+                                    <span class="top">{% trans 'Silver' %}</span>
                                     <div class="date-use">
-                                        <h4 class="title">$399</h4>
-                                        <span>/month</span>
+                                        <h4 class="title">$4</h4>
+                                        <span>{% trans '/month' %}</span>
                                     </div>
                                 </div>
                                 <div class="body">
-                                    <p class="para">A premium pricing plan is a pricing <br> structure that is designed.
+                                    <p class="para">
+                                        {% trans 'A premium pricing plan is a pricing <br> structure that is designed.' %}
                                     </p>
 
                                     <div class="check-wrapper">
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>60,000 Monthly Word Limit</p>
+                                            <p>{% trans '30,000 Monthly Word Limit' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>60+ Templates</p>
+                                            <p>{% trans 'Access to AI chatbot' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>All types of content</p>
+                                            <p>
+                                                {% blocktrans %}
+                                                <span class="text-danger">Not</span> All types of content
+                                                {% endblocktrans %}
+                                            </p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>60+ Languages</p>
+                                            <p>{% trans 'Limited usage!' %}</p>
                                         </div>
                                         <!-- single check end-->
                                     </div>
-                                    <a href="#" class="pricing-btn">Get Started</a>
-                                </div>
-                            </div>
-                            <!-- single pricing-area end -->
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                            <!-- single pricing-area -->
-                            <div class="single-pricing-single-two">
-                                <div class="head">
-                                    <span class="top">Silver</span>
-                                    <div class="date-use">
-                                        <h4 class="title">$199</h4>
-                                        <span>/month</span>
-                                    </div>
-                                </div>
-                                <div class="body">
-                                    <p class="para">A premium pricing plan is a pricing <br> structure that is designed.
-                                    </p>
-
-                                    <div class="check-wrapper">
-                                        <!-- single check -->
-                                        <div class="check-area">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p>30,000 Monthly Word Limit</p>
-                                        </div>
-                                        <!-- single check end-->
-                                        <!-- single check -->
-                                        <div class="check-area">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p>30+ Templates</p>
-                                        </div>
-                                        <!-- single check end-->
-                                        <!-- single check -->
-                                        <div class="check-area">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p>All types of content</p>
-                                        </div>
-                                        <!-- single check end-->
-                                        <!-- single check -->
-                                        <div class="check-area">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p>40+ Languages</p>
-                                        </div>
-                                        <!-- single check end-->
-                                    </div>
-                                    <a href="#" class="pricing-btn">Get Started</a>
+                                    <a href="#" class="pricing-btn">{% trans 'Get Started' %}</a>
                                 </div>
                             </div>
                             <!-- single pricing-area end -->
                         </div>
                     </div>
                 </div>
+
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="row g-5 mt--10">
                         <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                             <!-- single pricing-area -->
                             <div class="single-pricing-single-two">
                                 <div class="head">
-                                    <span class="top">Basic</span>
+                                    <span class="top">{% trans 'Basic' %}</span>
                                     <div class="date-use">
-                                        <h4 class="title">$Free</h4>
-                                        <span>/month</span>
+                                        <h4 class="title">{% trans '$Free' %}</h4>
+                                        <span>{% trans '/year' %}</span>
                                     </div>
                                 </div>
                                 <div class="body">
-                                    <p class="para">A premium pricing plan is a pricing <br> structure that is designed.
+                                    <p class="para">
+                                        {% blocktrans %}
+                                        A premium pricing plan is a pricing <br> structure that is designed.
+                                        {% endblocktrans %}
                                     </p>
 
                                     <div class="check-wrapper">
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>10,000 Monthly Word Limit</p>
+                                            <p>{% trans '10,000 Monthly Word Limit' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>10+ Templates</p>
+                                            <p>{% trans 'Access to AI chatbot' %}</p>
                                         </div>
                                         <!-- single check end-->
-                                        <!-- single check -->
-                                        <div class="check-area">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p>All types of content</p>
-                                        </div>
-                                        <!-- single check end-->
-                                        <!-- single check -->
-                                        <div class="check-area">
-                                            <i class="fa-solid fa-check"></i>
-                                            <p>10+ Languages</p>
-                                        </div>
-                                        <!-- single check end-->
+
                                     </div>
-                                    <a href="#" class="pricing-btn">Get Started</a>
+                                    <a href="#" class="pricing-btn">{% trans 'Get Started' %}</a>
                                 </div>
                             </div>
                             <!-- single pricing-area end -->
@@ -221,43 +221,50 @@
                             <!-- single pricing-area -->
                             <div class="single-pricing-single-two">
                                 <div class="head">
-                                    <span class="top">Diamond</span>
+                                    <span class="top">{% trans 'Diamond' %}</span>
                                     <div class="date-use">
-                                        <h4 class="title">$399</h4>
-                                        <span>/month</span>
+                                        <h4 class="title">$100</h4>
+                                        <span>{% trans '/year' %}</span>
                                     </div>
                                 </div>
                                 <div class="body">
-                                    <p class="para">A premium pricing plan is a pricing <br> structure that is designed.
+                                    <p class="para">
+                                        {% blocktrans %}
+                                        A premium pricing plan is a pricing <br> structure that is designed.
+                                        {% endblocktrans %}
                                     </p>
 
                                     <div class="check-wrapper">
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>60,000 Monthly Word Limit</p>
+                                            <p>{% trans '720,000 yearly Word Limit' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>60+ Templates</p>
+                                            <p>{% trans 'Access to AI chatbot' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>All types of content</p>
+                                            <p>{% trans 'All types of content' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>60+ Languages</p>
+                                            <p>{% trans 'Unlimited Usage' %}</p>
+                                        </div>
+                                        <div class="check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>{% trans 'Progress notifications' %}</p>
                                         </div>
                                         <!-- single check end-->
                                     </div>
-                                    <a href="#" class="pricing-btn">Get Started</a>
+                                    <a href="#" class="pricing-btn">{% trans 'Get Started' %}</a>
                                 </div>
                             </div>
                             <!-- single pricing-area end -->
@@ -266,43 +273,46 @@
                             <!-- single pricing-area -->
                             <div class="single-pricing-single-two">
                                 <div class="head">
-                                    <span class="top">Silver</span>
+                                    <span class="top">{% trans 'Silver' %}</span>
                                     <div class="date-use">
-                                        <h4 class="title">$199</h4>
-                                        <span>/month</span>
+                                        <h4 class="title">$40</h4>
+                                        <span>/{% trans 'year' %}</span>
                                     </div>
                                 </div>
                                 <div class="body">
-                                    <p class="para">A premium pricing plan is a pricing <br> structure that is designed.
+                                    <p class="para">
+                                        {% blocktrans %}
+                                        A premium pricing plan is a pricing <br> structure that is designed.
+                                        {% endblocktrans %}
                                     </p>
 
                                     <div class="check-wrapper">
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>30,000 Monthly Word Limit</p>
+                                            <p>{% trans '120,000 Yearly Word Limit' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>30+ Templates</p>
+                                            <p>{% trans 'Access to AI chatbot' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>All types of content</p>
+                                            <p>{% trans 'Some types of content' %}</p>
                                         </div>
                                         <!-- single check end-->
                                         <!-- single check -->
                                         <div class="check-area">
                                             <i class="fa-solid fa-check"></i>
-                                            <p>40+ Languages</p>
+                                            <p>{% trans 'Limited Usage' %}</p>
                                         </div>
                                         <!-- single check end-->
                                     </div>
-                                    <a href="#" class="pricing-btn">Get Started</a>
+                                    <a href="#" class="pricing-btn">{% trans 'Get Started' %}</a>
                                 </div>
                             </div>
                             <!-- single pricing-area end -->
@@ -324,14 +334,15 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="title-conter-area">
-                    <span class="pre-title-bg">Faq's</span>
+                    <span class="pre-title-bg">{% trans "Faq's" %}</span>
                     <h2 class="title">
+                        {% blocktrans %}
                         Questions About our OpenUp? <br>
                         We have Answers!
+                        {% endblocktrans %}
                     </h2>
                     <p class="disc">
-                        please feel free to reach out to us. We are always happy to assist you and provide any
-                        additional.
+                        {% trans 'please feel free to reach out to us. We are always happy to assist you and provide any additional.' %}
                     </p>
                 </div>
             </div>

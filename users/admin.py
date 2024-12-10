@@ -1,10 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from django.utils.translation.trans_real import activate
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser, ProfileModel
-
 
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm

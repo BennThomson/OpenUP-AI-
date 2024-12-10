@@ -1,5 +1,7 @@
 {% extends "Openup/light/layouts/base.html" %}
 {% load static %}
+{% load hitcount_tags %}
+
 
 {% block body  %}
 <body class="inner-page">
@@ -8,9 +10,6 @@
 
     <div class="bd-breadcrumb">
     </div>
-
-
-
     <!-- rts blog ddetailks area start -->
     <div class="rts-blog-details-area-top rts-section-gapTop">
         <div class="container">
@@ -29,19 +28,19 @@
                         <div class="col-lg-6 col-md-12 col-sm-12 col-12">
                             <div class="authore-bd-area">
                                 <div class="main">
-                                    <img src="assets/images/blog/11.png" alt="blog">
+                                    
                                     <div class="info">
-                                        <span class="deg">Author</span>
-                                        <span class="name">samuel</span>
+                                        <span class="deg">Views Count</span>
+                                        <span class="name text-danger">{% get_hit_count for article %}</span>
                                     </div>
                                 </div>
                                 <div class="sub-area">
                                     <p>Category</p>
-                                    <span class="deg">Blog Content</span>
+                                    <span class="deg">{{ article.type }}</span>
                                 </div>
                                 <div class="sub-area">
                                     <p>Purplish</p>
-                                    <span class="deg">15 may, 2023</span>
+                                    <span class="deg">{{ article.created_at }}</span>
                                 </div>
                             </div>
                         </div>
@@ -85,112 +84,37 @@
                 </div>
             </div>
             <div class="row g-5 mt--10">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                    <!-- single blog area start -->
-                    <div class="single-blog-area-wrapper">
-                        <a href="#" class="thumbnail">
-                            <img src="assets/images/blog/07.jpg" alt="Blog_images">
-                        </a>
-                        <div class="inner-content">
-                            <div class="head">
-                                <span class="tag">Content Write</span>
-                                <span class="time">7 min Read</span>
-                            </div>
-                            <div class="body">
-                                <a href="#">
-                                    <h5 class="title">Five Things You Need to Know
-                                        about Writing Articles</h5>
-                                </a>
-                                <div class="author-area">
-                                    <div class="author">
-                                        <img src="assets/images/blog/04.png" alt="blog-area">
-                                        <div class="info">
-                                            <p>samuel</p>
-                                            <span>Author</span>
-                                        </div>
+                {% for related_article in related_articles %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                        <!-- single blog area start -->
+                        <div class="single-blog-area-wrapper">
+                            <a href="{% url 'article_detail' related_article.id %}" class="thumbnail">
+                                <img src="{{ related_article.image.url }}" alt="Blog_images">
+                            </a>
+                            <div class="inner-content">
+                                <div class="head">
+                                    <span class="tag">{{ related_article.type }}</span>
+                                    <span class="time">4 min Read</span>
+                                </div>
+                                <div class="body">
+                                    <a href="#">
+                                        <h5 class="title">{{ related_article.title }}</h5>
+                                    </a>
+                                    <div class="author-area">
+                                        
+                                        <a href="{% url 'article_detail' related_article.id %}">Read More<i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
-                                    <a href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
+                        <!-- single blog area end -->
                     </div>
-                    <!-- single blog area end -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                    <!-- single blog area start -->
-                    <div class="single-blog-area-wrapper">
-                        <a href="#" class="thumbnail">
-                            <img src="assets/images/blog/08.jpg" alt="Blog_images">
-                        </a>
-                        <div class="inner-content">
-                            <div class="head">
-                                <span class="tag">blog Content</span>
-                                <span class="time">4 min Read</span>
-                            </div>
-                            <div class="body">
-                                <a href="#">
-                                    <h5 class="title">15 AI Prompts to Supercharge
-                                        Sales &amp; Marketing Teams</h5>
-                                </a>
-                                <div class="author-area">
-                                    <div class="author">
-                                        <img src="assets/images/blog/05.png" alt="blog-area">
-                                        <div class="info">
-                                            <p>samuel</p>
-                                            <span>Author</span>
-                                        </div>
-                                    </div>
-                                    <a href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single blog area end -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                    <!-- single blog area start -->
-                    <div class="single-blog-area-wrapper">
-                        <a href="#" class="thumbnail">
-                            <img src="assets/images/blog/09.jpg" alt="Blog_images">
-                        </a>
-                        <div class="inner-content">
-                            <div class="head">
-                                <span class="tag">Content Write</span>
-                                <span class="time">7 min Read</span>
-                            </div>
-                            <div class="body">
-                                <a href="#">
-                                    <h5 class="title">Introducing Infobase by Copy
-                                        ai: Your Team’s Brand Center</h5>
-                                </a>
-                                <div class="author-area">
-                                    <div class="author">
-                                        <img src="assets/images/blog/06.png" alt="blog-area">
-                                        <div class="info">
-                                            <p>samuel</p>
-                                            <span>Author</span>
-                                        </div>
-                                    </div>
-                                    <a href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single blog area end -->
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
     <!-- related post area end -->
-
-
-
-
-
-
-
-
-
+    
     <!-- cta area start -->
     <!-- cta area start -->
     <div class="rts-cta-area rts-section-gapBottom  bg_faq">
@@ -204,9 +128,6 @@
                                 your content game?
                             </h3>
                             <a href="about.html" class="rts-btn btn-primary">Get Started Now</a>
-                        </div>
-                        <div class="right">
-                            <img src="assets/images/cta/02.png" alt="cta-area">
                         </div>
                     </div>
                 </div>
@@ -224,7 +145,6 @@
     </div>
 
 
-    <!-- header style two -->
     <div id="side-bar" class="side-bar header-two">
         <button class="close-icon-menu"><i class="far fa-times"></i></button>
 
@@ -235,54 +155,25 @@
                     <li class="has-droupdown parent">
                         <a href="#" class="main">Home</a>
                         <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="index.html">Content Writing 01</a></li>
-                            <li><a class="mobile-menu-link" href="index-two.html">Content Writing 03</a></li>
-                            <li><a class="mobile-menu-link" href="index-three.html">Content Writing 03</a></li>
                             <li><a class="mobile-menu-link" href="index-four.html">Ai Chat Bot</a></li>
-                            <li><a class="mobile-menu-link" href="index-five.html">Voice Generator</a></li>
-                            <li><a class="mobile-menu-link" href="index-five.html">Image Generator</a></li>
                             <li><a class="mobile-menu-link" href="index-five.html">Photo Stock</a></li>
                         </ul>
                     </li>
                     <li class="parent">
-                        <a href="feature.html" class="main">Use Cases</a>
+                        <a href="{% url 'contactPage' %}" class="main">Contact</a>
                     </li>
-                    <li class="has-droupdown parent">
-                        <a href="#" class="main">Pages</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
-                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
-                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
-                            <li><a class="mobile-menu-link" href="contact.html">Contact</a></li>
-                            <li><a class="mobile-menu-link" href="use-case.html">Use Case</a></li>
-                            <li><a class="mobile-menu-link" href="use-case-2.html">Use Case 2</a></li>
-                            <li><a class="mobile-menu-link" href="case-details.html">Use Case Details</a></li>
-                            <li><a class="mobile-menu-link" href="case-details-2.html">Use Case Details</a></li>
-                            <li><a class="mobile-menu-link" href="pricing.html">Pricing</a></li>
-                            <li><a class="mobile-menu-link" href="pricing-two.html">Pricing Two</a></li>
-                            <li><a class="mobile-menu-link" href="pricing-three.html">Pricing Three</a></li>
-                            <li><a class="mobile-menu-link" href="faq.html">FAQ</a></li>
-                            <li><a class="mobile-menu-link" href="log-in.html">Log In</a></li>
-                            <li><a class="mobile-menu-link" href="registration.html">Registration</a></li>
-                            <li><a class="mobile-menu-link" href="reset.html">Reset</a></li>
-                            <li><a class="mobile-menu-link" href="404.html">Not Found</a></li>
-                        </ul>
-                    </li>
-                    <li class="parent">
-                        <a href="feature.html" class="main">Feature</a>
-                    </li>
-                    <li class="has-droupdown parent">
-                        <a href="#" class="main">Shop</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="shop-details.html">Product Details</a></li>
-                            <li><a class="mobile-menu-link" href="cart.html">Cart</a></li>
-                            <li><a class="mobile-menu-link" href="checkout.html">Checkout</a></li>
-                            <li><a class="mobile-menu-link" href="log-in.html">My Account</a></li>
-                        </ul>
-                    </li>
-                    <li class="parent">
-                        <a href="contact.html" class="main">Contact</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="parent">
+                            <a href="{% url 'dashboard-main' %}" class="main">Dashboard</a>
+                        </li>
+                    {% else %}
+                        <li class="parent">
+                            <a href="{% url 'login' %}" class="main">Login</a>
+                        </li>
+                        <li class="parent">
+                            <a href="{% url 'register' %}" class="main">Sign up</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </nav>
 
@@ -314,6 +205,7 @@
         <!-- mobile menu area end -->
     </div>
     <!-- header style two End -->
+
 
 
     <!-- rts backto top start -->
