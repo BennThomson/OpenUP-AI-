@@ -1,0 +1,1228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-05 13:19+0500\n"
+"PO-Revision-Date: 2024-12-09 20:50+0500\n"
+"Last-Translator: Bayrambek Matchanov <admin@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
+
+#: dashboard/models.py:7
+msgid "original text"
+msgstr "Original Matn"
+
+#: dashboard/models.py:8
+msgid "humanized text"
+msgstr "Insonlashtirilgan matn"
+
+#: dashboard/models.py:14 dashboard/models.py:24
+msgid "text"
+msgstr "Matn"
+
+#: dashboard/models.py:15
+msgid "texts"
+msgstr "Matnlar"
+
+#: dashboard/models.py:21 users/models.py:28
+msgid "user"
+msgstr "Foydalanuvchi"
+
+#: dashboard/models.py:26
+msgid "number of words"
+msgstr "So'zlar soni"
+
+#: dashboard/models.py:27 dashboard/models.py:51 users/models.py:30
+msgid "created at"
+msgstr "yaratilgan vaqti"
+
+#: dashboard/models.py:28
+msgid "purpose"
+msgstr "maqsad"
+
+#: dashboard/models.py:31
+#, python-format
+msgid "%(first_name)s Document"
+msgstr "%(first_name)s Dokument"
+
+#: dashboard/models.py:34
+msgid "document"
+msgstr "dokument"
+
+#: dashboard/models.py:35 templates/Dashboard/index.html:89
+msgid "documents"
+msgstr "dokumentlar"
+
+#: dashboard/models.py:41
+msgid "Blog content"
+msgstr "Blog kontenti"
+
+#: dashboard/models.py:42
+msgid "Content write"
+msgstr "kontent yozish"
+
+#: dashboard/models.py:43
+msgid "News content"
+msgstr "yangiliklar kontenti"
+
+#: dashboard/models.py:44
+msgid "Scientific content"
+msgstr "Ilmiy ish kontenti"
+
+#: dashboard/models.py:45
+msgid "Educational content"
+msgstr "Talimiy kontent"
+
+#: dashboard/models.py:46
+msgid "Other"
+msgstr "Boshqa"
+
+#: dashboard/models.py:48
+msgid "type"
+msgstr "turi"
+
+#: dashboard/models.py:49
+msgid "title"
+msgstr "sarlavha"
+
+#: dashboard/models.py:50
+msgid "content"
+msgstr "kontent"
+
+#: dashboard/models.py:52 users/models.py:31
+msgid "updated at"
+msgstr "yangilangan vaqti"
+
+#: dashboard/models.py:54
+msgid "image"
+msgstr "rasm"
+
+#: dashboard/models.py:61
+msgid "article"
+msgstr "maqola"
+
+#: dashboard/models.py:62
+msgid "articles"
+msgstr "maqolalar"
+
+#: mainPage/models.py:6
+msgid "name"
+msgstr "ism"
+
+#: mainPage/models.py:7
+msgid "email"
+msgstr "e-mail"
+
+#: mainPage/models.py:8
+msgid "message"
+msgstr "xabar"
+
+#: mainPage/models.py:11
+#, python-format
+msgid "Message by %(email)s"
+msgstr "%(email)s dan xabar"
+
+#: mainPage/models.py:14
+msgid "contact"
+msgstr "kontakt"
+
+#: mainPage/models.py:15
+msgid "contacts"
+msgstr "kontaktlar"
+
+#: mainPage/models.py:20
+msgid "question"
+msgstr "savol"
+
+#: mainPage/models.py:21
+msgid "answer"
+msgstr "javob"
+
+#: mainPage/models.py:24
+#, python-format
+msgid "Question: %(question)s"
+msgstr "Savol: %(question)s"
+
+#: mainPage/models.py:27
+msgid "FAQ"
+msgstr "FAQ"
+
+#: mainPage/models.py:28
+msgid "FAQs"
+msgstr "FAQS"
+
+#: templates/404.html:20 templates/404.html:23 templates/404.html:42
+msgid "Page Not Found"
+msgstr "Sahifa topilmadi"
+
+#: templates/404.html:22 templates/404.html:75
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:12
+#: templates/Openup/light/index-two.html:646
+#: templates/Openup/light/layouts/header/header.html:67
+msgid "Home"
+msgstr "Asosiy"
+
+#: templates/404.html:44
+msgid ""
+"\n"
+"                                We're sorry, the page you requested could not be found <br> please go back to the homepage\n"
+"                                "
+msgstr ""
+"\n"
+"Kechirasiz, siz qidirgan sahifa topilmadi, iltimos asosiyga qayting"
+
+#: templates/404.html:48
+msgid "Back to Home"
+msgstr "Asosiyga qaytish"
+
+#: templates/404.html:77 templates/Openup/light/index-two.html:648
+#: templates/Openup/light/layouts/header/header.html:69
+msgid "Ai Chat Bot"
+msgstr "AI chat bot"
+
+#: templates/404.html:78 templates/Openup/light/index-two.html:649
+#: templates/Openup/light/layouts/header/header.html:70
+msgid "Photo Stock"
+msgstr "Rasm dukon"
+
+#: templates/404.html:85 templates/Openup/light/index-two.html:656
+msgid "Languages"
+msgstr "Tillar"
+
+#: templates/404.html:88 templates/Openup/light/index-two.html:659
+msgid "Uzbek"
+msgstr "O'zbek tili"
+
+#: templates/404.html:89 templates/Openup/light/index-two.html:660
+msgid "English"
+msgstr "Ingliz tili"
+
+#: templates/404.html:90 templates/Openup/light/index-two.html:661
+msgid "Russian"
+msgstr "Rus tili"
+
+#: templates/404.html:95 templates/Openup/light/index-two.html:666
+#: templates/Openup/light/layouts/header/header.html:71
+msgid "Contact"
+msgstr "Kontakt"
+
+#: templates/404.html:99 templates/Dashboard/layouts/dashboardMain.html:15
+#: templates/Openup/light/index-two.html:670
+#: templates/Openup/light/layouts/header/header.html:79
+msgid "Dashboard"
+msgstr "Boshqaruv paneli"
+
+#: templates/404.html:103 templates/Dashboard/registration/login.html:44
+#: templates/Dashboard/registration/register.html:49
+#: templates/Openup/light/index-two.html:674
+#: templates/Openup/light/layouts/header/header.html:81
+#: templates/registration/password_reset_form.html:34
+msgid "Login"
+msgstr "Kirish"
+
+#: templates/404.html:106 templates/Dashboard/registration/login.html:46
+#: templates/Openup/light/index-two.html:677
+#: templates/Openup/light/layouts/header/header.html:82
+msgid "Sign Up"
+msgstr "Registratsiya"
+
+#: templates/Dashboard/chatbot.html:18
+msgid "You"
+msgstr "Siz"
+
+#: templates/Dashboard/chatbot.html:30
+msgid "Openup"
+msgstr "Openup"
+
+#: templates/Dashboard/chatbot.html:52
+msgid "Message openup..."
+msgstr "Openupga xabar yuborish"
+
+#: templates/Dashboard/index.html:15
+msgid "Openup AI Generator"
+msgstr "Open AI Generator"
+
+#: templates/Dashboard/index.html:17
+msgid ""
+"\n"
+"                            Openup is the place to create, publish and monetize content using the power of AI. Use the\n"
+"                            Openup AI Studio to create amazing generative images, music, and audio.\n"
+"                        "
+msgstr ""
+"\n"
+"Openup - bu AI kuchidan foydalangan holda kontent yaratish, nashr etish va monetizatsiya qilish joyi. Openup AI Studiodan ajoyib musiqa, rasm va audio yaratishda foydalaning"
+
+#: templates/Dashboard/index.html:22
+msgid "Soon available"
+msgstr "Tez orada"
+
+#: templates/Dashboard/index.html:39
+msgid "Words Available"
+msgstr "Mavjud so'zlar"
+
+#: templates/Dashboard/index.html:41
+msgid "You have"
+msgstr "Sizda"
+
+#: templates/Dashboard/index.html:43
+msgid "Good"
+msgstr "Ko'p"
+
+#: templates/Dashboard/index.html:44 templates/Dashboard/index.html:47
+#: templates/Dashboard/index.html:50
+msgid "level of words available."
+msgstr "so'zlar bor"
+
+#: templates/Dashboard/index.html:46
+msgid "Average"
+msgstr "O'rtacha"
+
+#: templates/Dashboard/index.html:49
+msgid "Bad"
+msgstr "Kam"
+
+#: templates/Dashboard/index.html:55 templates/Dashboard/index.html:72
+msgid "Generate"
+msgstr "Yaratish"
+
+#: templates/Dashboard/index.html:65
+msgid "Type of plan"
+msgstr "Plan turi"
+
+#: templates/Dashboard/index.html:83
+msgid "Saved Documents"
+msgstr "Saqlangan dokumentlar"
+
+#: templates/Dashboard/index.html:87
+msgid "O documents available"
+msgstr "Dokumentlar mavjud emas"
+
+#: templates/Dashboard/index.html:94
+msgid "Explore"
+msgstr "O'rganish"
+
+#: templates/Dashboard/layouts/ThreeChoices/choices.html:9
+msgid "Image"
+msgstr "Tavsir"
+
+#: templates/Dashboard/layouts/ThreeChoices/choices.html:16
+msgid "Content"
+msgstr "Kontent"
+
+#: templates/Dashboard/layouts/ThreeChoices/choices.html:23
+msgid "Voice"
+msgstr "Ovoz"
+
+#: templates/Dashboard/layouts/header/DashboardHeader.html:50
+msgid "Notification will be available soon"
+msgstr "Tez kunda bildirishnoma xizmati.."
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:18
+msgid "Community Feed"
+msgstr "Hamjamiyat"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:24
+msgid "Manage Subscription"
+msgstr "Obunani boshqarish"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:32
+msgid "AI Chat Bot"
+msgstr "AI chat bot"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:41
+msgid "Settings"
+msgstr "Sozlamalar"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:48
+msgid "Profile"
+msgstr "Profil"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:58
+msgid "Logout"
+msgstr "Chiqish"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:74
+msgid "Enter your name"
+msgstr "Ism kiriting"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:78
+msgid "See your email"
+msgstr "E-mail ko'rish"
+
+#: templates/Dashboard/layouts/sidebar/DashboardSide.html:86
+msgid "Upgrade To Pro"
+msgstr "Pro-ga yangilang"
+
+#: templates/Dashboard/manage-subscription.html:20
+msgid ""
+"\n"
+"                                        Manage Subscription\n"
+"                                    "
+msgstr ""
+"\n"
+"Obunani boshqarish"
+
+#: templates/Dashboard/manage-subscription.html:35
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:24
+msgid "Monthly Pricing"
+msgstr "Oylik to'lov"
+
+#: templates/Dashboard/manage-subscription.html:42
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:29
+msgid "Annual Pricing"
+msgstr "Yillik to'lov"
+
+#: templates/Dashboard/manage-subscription.html:46
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:33
+#, python-format
+msgid "SAVE 25%%"
+msgstr "25% saqlash"
+
+#: templates/Dashboard/manage-subscription.html:57
+#: templates/Dashboard/manage-subscription.html:202
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:44
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:187
+msgid "Basic"
+msgstr "Oddiy"
+
+#: templates/Dashboard/manage-subscription.html:59
+#: templates/Dashboard/manage-subscription.html:204
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:46
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:189
+msgid "$Free"
+msgstr "Bepul"
+
+#: templates/Dashboard/manage-subscription.html:60
+#: templates/Dashboard/manage-subscription.html:99
+#: templates/Dashboard/manage-subscription.html:149
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:47
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:85
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:135
+msgid "/month"
+msgstr "/oy"
+
+#: templates/Dashboard/manage-subscription.html:65
+msgid ""
+" A premium pricing plan is a pricing <br> structure\n"
+"                                                        that is designed."
+msgstr "premium versiya juda ko'p funksiyalar yaratadi."
+
+#: templates/Dashboard/manage-subscription.html:73
+#: templates/Dashboard/manage-subscription.html:220
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:59
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:204
+msgid "10,000 Monthly Word Limit"
+msgstr "Oylik 10,000 so'z chegarasi"
+
+#: templates/Dashboard/manage-subscription.html:80
+#: templates/Dashboard/manage-subscription.html:117
+#: templates/Dashboard/manage-subscription.html:167
+#: templates/Dashboard/manage-subscription.html:226
+#: templates/Dashboard/manage-subscription.html:264
+#: templates/Dashboard/manage-subscription.html:317
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:66
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:103
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:153
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:210
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:247
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:299
+msgid "Access to AI chatbot"
+msgstr "AI bot ga bog'lanish"
+
+#: templates/Dashboard/manage-subscription.html:86
+#: templates/Dashboard/manage-subscription.html:137
+#: templates/Dashboard/manage-subscription.html:188
+#: templates/Dashboard/manage-subscription.html:231
+#: templates/Dashboard/manage-subscription.html:284
+#: templates/Dashboard/manage-subscription.html:333
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:72
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:123
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:173
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:215
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:267
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:315
+msgid "Get Started"
+msgstr "Boshlash"
+
+#: templates/Dashboard/manage-subscription.html:96
+#: templates/Dashboard/manage-subscription.html:240
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:82
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:224
+msgid "Diamond"
+msgstr "Olmos"
+
+#: templates/Dashboard/manage-subscription.html:104
+#: templates/Dashboard/manage-subscription.html:154
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:90
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:140
+msgid "A premium pricing plan is a pricing <br> structure that is designed."
+msgstr "premium versiya juda ko'p funksiyalar yaratadi."
+
+#: templates/Dashboard/manage-subscription.html:111
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:97
+msgid "60,000 Monthly Word Limit"
+msgstr "Oylik 60,000 so'z chegarasi"
+
+#: templates/Dashboard/manage-subscription.html:123
+#: templates/Dashboard/manage-subscription.html:270
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:109
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:253
+msgid "All types of content"
+msgstr "Hamma turdagi kontent"
+
+#: templates/Dashboard/manage-subscription.html:129
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:115
+msgid "Unlimited usage"
+msgstr "Cheksiz foydalanish"
+
+#: templates/Dashboard/manage-subscription.html:133
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:119
+msgid "progress notifications"
+msgstr "rivojlanish bildirishnomalar"
+
+#: templates/Dashboard/manage-subscription.html:146
+#: templates/Dashboard/manage-subscription.html:293
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:132
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:276
+msgid "Silver"
+msgstr "Kumush"
+
+#: templates/Dashboard/manage-subscription.html:161
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:147
+msgid "30,000 Monthly Word Limit"
+msgstr "Oylik 30,000 so'z chegarasi"
+
+#: templates/Dashboard/manage-subscription.html:174
+msgid ""
+"\n"
+"                                                                <span class=\"text-danger\">Not</span> All types of\n"
+"                                                                content\n"
+"                                                            "
+msgstr ""
+"\n"
+"<span class=\"text-danger\">Not</span> Hamma turdagi kontent"
+
+#: templates/Dashboard/manage-subscription.html:184
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:169
+msgid "Limited usage!"
+msgstr "Chegaralangan foydalanish"
+
+#: templates/Dashboard/manage-subscription.html:205
+#: templates/Dashboard/manage-subscription.html:243
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:190
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:227
+msgid "/year"
+msgstr "/yil"
+
+#: templates/Dashboard/manage-subscription.html:210
+#: templates/Dashboard/manage-subscription.html:248
+#: templates/Dashboard/manage-subscription.html:301
+msgid ""
+"\n"
+"                                                        A premium pricing plan is a pricing <br> structure that is\n"
+"                                                        designed.\n"
+"                                                    "
+msgstr ""
+"\n"
+"premium versiya juda ko'p funksiyalar yaratadi."
+
+#: templates/Dashboard/manage-subscription.html:258
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:241
+msgid "720,000 yearly Word Limit"
+msgstr "Oylik 720,000 so'z chegarasi"
+
+#: templates/Dashboard/manage-subscription.html:276
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:259
+msgid "Unlimited Usage"
+msgstr "Cheksiz foydalanish"
+
+#: templates/Dashboard/manage-subscription.html:280
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:263
+msgid "Progress notifications"
+msgstr "rivojlanish xabarnomalari"
+
+#: templates/Dashboard/manage-subscription.html:296
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:279
+msgid "year"
+msgstr "yil"
+
+#: templates/Dashboard/manage-subscription.html:311
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:293
+msgid "120,000 Yearly Word Limit"
+msgstr "Oylik 120,000 so'z chegarasi"
+
+#: templates/Dashboard/manage-subscription.html:323
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:305
+msgid "Some types of content"
+msgstr "Kontentning ayrim turlari"
+
+#: templates/Dashboard/manage-subscription.html:329
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:311
+msgid "Limited Usage"
+msgstr "Chekli foydalanish"
+
+#: templates/Dashboard/profile.html:19
+msgid "Personal Account"
+msgstr "Shaxsiy akkount"
+
+#: templates/Dashboard/profile.html:26
+msgid "Personal Details"
+msgstr "Shaxsiy Malumotlar"
+
+#: templates/Dashboard/profile.html:31
+msgid "First Name"
+msgstr "Ism"
+
+#: templates/Dashboard/profile.html:36 templates/Dashboard/profile.html:46
+msgid "No information"
+msgstr "Malumot yo'q"
+
+#: templates/Dashboard/profile.html:41
+msgid "Last_name"
+msgstr "Familiya"
+
+#: templates/Dashboard/profile.html:51
+#: templates/Dashboard/registration/login.html:34
+#: templates/Dashboard/registration/register.html:28
+msgid "Email"
+msgstr "E-mail"
+
+#: templates/Dashboard/profile.html:55
+#: templates/Dashboard/registration/login.html:38
+#: templates/Dashboard/registration/register.html:36
+msgid "Password"
+msgstr "Kod"
+
+#: templates/Dashboard/profile.html:56
+msgid "Change password"
+msgstr "Kodni o'zgartirish"
+
+#: templates/Dashboard/profile.html:64
+msgid "Edit"
+msgstr "Tahrirlash"
+
+#: templates/Dashboard/profile.html:71
+msgid "Billing Information"
+msgstr "To'lov malumotlari"
+
+#: templates/Dashboard/profile.html:79
+msgid "Plan"
+msgstr "Plan"
+
+#: templates/Dashboard/profile.html:80 users/models.py:24
+msgid "Free"
+msgstr "Bepul"
+
+#: templates/Dashboard/profile.html:87
+msgid "Payment Method"
+msgstr "To'lash usuli"
+
+#: templates/Dashboard/profile.html:88 templates/Dashboard/profile.html:96
+#: templates/Dashboard/profile.html:104
+msgid "No active subscription"
+msgstr "Faol obuna yo'q"
+
+#: templates/Dashboard/profile.html:95
+msgid "Recurring Payment"
+msgstr "Takroriy to'lov"
+
+#: templates/Dashboard/profile.html:103
+msgid "Next due date"
+msgstr "Keyingi to'lash vaqti"
+
+#: templates/Dashboard/profile.html:111
+msgid "Billing history"
+msgstr "To'lov tarixi"
+
+#: templates/Dashboard/profile.html:115
+msgid "No payment history available"
+msgstr "To'lov tarixi mavjud emas"
+
+#: templates/Dashboard/profile.html:129
+msgid "Modal title"
+msgstr "Modal sarlavha"
+
+#: templates/Dashboard/profile.html:153
+msgid "Close"
+msgstr "Yopish"
+
+#: templates/Dashboard/profile.html:157
+msgid "Save"
+msgstr "Saqlash"
+
+#: templates/Dashboard/registration/login.html:21
+msgid "Go home"
+msgstr "Asosiyga borish"
+
+#: templates/Dashboard/registration/login.html:25
+msgid "Welcome Back"
+msgstr "Xush kelibsiz"
+
+#: templates/Dashboard/registration/login.html:26
+msgid "Login to continue"
+msgstr "Davom ettirish uchun kiring!"
+
+#: templates/Dashboard/registration/login.html:42
+msgid "Forgot password?"
+msgstr "Kodni unitdizmi?"
+
+#: templates/Dashboard/registration/login.html:45
+msgid "Don't have an account?"
+msgstr "Akkount yo'qmi?"
+
+#: templates/Dashboard/registration/login.html:47
+msgid "for Free"
+msgstr "Bepulga"
+
+#: templates/Dashboard/registration/login.html:51
+#: templates/Dashboard/registration/register.html:54
+msgid "or"
+msgstr "yoki"
+
+#: templates/Dashboard/registration/login.html:70
+#: templates/Dashboard/registration/register.html:73
+msgid "Continue with Google"
+msgstr "Google bilan davom ettiring"
+
+#: templates/Dashboard/registration/login.html:83
+#: templates/Dashboard/registration/register.html:88
+msgid "Continue with Github"
+msgstr "Github bilan davom ettiring"
+
+#: templates/Dashboard/registration/register.html:18
+msgid "Start your Journey"
+msgstr "sayohatingizni boshlang"
+
+#: templates/Dashboard/registration/register.html:19
+msgid "Create an account"
+msgstr "Akkount yarating"
+
+#: templates/Dashboard/registration/register.html:43
+msgid "confirmation password"
+msgstr "Kodni tasdiqlash"
+
+#: templates/Dashboard/registration/register.html:47
+msgid "Create Account"
+msgstr "Akkount yaratish"
+
+#: templates/Dashboard/registration/register.html:48
+msgid "If you have an account?"
+msgstr "Agar akkount bo'lsa?"
+
+#: templates/Openup/light/index-two.html:20
+msgid "go to your"
+msgstr "boring"
+
+#: templates/Openup/light/index-two.html:20
+msgid "profile management!"
+msgstr "profil boshqarish"
+
+#: templates/Openup/light/index-two.html:28
+msgid "We are really sorry for this happened! Try again!"
+msgstr "Ming uzur, boshqatdan urinib ko'ring."
+
+#: templates/Openup/light/index-two.html:38
+msgid "Task 1"
+msgstr "Vazifa 1"
+
+#: templates/Openup/light/index-two.html:42
+msgid "Task 2"
+msgstr "Vazifa 2"
+
+#: templates/Openup/light/index-two.html:45
+msgid "Write or paste your essay below!"
+msgstr "Inshoni yozing yoki qo'ying."
+
+#: templates/Openup/light/index-two.html:46
+msgid "write"
+msgstr "Yozing"
+
+#: templates/Openup/light/index-two.html:47
+msgid "Check for AI"
+msgstr "AI ga tekshirtirish"
+
+#: templates/Openup/light/index-two.html:57
+#, python-format
+msgid ""
+"\n"
+"                                        Your overall score: <span style='color: green'>%(overall_band_score)s</span>\n"
+"                                        "
+msgstr ""
+"\n"
+"Umumiy ball: <span style='color: green'>%(overall_band_score)s</span>"
+
+#: templates/Openup/light/index-two.html:62
+msgid "Below you can find the detailed feedback on your text."
+msgstr "Quyida insho uchun chuqur mulohaza topsangiz bo'ladi"
+
+#: templates/Openup/light/index-two.html:76
+#, python-format
+msgid ""
+"\n"
+"                                                    Task Response: %(band_range_tr)s\n"
+"                                                    "
+msgstr ""
+"\n"
+"Task Response: %(band_range_tr)s"
+
+#: templates/Openup/light/index-two.html:92
+#, python-format
+msgid ""
+"\n"
+"                                                    Coherence Response: %(band_range_cr)s\n"
+"                                                    "
+msgstr ""
+"\n"
+"Coherence Response: %(band_range_cr)s"
+
+#: templates/Openup/light/index-two.html:108
+#, python-format
+msgid ""
+"\n"
+"                                                    Lexical response: %(band_range_lr)s\n"
+"                                                    "
+msgstr ""
+"\n"
+"Lexical response: %(band_range_lr)s"
+
+#: templates/Openup/light/index-two.html:124
+#, python-format
+msgid ""
+"\n"
+"                                                    Grammatical Response: %(band_range_gr)s\n"
+"                                                    "
+msgstr ""
+"\n"
+"Grammatical Response: %(band_range_gr)s"
+
+#: templates/Openup/light/index-two.html:136
+msgid "Recommendations and Improvements"
+msgstr "Tavsiyalar va maslahatlar"
+
+#: templates/Openup/light/index-two.html:138
+#, python-format
+msgid ""
+"\n"
+"                                        %(improvement_suggestions)s\n"
+"                                        "
+msgstr ""
+"\n"
+"%(improvement_suggestions)s"
+
+#: templates/Openup/light/index-two.html:153
+msgid "Welcome to Openup"
+msgstr "Openup ga hush kelibsiz"
+
+#: templates/Openup/light/index-two.html:155
+msgid ""
+"\n"
+"                                Best AI Writer for <br>\n"
+"                                Creating <span>Blog Articles.</span>\n"
+"                                "
+msgstr ""
+"\n"
+"Blog maqolarlar yaratish<br>\n"
+"uchun <span>eng zo'r AI yozuvchisi</span>"
+
+#: templates/Openup/light/index-two.html:161
+msgid ""
+"Create SEO-optimized and plagiarism-free contentfor your blogs, ads, emails,"
+" and website 10X faster."
+msgstr ""
+"Bloglaringiz, reklamalaringiz, elektron pochta xabarlaringiz va veb-"
+"saytlaringiz uchun SEO optimallashtirilgan va plagiatsiz tarkibni 10 barobar"
+" tezroq yarating."
+
+#: templates/Openup/light/index-two.html:165
+msgid "Enter your mail address"
+msgstr "E-mailingizni kiriting"
+
+#: templates/Openup/light/index-two.html:166
+msgid "Sign Up Free"
+msgstr "Bepulga ro'yxatdan o'ting"
+
+#: templates/Openup/light/index-two.html:184
+msgid "Based on 10,000+ reviews on"
+msgstr "10,000 + natijalarga ko'ra"
+
+#: templates/Openup/light/index-two.html:216
+msgid "IELTS content"
+msgstr "IELTS kontent"
+
+#: templates/Openup/light/index-two.html:218
+msgid ""
+"\n"
+"                            Get valuable suggestion by <br>\n"
+"                            Checking your essay!\n"
+"                            "
+msgstr ""
+"\n"
+"Inshoizni tekshirtirish orqali <br> qimmat maslahatga ega bo'ling"
+
+#: templates/Openup/light/index-two.html:243
+msgid "Write or paste"
+msgstr "Yozing yoki qo'ying"
+
+#: templates/Openup/light/index-two.html:245
+msgid ""
+"\n"
+"                                                Enter your essay and <br> check it for AI\n"
+"                                                "
+msgstr ""
+"\n"
+"Inshoni kiriting va <br> AI ga tekshirtiring."
+
+#: templates/Openup/light/index-two.html:264
+msgid "See your results"
+msgstr "Natijalarni ko'rish"
+
+#: templates/Openup/light/index-two.html:266
+msgid ""
+"\n"
+"                                                See your weaknesses and power and<br> try to enhance the skill\n"
+"                                                "
+msgstr ""
+"\n"
+"O'zizni kuchli va zaif tarafizni ko'ring va mahoratizni oshiring"
+
+#: templates/Openup/light/index-two.html:283
+msgid "Let AI Write"
+msgstr "AI ga yozdiring"
+
+#: templates/Openup/light/index-two.html:285
+msgid ""
+"\n"
+"                                                Let AI write an essay by improving yours <br> By this you'll understand more\n"
+"                                                "
+msgstr ""
+"\n"
+"Siz yozgan inshoni AI ga tekshirtiring <br> va bu orqali siz xatolariz haqida ko'proq tushunasiz."
+
+#: templates/Openup/light/index-two.html:313
+msgid "New"
+msgstr "Yangi"
+
+#: templates/Openup/light/index-two.html:315
+msgid "Features"
+msgstr "Xususiyatlari"
+
+#: templates/Openup/light/index-two.html:317
+msgid ""
+"\n"
+"                            What can you create <br>\n"
+"                            with Openup?\n"
+"                            "
+msgstr ""
+"\n"
+"Openup bilan <br> Nima yarata olasiz?"
+
+#: templates/Openup/light/index-two.html:411
+msgid "Blog Posts"
+msgstr "Blog xabarlari"
+
+#: templates/Openup/light/index-two.html:417
+msgid "SEO Articles"
+msgstr "SEO maqolalar"
+
+#: templates/Openup/light/index-two.html:422
+msgid "News Articles"
+msgstr "Yangi maqolalar"
+
+#: templates/Openup/light/index-two.html:427
+msgid "College Essays"
+msgstr "Kollej Insholari"
+
+#: templates/Openup/light/index-two.html:432
+msgid "Press Releases"
+msgstr "Matbuot xabarlari"
+
+#: templates/Openup/light/index-two.html:447
+#: templates/Openup/light/index-two.html:452
+msgid "Use Cases"
+msgstr "Foydalanish holatlari"
+
+#: templates/Openup/light/index-two.html:454
+msgid ""
+"\n"
+"                            AI Writing Copy <br>\n"
+"                            Favorite Tools\n"
+"                            "
+msgstr ""
+"\n"
+"AI yozish nusxasi <br>\n"
+"Sevimli qurilmalar"
+
+#: templates/Openup/light/index-two.html:471
+msgid "Blog Content"
+msgstr "Blog kontent"
+
+#: templates/Openup/light/index-two.html:474
+#: templates/Openup/light/index-two.html:495
+#: templates/Openup/light/index-two.html:517
+#: templates/Openup/light/index-two.html:538
+#: templates/Openup/light/index-two.html:557
+msgid ""
+"Write a first draft. The first draft should be written in long-form "
+"breaking."
+msgstr ""
+"Birinchi qoralama yozing. Birinchi qoralama uzun shaklli sindirish bilan "
+"yozilishi kerak."
+
+#: templates/Openup/light/index-two.html:476
+msgid "Try Blog Content"
+msgstr "Blog kontentdan foydalanib ko'ring"
+
+#: templates/Openup/light/index-two.html:492
+msgid "Social Media Content"
+msgstr "Ijtimoiy tarmoq kontent"
+
+#: templates/Openup/light/index-two.html:497
+msgid "Try Blog Content "
+msgstr "Blog kontentdan foydalanib ko'ring"
+
+#: templates/Openup/light/index-two.html:514
+msgid "E-commerce copy"
+msgstr "Elektron savdo-sotiqdan nusxa"
+
+#: templates/Openup/light/index-two.html:519
+#: templates/Openup/light/index-two.html:540
+#: templates/Openup/light/index-two.html:559
+msgid "soon available"
+msgstr "Tez kunda"
+
+#: templates/Openup/light/index-two.html:535
+msgid "Sales Copy"
+msgstr "Savdo nusxasi"
+
+#: templates/Openup/light/index-two.html:555
+msgid "website copy"
+msgstr "veb-sayt nusxasi"
+
+#: templates/Openup/light/index-two.html:577
+msgid "Article Samples"
+msgstr "Article Samples"
+
+#: templates/Openup/light/index-two.html:579
+msgid ""
+"\n"
+"                            Fully unique content <br>\n"
+"                            generated by AI\n"
+"                            "
+msgstr ""
+"\n"
+"AI tomonidan yaratilgan <br>\n"
+"To'liq noyob kontent "
+
+#: templates/Openup/light/index-two.html:600
+msgid "4 min Read"
+msgstr "4 min o'qish"
+
+#: templates/Openup/light/index-two.html:608
+msgid "Read More"
+msgstr "Ko'proq o'qish"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:8
+msgid "Pricing Plan"
+msgstr "Narxlar rejasi"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:10
+msgid ""
+"\n"
+"                        Ready to Get Started? <br>\n"
+"                        We'll Keep You Under Budget\n"
+"                        "
+msgstr ""
+"\n"
+"Boshlashga tayyormisiz? <br>\n"
+"Biz sizni byudjet ostida ushlab turamiz"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:52
+msgid " A premium pricing plan is a pricing <br> structure that is designed."
+msgstr "Premium narx plani bu juda zo'r kontentga imkon beradi"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:160
+msgid ""
+"\n"
+"                                                <span class=\"text-danger\">Not</span> All types of content\n"
+"                                                "
+msgstr ""
+"\n"
+"Hamma kontentga kirish<span class=\"text-danger\">bo'lmaydi</span>"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:195
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:232
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:284
+msgid ""
+"\n"
+"                                        A premium pricing plan is a pricing <br> structure that is designed.\n"
+"                                        "
+msgstr ""
+"\n"
+"Premium plan bu sizga yangi kontentga imkon yaratib beradi"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:337
+msgid "Faq's"
+msgstr "Faq's"
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:339
+msgid ""
+"\n"
+"                        Questions About our OpenUp? <br>\n"
+"                        We have Answers!\n"
+"                        "
+msgstr ""
+"\n"
+"Bizning Openup haqida savollar? <br>\n"
+"Bizda javoblar bor."
+
+#: templates/Openup/light/layouts/FAQ_and_pricing/pricing_and_questions.html:345
+msgid ""
+"please feel free to reach out to us. We are always happy to assist you and "
+"provide any additional."
+msgstr ""
+"iltimos biz bilan bog'laning. Biz har doim sizga yordam berishdan va har "
+"qanday qo'shimcha narsalarni taqdim etishdan xursandmiz."
+
+#: templates/Openup/light/layouts/footer/footer.html:20
+msgid ""
+"\n"
+"                                    Openup is artificial intelligence trained to automate important tasks such as writing\n"
+"                                    optimized product descriptions.\n"
+"                                "
+msgstr ""
+"\n"
+"Openup - bu yozish kabi muhim vazifalarni avtomatlashtirishga o'rgatilgan sun'iy intellekt\n"
+"optimallashtirilgan mahsulot tavsiflari."
+
+#: templates/Openup/light/layouts/footer/footer.html:73
+msgid ""
+"\n"
+"                                Maxuel Street, Frankfurt <br> 2589 Germany.\n"
+"                                "
+msgstr ""
+"\n"
+"Maxuel Street, Frankfurt <br> 2589 Germany."
+
+#: templates/registration/password_reset_complete.html:18
+msgid "Successfully"
+msgstr "Muvaffaqiyatli"
+
+#: templates/registration/password_reset_complete.html:20
+msgid "You have successfully changed your password"
+msgstr "Siz parolingizni muvaffaqiyatli o'zgartirdingiz"
+
+#: templates/registration/password_reset_confirm.html:18
+msgid "Enter your password"
+msgstr "Parolni kiriting."
+
+#: templates/registration/password_reset_confirm.html:19
+msgid "Password should be strong and contains more that 8 characters."
+msgstr ""
+"Parol kuchli bo'lishi va 8 tadan ortiq belgidan iborat bo'lishi kerak."
+
+#: templates/registration/password_reset_confirm.html:32
+msgid "Change Password"
+msgstr "Parolni o'zgartirish"
+
+#: templates/registration/password_reset_confirm.html:34
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+"Parolni tiklash havolasi yaroqsiz, ehtimol u allaqachon ishlatilgan. "
+"Iltimos, yangi parolni tiklashni so'rang."
+
+#: templates/registration/password_reset_confirm.html:35
+msgid "Request a new password reset"
+msgstr "Yangi parolni tiklashni talab qiling"
+
+#: templates/registration/password_reset_done.html:18
+msgid "Email sent!"
+msgstr "E-mail yuborildi!"
+
+#: templates/registration/password_reset_done.html:19
+msgid "We have emailed you"
+msgstr "Sizga elektron pochta xabarini yubordik"
+
+#: templates/registration/password_reset_done.html:19
+msgid "If you do not get any message"
+msgstr "Agar hech qanday xabar olmagan bo'lsangiz"
+
+#: templates/registration/password_reset_done.html:19
+msgid "try again"
+msgstr "boshqatdan urinib ko'ring"
+
+#: templates/registration/password_reset_form.html:18
+msgid "Enter your email"
+msgstr "E-mailni kiriting"
+
+#: templates/registration/password_reset_form.html:20
+msgid ""
+"You will be sent an email to reset your password after you have entered!"
+msgstr ""
+"Kiritganingizdan so'ng parolingizni qayta o'rnatish uchun sizga elektron "
+"pochta xabari yuboriladi!"
+
+#: templates/registration/password_reset_form.html:33
+msgid "Send email"
+msgstr "E-mail yuborildi"
+
+#: templates/registration/password_reset_form.html:34
+msgid "Back to login"
+msgstr "Kirishga qaytish"
+
+#: users/managers.py:16
+msgid "The Email must be set"
+msgstr "E-mail kiritilishi kerak"
+
+#: users/managers.py:32
+msgid "Superuser must have is_staff=True."
+msgstr "Superuserda is_staff=True bo'lishi kerak"
+
+#: users/managers.py:34
+msgid "Superuser must have is_superuser=True."
+msgstr "Superuserda is_superuser=True bo'lishi kerak"
+
+#: users/models.py:10
+msgid "email address"
+msgstr "Elektron pochta"
+
+#: users/models.py:25
+msgid "Premium"
+msgstr "Premium"
+
+#: users/models.py:33
+msgid "type of plan"
+msgstr "plan turi"
+
+#: users/models.py:38
+msgid "available words"
+msgstr "mavjud so'zlar"
+
+#: users/models.py:39
+msgid "active"
+msgstr "faol"
+
+#: users/models.py:42
+#, python-format
+msgid "%(first_name)s %(last_name)s Profile"
+msgstr "%(first_name)s %(last_name)s Profili"
+
+#: users/models.py:48
+msgid "profile"
+msgstr "profil"
+
+#: users/models.py:49
+msgid "profiles"
+msgstr "profillar"

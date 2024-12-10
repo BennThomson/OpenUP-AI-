@@ -1,9 +1,8 @@
 from pathlib import Path
 from decouple import config
-
+from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 SECRET_KEY = config("SECRET_KEY")
 
@@ -11,6 +10,7 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = ["*"]
 
+ROSETTA_REQUIRES_AUTH = False
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "mainPage"
 ACCOUNT_LOGOUT_REDIRECT_URL = "account_login"
@@ -23,6 +23,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # rosetta
+    "rosetta",
+    "parler",
     #     crispy
     "crispy_forms",
     "crispy_bootstrap5",
@@ -36,10 +39,13 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
     "allauth.socialaccount.providers.github",
+    # hitcount
+    "hitcount",
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 AUTH_USER_MODEL = "users.CustomUser"
 
@@ -57,6 +63,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     # social authentication
     "allauth.account.middleware.AccountMiddleware",
 ]
@@ -83,9 +90,7 @@ TEMPLATES = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin, regardless of `allauth`
     "django.contrib.auth.backends.ModelBackend",
-    # `allauth` specific authentication methods, such as login by email
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
@@ -120,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en"
 
 TIME_ZONE = "Asia/Tashkent"
 
@@ -128,11 +133,17 @@ USE_I18N = True
 
 USE_TZ = True
 
+LANGUAGES = [
+    ("en", "English"),
+    ("uz", "Uzbek"),
+    ("ru", "Russian"),
+]
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static"
 STATICFILES_DIRS = (BASE_DIR / "assets",)
 
+LOCALE_PATHS = (BASE_DIR / "locale",)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
@@ -167,7 +178,6 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     },
 }
-
 
 try:
     from config.local_settings import *

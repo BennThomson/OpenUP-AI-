@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <div class="left-side-bar">
     <div class="inner">
@@ -7,40 +8,36 @@
                 <div class="icon">
                     <img src="{% static 'main/Dashboard/images/icons/01.png' %}" alt="icons">
                 </div>
-                <p>Home</p>
+                <p>{% trans 'Home' %}</p>
             </a>
+
+            <a href="{% url 'mainPage' %}" class="single-menu">
+                <div class="icon">
+                    <img src="{% static 'main/Dashboard/images/icons/06.png' %}" alt="icons">
+                </div>
+                <p>{% trans 'AI checker' %}</p>
+            </a>
+
             <a href="{% url 'dashboard-community' %}" class="single-menu">
                 <div class="icon">
                     <img src="{% static 'main/Dashboard/images/icons/02.png' %}" alt="icons">
                 </div>
-                <p>Community Feed</p>
+                <p>{% trans 'Community Feed' %}</p>
             </a>
             <a href="{% url 'dashboard-subscription' %}" class="single-menu ">
                 <div class="icon">
                     <img src="{% static 'main/Dashboard/images/icons/03.png' %}" alt="icons">
                 </div>
-                <p>Manage Subscription</p>
+                <p>{% trans 'Manage Subscription' %}</p>
             </a>
         </div>
         <div class="single-menu-wrapper">
-            <a href="{% url 'dashboard-chatbot' %}" class="single-menu active">
+            <a href="{% url 'dashboard-chatbot' %}" class="single-menu">
                 <div class="icon">
                     <img src="{% static 'main/Dashboard/images/icons/04.png' %}" alt="icons">
                 </div>
-                <p>AI Chat Bot</p>
+                <p >{% trans 'AI Chat Bot' %}</p>
             </a>
-{#            <a href="#" class="single-menu">#}
-{#                <div class="icon">#}
-{#                    <img src="{% static 'main/Dashboard/images/icons/05.png' %}" alt="icons">#}
-{#                </div>#}
-{#                <p>Image Generator</p>#}
-{#            </a>#}
-{#            <a href="#" class="single-menu">#}
-{#                <div class="icon">#}
-{#                    <img src="{% static 'main/Dashboard/images/icons/06.png' %}" alt="icons">#}
-{#                </div>#}
-{#                <p>Voice Generate</p>#}
-{#            </a>#}
         </div>
         <div class="single-menu-wrapper">
             <a class="collapse-btn collapsed single-menu" data-bs-toggle="collapse" href="#collapseExample"
@@ -48,14 +45,14 @@
                 <div class="icon">
                     <img src="{% static 'main/Dashboard/images/icons/08.png' %}" alt="icons">
                 </div>
-                <p>Settings</p>
+                <p>{% trans 'Settings' %}</p>
             </a>
             <div class="collapse" id="collapseExample">
                 <ul class="submenu rts-default-sidebar-list">
                     <li>
                         <a href="{% url 'dashboard-profile' %}">
                             <i class="fa-sharp fa-regular fa-user"></i>
-                            <span>Profile</span>
+                            <span>{% trans 'Profile' %}</span>
                         </a>
                     </li>
                 </ul>
@@ -65,35 +62,35 @@
                 <div class="icon">
                     <img src="{% static 'main/Dashboard/images/icons/09.png' %}" alt="icons">
                 </div>
-                <p>Logout</p>
+                <p>{% trans 'Logout' %}</p>
             </a>
         </div>
     </div>
     <div class="bottom-user">
         <div class="user-wrapper">
-            <img src="{% static 'main/Dashboard/images/avatar/02.png' %}" alt="avatar">
             <div class="info">
                 <h6 class="title">
                     {% if user.first_name or user.last_name %}
-                        {% if user.first_name|add:user.last_name|length > 13 %}
+                        {% if user.first_name|add:user.last_name|length > 20 %}
                             {{ user.first_name}}...
                         {% else %}
                             {{ user.first_name }} {{ user.last_name }}
                         {% endif %}
                     {% else %}
-                        <a style="text-decoration: none" href="#">Enter your name</a>
+                        <a style="text-decoration: none" href="#">{% trans 'Enter your name' %}</a>
                     {% endif %}
                 </h6>
 
-                <a href="{% url 'dashboard-profile' %}">See your email</a>
+                <a href="{% url 'dashboard-profile' %}">{% trans 'See your email' %}</a>
             </div>
 {#            <span>Free</span>#}
         </div>
+
         <div class="pro-upgrade">
             <button class="rts-btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     data-bs-whatever="@mdo">
                 <img src="{% static 'main/Dashboard/images/icons/14.png' %}" alt="icons">
-                Upgrade To Pro
+                {% trans 'Upgrade To Pro' %}
             </button>
         </div>
     </div>

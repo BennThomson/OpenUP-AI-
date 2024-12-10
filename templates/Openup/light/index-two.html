@@ -1,43 +1,64 @@
 {% extends 'Openup/light/layouts/base.html' %}
 {% load static %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODEE %}
+{% get_available_languages as LANGUAGESS %}
 
 {% block body %}
 <body>
-    
+
     {% include 'Openup/light/layouts/header/header.html' %}
 
     <!-- rts banner area start -->
     <div class="banner-two-area bg-deam pt--140 pt_md--70">
         {% if user.is_authenticated %}
             <div class="container">
-                {% if not_availability_of_words %}
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>{{ request.user }}</strong> {{ not_availability_of_words }}, Go to your <a href="{% url 'dashboard-subscription' %}">profile management!</a>
+                {% if try_again %}
+                    <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">
+                        <strong>{{ request.user }}</strong> {% trans 'We are really sorry for this happened! Try again!' %}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            
+                {% if other_langauge %}
+                    <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">
+                        Only english language is accepted! Other languages will be available <strong>SooN</strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 {% endif %}
 
-                {% if try_again %}
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>{{ request.user }}</strong> We are really sorry for this happened! Try again!
+                {% if not_availability_of_words %}
+                    <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">
+
+                        <strong>{{ request.user }}</strong> {{ not_availability_of_words }}, {% trans 'go to your' %} <a href="{% url 'dashboard-subscription' %}">{% trans 'profile management!' %}</a>
+
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 {% endif %}
-                    
-                
-                <form action="{% url 'text_checker' %}" method="post" class="text-center" style="margin-top: 100px"> 
+
+                {% if Incorrect_text %}
+                    <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">
+                        {{ Incorrect_text }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            
+            
+                <form action="{% url 'text_checker' %}" method="post" class="text-center" style="margin-top: 100px">
                     {% csrf_token %}
                      <div class="form-check form-check-inline d-inline me-5">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="task1" Checked>
-                        <label class="form-check-label" for="inlineRadio1">Task 1</label> 
+                        <label class="form-check-label" for="inlineRadio1">{% trans 'Task 1' %}</label>
                       </div>
                       <div class="form-check form-check-inline d-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="task2">
-                        <label class="form-check-label" for="inlineRadio2">Task 2</label>
+                        <label class="form-check-label" for="inlineRadio2">{% trans 'Task 2' %}</label>
                       </div>
-                    <textarea style="border: 10px solid antiquewhite; border-radius: 20px; resize: none" class="p-3" name="text" id="" cols="15" rows="15" placeholder='write'></textarea>
-                
-                    <button type="submit" style="border-radius: 20px" class=" btn-success py-3 px-4 w-25 my-4">Check for AI</button>
+                    <br>
+                    <label  class="mt-3" for="text">{% trans 'Write or paste your essay below!' %}</label>
+                    <textarea style="border: 10px solid antiquewhite; border-radius: 20px; resize: none" class="p-3" name="text" id="text" cols="15" rows="15" placeholder='{% trans 'write' %}'></textarea>
+                    <button type="submit" style="border-radius: 20px" class=" btn-success py-3 px-4 w-25 my-4">{% trans 'Check for AI' %}</button>
                 </form>
             </div>
             {% if results %}
@@ -47,10 +68,12 @@
                             <div class="col-lg-12">
                                 <div class="title-conter-area">
                                     <h2 class="title">
+                                        {% blocktranslate %}
                                         Your overall score: <span style='color: green'>{{ overall_band_score }}</span>
+                                        {% endblocktranslate %}
                                     </h2>
                                     <p class="disc">
-                                        Below you can find the detailed feedback on your text.
+                                        {% trans 'Below you can find the detailed feedback on your text.' %}
                                     </p>
                                 </div>
                             </div>
@@ -63,7 +86,9 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingOne">
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    {% blocktranslate %}
                                                     Task Response: {{ band_range_tr }}
+                                                    {% endblocktranslate %}
                                                 </button>
                                             </h2>
                                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -76,7 +101,9 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingTwo">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    {% blocktranslate %}
                                                     Coherence Response: {{ band_range_cr }}
+                                                    {% endblocktranslate %}
                                                 </button>
                                             </h2>
                                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -89,7 +116,9 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingThree">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    {% blocktranslate %}
                                                     Lexical response: {{ band_range_lr }}
+                                                    {% endblocktranslate %}
                                                 </button>
                                             </h2>
                                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -102,7 +131,9 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingFour">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    {% blocktranslate %}
                                                     Grammatical Response: {{ band_range_gr }}
+                                                    {% endblocktranslate %}
                                                 </button>
                                             </h2>
                                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
@@ -112,37 +143,62 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class='text-center mt-3'>Recommendations and Improvements</h3> 
-                                    <h6 class='text-center p-2'> 
+                                    <h3 class='text-center mt-3'>{% trans 'Recommendations and Improvements' %}</h3>
+                                    <h6 class='text-center p-2'>
+                                        {% blocktranslate %}
                                         {{ improvement_suggestions }}
+                                        {% endblocktranslate %}
                                     </h6>
+                                {% if words %}
+                                    <div class="container text-center">
+                                        <div class="row">
+                                            <div class="col">
+                                                A must-to-change word(s)
+                                            </div>
+                                            <div class="col">
+                                                Alternative(s)
+                                            </div>
+                                        </div>
+                                    <p>{{ words }}</p>
+                                    </div>
+                                {% endif %}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            {% endif %}    
+            {% endif %}
         {% else %}
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="banner-two-inner-content pb--180 pb_md--180 pb_sm--100 pt--200 pt_md--100 pt_sm--20">
-                            <span class="pre-title">Welcome to Openup</span>
+                            <span class="pre-title">{% trans 'Welcome to Openup' %}</span>
                             <h1 class="title">
+                                {% blocktranslate %}
                                 Best AI Writer for <br>
                                 Creating <span>Blog Articles.</span>
+                                {% endblocktranslate %}
                             </h1>
                             <p class="disc">
-                                Create SEO-optimized and plagiarism-free contentfor your blogs, ads, emails, and website
-                                10X faster.
+                                {% trans 'Create SEO-optimized and plagiarism-free contentfor your blogs, ads, emails, and website 10X faster.' %}
                             </p>
-                            <form action="#">
-                                <div class="input-area">
-                                    <input type="email" placeholder="Enter your mail address" required>
-                                    <button><a href="#">Sign Up Free</a><i class="fa-regular fa-arrow-right"></i>
-                                    </button>
+                            <div class="">
+                                <div class="row">
+                                    <div class="col d-flex">
+                                        <button type="button" class="btn btn-primary btn-lg w-25 py-3 m-1">
+                                            <p class="text-white">
+                                                <a href="{% url 'login' %}">{% trans 'Login' %}</a>
+                                            </p>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-lg w-25 py-3 m-1">
+                                            <p class="text-white">
+                                                <a href="{% url 'register' %}">{% trans 'Sign Up' %}</a>
+                                            </p>
+                                        </button>
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
                             <div class="rating-area">
                                 <div class="rating">
                                     <img src="{% static 'main/Openup/images/banner/star.svg' %}" alt="start"
@@ -157,7 +213,7 @@
                                          loading="lazy">
                                 </div>
                                 '
-                                <p class="disc">Based on 10,000+ reviews on</p>'
+                                <p class="disc">{% trans 'Based on 10,000+ reviews on' %}</p>'
                             </div>
                             <div class="brand-arae">
                                 <img src="{% static 'main/Openup/images/banner/brand/01.png' %}" alt="brand"
@@ -182,17 +238,19 @@
     </div>
     <!-- rts banner area end -->
 
-    
+
     <!-- rts eaxty steps area start -->
     <div class="rts-easy-steps-area rts-section-gapTop">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-conter-area">
-                        <span class="pre-title-bg">How It Work</span>
+                        <span class="pre-title-bg">{% trans 'IELTS content' %}</span>
                         <h2 class="title">
-                            Get Unique Content In <br>
-                            Three Easy Steps
+                            {% blocktrans %}
+                            Get valuable suggestion by <br>
+                            Checking your essay!
+                            {% endblocktrans %}
                         </h2>
                     </div>
                 </div>
@@ -214,9 +272,11 @@
                                             </svg>
                                         </div>
                                         <div class="info-wrapper">
-                                            <h5 class="title">Describe</h5>
+                                            <h5 class="title">{% trans 'Write or paste' %}</h5>
                                             <p class="disc">
-                                                Enter the title of your article and <br> 1-2 sentences to generate it.
+                                                {% blocktrans %}
+                                                Enter your essay and <br> check it for AI
+                                                {% endblocktrans %}
                                             </p>
                                         </div>
                                     </div>
@@ -233,9 +293,11 @@
 
                                         </div>
                                         <div class="info-wrapper">
-                                            <h5 class="title">Generate</h5>
+                                            <h5 class="title">{% trans 'See your results' %}</h5>
                                             <p class="disc">
-                                                Our AI article generator uses art language <br> models to create unique articles.
+                                                {% blocktrans %}
+                                                See your weaknesses and power and<br> try to enhance the skill
+                                                {% endblocktrans %}
                                             </p>
                                         </div>
                                     </div>
@@ -250,9 +312,11 @@
                                             </svg>
                                         </div>
                                         <div class="info-wrapper">
-                                            <h5 class="title">Edit and Export</h5>
+                                            <h5 class="title">{% trans 'Let AI Write' %}</h5>
                                             <p class="disc">
-                                                Edit and verify article generation results. <br> Export in different formats.
+                                                {% blocktrans %}
+                                                Let AI write an essay by improving yours <br> By this you'll understand more
+                                                {% endblocktrans %}
                                             </p>
                                         </div>
                                     </div>
@@ -278,12 +342,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <span class="bg-text">New</span>
+                    <span class="bg-text">{% trans 'New' %}</span>
                     <div class="title-conter-area">
-                        <span class="pre-title-bg">Features</span>
+                        <span class="pre-title-bg">{% trans 'Features' %}</span>
                         <h2 class="title">
+                            {% blocktrans %}
                             What can you create <br>
                             with Openup?
+                            {% endblocktrans %}
                         </h2>
                     </div>
                 </div>
@@ -374,28 +440,28 @@
                                                 <path d="M12.7148 6.43359C18.75 6.78516 23.9648 12 24.3164 17.9766C24.375 18.7383 23.7891 19.4414 23.0273 19.5C22.9688 19.5 22.9688 19.5 22.9102 19.5C22.207 19.5 21.5625 18.9141 21.5625 18.1523C21.2109 13.5234 17.168 9.48047 12.5391 9.1875C11.7773 9.1875 11.1914 8.48438 11.25 7.72266C11.25 6.96094 11.9531 6.375 12.7148 6.43359ZM13.125 0.75C22.3828 0.75 30 8.36719 30 17.625C30 18.6797 29.1211 19.5 28.125 19.5C27.0703 19.5 26.25 18.6797 26.25 17.625C26.25 10.418 20.332 4.5 13.125 4.5C12.0703 4.5 11.25 3.67969 11.25 2.625C11.25 1.62891 12.0703 0.75 13.125 0.75ZM10.0781 14.0508C14.4727 14.9297 17.6953 19.3242 16.6406 24.1289C15.9961 27.293 13.418 29.8711 10.2539 30.5156C4.80469 31.6875 0 27.5273 0 22.3125V7.78125C0 7.01953 0.585938 6.43359 1.34766 6.43359H4.16016C4.98047 6.43359 5.56641 7.01953 5.56641 7.78125V22.2539C5.56641 23.7188 6.85547 25.0078 8.4375 25.0078C9.96094 25.0078 11.25 23.7773 11.25 22.2539C11.25 21.082 10.4297 20.0273 9.375 19.6758C8.84766 19.5 8.4375 19.0312 8.4375 18.3867V15.457C8.4375 14.5781 9.19922 13.875 10.0781 14.0508Z" fill="white"></path>
                                             </svg>
 
-                                            Blog Posts
+                                            {% trans 'Blog Posts' %}
                                         </button>
                                         <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                                             <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M27 2V20C27 20.8438 26.2969 21.5 25.5 21.5C24.6562 21.5 24 20.8438 24 20V2C24 1.20312 24.6562 0.5 25.5 0.5C26.2969 0.5 27 1.20312 27 2ZM2.95312 7.95312L22.5 2V20L16.3125 18.1719C15.8438 20.0938 14.0625 21.5 12 21.5C9.46875 21.5 7.5 19.4844 7.5 17C7.5 16.4844 7.54688 16.0156 7.73438 15.5469L2.95312 14.0938C2.95312 14.8906 2.29688 15.5 1.5 15.5C0.65625 15.5 0 14.8438 0 14V8C0 7.20312 0.65625 6.5 1.5 6.5C2.29688 6.5 2.95312 7.15625 2.95312 7.95312ZM14.1562 17.5156L9.89062 16.2031C9.79688 16.4375 9.75 16.7188 9.75 17C9.75 18.2656 10.7344 19.25 12 19.25C13.0312 19.25 13.9688 18.5 14.1562 17.5156Z" fill="#3F3EED"></path>
                                             </svg>
-                                            SEO Articles</button>
+                                            {% trans 'SEO Articles' %}</button>
                                         <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                                             <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M22.5 0.5C23.2969 0.5 24 1.20312 24 2V18.5C24 20.1875 22.6406 21.5 21 21.5H3C1.3125 21.5 0 20.1875 0 18.5V5C0 4.20312 0.65625 3.5 1.5 3.5H3V17.75C3 18.1719 3.32812 18.5 3.75 18.5C4.125 18.5 4.5 18.1719 4.5 17.75V2C4.5 1.20312 5.15625 0.5 6 0.5H22.5ZM12.75 18.5C13.125 18.5 13.5 18.1719 13.5 17.75C13.5 17.375 13.125 17 12.75 17H8.25C7.82812 17 7.5 17.375 7.5 17.75C7.5 18.1719 7.82812 18.5 8.25 18.5H12.75ZM12.75 14C13.125 14 13.5 13.6719 13.5 13.25C13.5 12.875 13.125 12.5 12.75 12.5H8.25C7.82812 12.5 7.5 12.875 7.5 13.25C7.5 13.6719 7.82812 14 8.25 14H12.75ZM20.25 18.5C20.625 18.5 21 18.1719 21 17.75C21 17.375 20.625 17 20.25 17H15.75C15.3281 17 15 17.375 15 17.75C15 18.1719 15.3281 18.5 15.75 18.5H20.25ZM20.25 14C20.625 14 21 13.6719 21 13.25C21 12.875 20.625 12.5 20.25 12.5H15.75C15.3281 12.5 15 12.875 15 13.25C15 13.6719 15.3281 14 15.75 14H20.25ZM21 8.75V4.25C21 3.875 20.625 3.5 20.25 3.5H8.25C7.82812 3.5 7.5 3.875 7.5 4.25V8.75C7.5 9.17188 7.82812 9.5 8.25 9.5H20.25C20.625 9.5 21 9.17188 21 8.75Z" fill="#3F3EED"></path>
                                             </svg>
-                                            News Articles</button>
+                                            {% trans 'News Articles' %}</button>
                                         <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                                             <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M29.2031 5.42188C29.6719 5.60938 30 6.03125 30 6.5C30 7.01562 29.6719 7.4375 29.2031 7.625L15.9844 12.3594C15.3281 12.5938 14.625 12.5938 13.9688 12.3594L5.0625 9.17188C4.5 9.78125 4.07812 10.5312 3.89062 11.375C4.21875 11.6094 4.5 12.0312 4.5 12.5C4.5 12.9688 4.26562 13.3906 3.9375 13.6719L5.0625 20.6562C5.15625 21.125 4.78125 21.5 4.35938 21.5H1.59375C1.17188 21.5 0.796875 21.125 0.890625 20.6562L2.01562 13.6719C1.6875 13.3906 1.5 12.9688 1.5 12.5C1.5 11.8906 1.875 11.375 2.39062 11.1406C2.57812 10.2031 3 9.35938 3.5625 8.60938L0.75 7.625C0.28125 7.4375 0 7.01562 0 6.5C0 6.03125 0.28125 5.60938 0.75 5.42188L13.9219 0.6875C14.5781 0.453125 15.2812 0.453125 15.9375 0.6875L29.2031 5.42188ZM16.4531 13.7656L23.2969 11.3281L24 18.0312C24 19.9531 19.9219 21.5 15 21.5C9.98438 21.5 6 19.9531 6 18.0312L6.65625 11.3281L13.5 13.7656C13.9688 13.9531 14.4844 14 15 14C15.4688 14 15.9844 13.9531 16.4531 13.7656Z" fill="#3F3EED"></path>
                                             </svg>
-                                            College Essays</button>
+                                            {% trans 'College Essays' %}</button>
                                         <button class="nav-link" id="v-pills-settingsf-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settingsf" type="button" role="tab" aria-controls="v-pills-settingsf" aria-selected="false">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M22.9688 1.92188C24 2.95312 24 4.59375 22.9688 5.625L21.5625 7.03125L16.9688 2.4375L18.375 1.03125C19.4062 0 21.0469 0 22.0781 1.03125L22.9688 1.92188ZM8.0625 11.3438L15.8906 3.51562L20.4844 8.10938L12.6562 15.9375C12.375 16.2188 12 16.4531 11.625 16.5938L7.45312 17.9531C7.03125 18.0938 6.60938 18 6.32812 17.6719C6 17.3906 5.90625 16.9219 6.04688 16.5469L7.40625 12.375C7.54688 12 7.78125 11.625 8.0625 11.3438ZM9 3C9.79688 3 10.5 3.70312 10.5 4.5C10.5 5.34375 9.79688 6 9 6H4.5C3.65625 6 3 6.70312 3 7.5V19.5C3 20.3438 3.65625 21 4.5 21H16.5C17.2969 21 18 20.3438 18 19.5V15C18 14.2031 18.6562 13.5 19.5 13.5C20.2969 13.5 21 14.2031 21 15V19.5C21 21.9844 18.9844 24 16.5 24H4.5C1.96875 24 0 21.9844 0 19.5V7.5C0 5.01562 1.96875 3 4.5 3H9Z" fill="#3F3EED"></path>
                                             </svg>
-                                            Press Releases</button>
+                                            {% trans 'Press Releases' %}</button>
                                     </div>
                                 </div>
                             </div>
@@ -410,17 +476,18 @@
 
     <!-- use case area start -->
     <div class="case-area-start index-two rts-section-gap">
-        <span class="bg-text">Use Cases</span>
+        <span class="bg-text">{% trans 'Use Cases' %}</span>
         <div class="container">
-            <div class="row g-5">
+            <div class="row g-4">
                 <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                     <div class="title-left-area">
-                        <span class="pre-title-bg">Use Cases</span>
+                        <span class="pre-title-bg">{% trans 'Use Cases' %}</span>
                         <h2 class="title">
+                            {% blocktrans %}
                             AI Writing Copy <br>
                             Favorite Tools
+                            {% endblocktrans %}
                         </h2>
-                        <a href="use-case.html">View All Use-Case <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 col-12">
@@ -432,13 +499,13 @@
                                 <path d="M22.7148 15.4336C28.75 15.7852 33.9648 21 34.3164 26.9766C34.375 27.7383 33.7891 28.4414 33.0273 28.5C32.9688 28.5 32.9688 28.5 32.9102 28.5C32.207 28.5 31.5625 27.9141 31.5625 27.1523C31.2109 22.5234 27.168 18.4805 22.5391 18.1875C21.7773 18.1875 21.1914 17.4844 21.25 16.7227C21.25 15.9609 21.9531 15.375 22.7148 15.4336ZM23.125 9.75C32.3828 9.75 40 17.3672 40 26.625C40 27.6797 39.1211 28.5 38.125 28.5C37.0703 28.5 36.25 27.6797 36.25 26.625C36.25 19.418 30.332 13.5 23.125 13.5C22.0703 13.5 21.25 12.6797 21.25 11.625C21.25 10.6289 22.0703 9.75 23.125 9.75ZM20.0781 23.0508C24.4727 23.9297 27.6953 28.3242 26.6406 33.1289C25.9961 36.293 23.418 38.8711 20.2539 39.5156C14.8047 40.6875 10 36.5273 10 31.3125V16.7812C10 16.0195 10.5859 15.4336 11.3477 15.4336H14.1602C14.9805 15.4336 15.5664 16.0195 15.5664 16.7812V31.2539C15.5664 32.7188 16.8555 34.0078 18.4375 34.0078C19.9609 34.0078 21.25 32.7773 21.25 31.2539C21.25 30.082 20.4297 29.0273 19.375 28.6758C18.8477 28.5 18.4375 28.0312 18.4375 27.3867V24.457C18.4375 23.5781 19.1992 22.875 20.0781 23.0508Z" fill="#3F3EED"></path>
                             </svg>
                         </div>
-                        <a href="case-details.html">
-                            <h5 class="title">Blog Content</h5>
+                        <a href="{% if user.is_authenticated %} {% url 'dashboard-chatbot' %}{% else %}{% url 'login' %}{% endif %}">
+                            <h5 class="title">{% trans 'Blog Content' %}</h5>
                         </a>
                         <p class="disc">
-                            Write a first draft. The first draft should be written in long-form breaking.
+                            {% trans 'Write a first draft. The first draft should be written in long-form breaking.' %}
                         </p>
-                        <a href="case-details.html">Try Blog Content <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="{% if user.is_authenticated %} {% url 'dashboard-chatbot' %}{% else %}{% url 'login' %}{% endif %}">{% trans 'Try Blog Content' %} <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <!-- single case area end -->
                 </div>
@@ -453,13 +520,13 @@
                             </svg>
 
                         </div>
-                        <a href="case-details.html">
-                            <h5 class="title">Social Media Content</h5>
+                        <a href="{% if user.is_authenticated %} {% url 'dashboard-chatbot' %}{% else %}{% url 'login' %}{% endif %}">
+                            <h5 class="title">{% trans 'Social Media Content' %}</h5>
                         </a>
                         <p class="disc">
-                            Write a first draft. The first draft should be written in long-form breaking.
+                            {% trans 'Write a first draft. The first draft should be written in long-form breaking.' %}
                         </p>
-                        <a href="case-details.html">Try Blog Content <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="{% if user.is_authenticated %} {% url 'dashboard-chatbot' %}{% else %}{% url 'login' %}{% endif %}">{% trans 'Try Blog Content ' %}<i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <!-- single case area end -->
                 </div>
@@ -475,13 +542,13 @@
                             </svg>
 
                         </div>
-                        <a href="case-details.html">
-                            <h5 class="title">eCommerce copy</h5>
-                        </a>
+
+                            <h5 class="title">{% trans 'E-commerce copy' %}</h5>
+
                         <p class="disc">
-                            Write a first draft. The first draft should be written in long-form breaking.
+                            {% trans 'Write a first draft. The first draft should be written in long-form breaking.' %}
                         </p>
-                        <a href="case-details.html">Try Blog Content <i class="fa-solid fa-arrow-right"></i></a>
+                        <p class="text-danger">{% trans 'soon available' %}</p>
                     </div>
                     <!-- single case area end -->
                 </div>
@@ -496,13 +563,13 @@
                             </svg>
 
                         </div>
-                        <a href="case-details.html">
-                            <h5 class="title">Sales Copy</h5>
-                        </a>
+
+                            <h5 class="title">{% trans 'Sales Copy' %}</h5>
+
                         <p class="disc">
-                            Write a first draft. The first draft should be written in long-form breaking.
+                            {% trans 'Write a first draft. The first draft should be written in long-form breaking.' %}
                         </p>
-                        <a href="case-details.html">Try Blog Content <i class="fa-solid fa-arrow-right"></i></a>
+                        <p class="text-danger">{% trans 'soon available' %}</p>
                     </div>
                     <!-- single case area end -->
                 </div>
@@ -517,13 +584,11 @@
                             </svg>
 
                         </div>
-                        <a href="case-details.html">
-                            <h5 class="title">website copy</h5>
-                        </a>
+                            <h5 class="title">{% trans 'website copy' %}</h5>
                         <p class="disc">
-                            Write a first draft. The first draft should be written in long-form breaking.
+                            {% trans 'Write a first draft. The first draft should be written in long-form breaking.' %}
                         </p>
-                        <a href="case-details.html">Try Blog Content <i class="fa-solid fa-arrow-right"></i></a>
+                        <p class="text-danger">{% trans 'soon available' %}</p>
                     </div>
                     <!-- single case area end -->
                 </div>
@@ -541,10 +606,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-conter-area">
-                        <span class="pre-title-bg">Article Samples</span>
+                        <span class="pre-title-bg">{% trans 'Article Samples' %}</span>
                         <h2 class="title">
+                            {% blocktrans %}
                             Fully unique content <br>
                             generated by AI
+                            {% endblocktrans %}
                         </h2>
                     </div>
                 </div>
@@ -562,15 +629,15 @@
                             <div class="inner-content">
                                 <div class="head">
                                     <span class="tag">{{ article.type }}</span>
-                                    <span class="time">4 min Read</span>
+                                    <span class="time">{% trans '4 min Read' %}</span>
                                 </div>
                                 <div class="body">
-                                    <a href="blog-details.html">
-                                        <h5 class="title">{{ article.title }}</h5>
+                                    <a href="{% url 'article_detail' article.id %}">
+                                        <h5 class="title">{{ article.title|truncatechars:'30' }}</h5>
                                     </a>
                                     <div class="author-area">
-                                        
-                                        <a href="{% url 'article_detail' article.id %}">Read More <i class="fa-solid fa-arrow-right"></i></a>
+
+                                        <a href="{% url 'article_detail' article.id %}">{% trans 'Read More' %}<i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -596,7 +663,7 @@
 
     <div id="anywhere-home" class="">
     </div>
-    
+
 
     <!-- header style two -->
     <div id="side-bar" class="side-bar header-two">
@@ -605,23 +672,43 @@
         <!-- mobile menu area start -->
         <div class="mobile-menu-main">
             <nav class="nav-main mainmenu-nav mt--30">
+
                 <ul class="mainmenu metismenu" id="mobile-menu-active">
                     <li class="has-droupdown parent">
-                        <a href="#" class="main">Home</a>
+                        <a href="#" class="main">{% trans 'Home' %}</a>
                         <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="index-four.html">Ai Chat Bot</a></li>
-                            <li><a class="mobile-menu-link" href="index-five.html">Photo Stock</a></li>
+                            <li><a class="mobile-menu-link" href="#">{% trans 'Ai Chat Bot' %}</a></li>
+                            <li><a class="mobile-menu-link" href="#">{% trans 'Photo Stock' %}</a></li>
+
                         </ul>
                     </li>
-                    <li class="parent">
-                        <a href="{% url 'contactPage' %}" class="main">Contact</a>
+
+                    <li class="has-droupdown parent">
+                        <a href="#" class="main">
+                            {% trans 'Languages' %}
+                        </a>
+                        <ul class="submenu mm-collapse">
+                                <li><a class="mobile-menu-link" href="/uz{{ request.path|slice:'3:'}}">{% trans 'Uzbek' %}</a></li>
+                                <li><a class="mobile-menu-link" href="/en{{ request.path|slice:'3:'}}">{% trans 'English' %}</a></li>
+                                <li><a class="mobile-menu-link" href="/ru{{ request.path|slice:'3:'}}">{% trans 'Russian' %}</a></li>
+                        </ul>
                     </li>
+
                     <li class="parent">
-                        <a href="{% url 'login' %}" class="main">Login</a>
+                        <a href="{% url 'contactPage' %}" class="main">{% trans 'Contact' %}</a>
                     </li>
-                    <li class="parent">
-                        <a href="{% url 'register' %}" class="main">Sign up</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="parent">
+                            <a href="{% url 'dashboard-main' %}" class="main">{% trans 'Dashboard' %}</a>
+                        </li>
+                    {% else %}
+                        <li class="parent">
+                            <a href="{% url 'login' %}" class="main">{% trans 'Login' %}</a>
+                        </li>
+                        <li class="parent">
+                            <a href="{% url 'register' %}" class="main">{% trans 'Sign Up' %}</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </nav>
 

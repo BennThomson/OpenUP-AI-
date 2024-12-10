@@ -7,7 +7,6 @@ from .views import (
     CustomPasswordResetView,
 )
 from django.contrib.auth.views import (
-    PasswordResetView,
     PasswordResetDoneView,
     PasswordResetConfirmView,
     PasswordResetCompleteView,

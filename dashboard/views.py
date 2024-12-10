@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from users.models import ProfileModel
-from .models import saved_documents, content_artices_model
+from .models import saved_documents, Billing_model
+from .chat_maker import chat_maker
 
 
 @login_required
@@ -29,13 +30,34 @@ def dashboard_community_view(request):
 @login_required
 def dashboard_chatbot_view(request):
     request.META["title"] = "Chatbot"
-    return render(request, "Dashboard/chatbot.html")
+    question = request.POST.get("question")
+    answer = None
+    if question is not None:
+        try:
+            answer = chat_maker(question)
+        except SyntaxError as e:
+            pass
+
+    if answer is not None:
+        context = {
+            "question": question,
+            "answer": answer,
+        }
+    else:
+        context = {
+            "message": "Try again",
+        }
+    return render(request, "Dashboard/chatbot.html", context=context)
 
 
 @login_required
 def dashboard_profile_view(request):
     request.META["title"] = "Profile"
-    return render(request, "Dashboard/profile.html")
+    payments = Billing_model.objects.filter(user=request.user)
+    context = {
+        "payments": payments,
+    }
+    return render(request, "Dashboard/profile.html", context=context)
 
 
 @login_required

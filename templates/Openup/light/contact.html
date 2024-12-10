@@ -22,7 +22,7 @@
                                     <li>
                                         <a class="links-main" href="{% url 'mainPage' %}">Home</a>
                                     </li>
-                                    <li><a href="#">Ai Chat Bot</a></li>
+                                    <li><a href="{% url 'dashboard-chatbot' %}">Ai Chat Bot</a></li>
                                     <li><a href="#">Photo Stock <span>New</span></a></li>
                                 </ul>
                             </nav>
@@ -84,32 +84,7 @@
                     <form  action="{% url 'contactPage' %}" method="post">
                         {% csrf_token %}
                             {{ form|crispy }}
-
                             <input type="submit" value="Send Message">
-
-{#                        <h3 class="title">Get In Touch</h3>#}
-{#                        <!-- ingle input start -->#}
-{#                        <div class="single-input">#}
-{#                            <label for="name">Your Name</label>#}
-{#                            <input id="name" name="name" type="text" placeholder="Enter you full name" required>#}
-{#                            <i class="fa-regular fa-user"></i>#}
-{#                        </div>#}
-{#                        <!-- single input end -->#}
-{#                        <!-- ingle input start -->#}
-{#                        <div class="single-input">#}
-{#                            <label for="email">Your Email Address</label>#}
-{#                            <input id="email" name="email" type="email" placeholder="openup@info.com">#}
-{#                            <i class="fa-light fa-envelope"></i>#}
-{#                        </div>#}
-{#                        <!-- single input end -->#}
-{#                        <!-- ingle input start -->#}
-{#                        <div class="single-input">#}
-{#                            <label for="textarea">Enter Your Message</label>#}
-{#                            <textarea name="message" id="textarea" placeholder="Write here your details message"></textarea>#}
-{#                            <i class="fa-light fa-marker"></i>#}
-{#                        </div>#}
-                        <!-- single input end -->
-{#                        <button type="submit" class="btn btn-primary">Send Message</button>#}
                     </form>
 
                     <!-- left contact form end -->
@@ -190,7 +165,7 @@
                                 All set to level up <br>
                                 your content game?
                             </h3>
-                            <a href="about.html" class="rts-btn btn-primary">Get Started Now</a>
+                            <a href="{% url 'mainPage' %}" class="rts-btn btn-primary">Get Started Now</a>
                         </div>
                         <div class="right">
                             <img src="{% static 'main/Openup/images/cta/02.png' %}" alt="cta-area">
