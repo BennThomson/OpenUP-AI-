@@ -163,3 +163,4 @@ cython_debug/
 my_open_ai_key.py
 prompts.py
 media
+.environ
